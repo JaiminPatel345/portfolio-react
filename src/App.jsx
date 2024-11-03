@@ -1,7 +1,9 @@
+import { Home } from "./pages"
+
 function App() {
     return (
         <>
-            <h1 className="bg-rose-300">Test tailwind</h1>
+            <Home />
         </>
     )
 }
