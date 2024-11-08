@@ -1,4 +1,3 @@
-import { Boxes } from "../components"
 import { cn } from "../lib/utils"
 import { TypeAnimation } from "react-type-animation"
 
@@ -7,7 +6,7 @@ const Home = () => {
         <div className="h-screen relative w-full overflow-hidden bg-slate-900 flex items-center justify-center rounded-lg">
             <div className="absolute inset-0 w-full h-full bg-slate-900 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
 
-            <Boxes />
+            {/* <Boxes /> */}
 
             {/* Main Content */}
             <div className=" flex flex-col md:flex-row items-center md:items-center justify-center md:justify-between w-full max-w-6xl px-4 md:px-8">
