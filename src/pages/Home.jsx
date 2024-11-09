@@ -1,7 +1,15 @@
+import { FlipWords } from "../components/"
 import { cn } from "../lib/utils"
-import { TypeAnimation } from "react-type-animation"
+// import { TypeAnimation } from "react-type-animation"
 
 const Home = () => {
+    const words = [
+        "DSA Enthusiast",
+        "Problem Solver",
+        "Innovative Thinker",
+        "Open-Source Contributor",
+        "Continuous Learner",
+    ]
     return (
         <div className="h-screen relative w-full overflow-hidden bg-slate-900 flex items-center justify-center ">
             <div className="absolute inset-0 w-full h-full bg-black z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
@@ -20,7 +28,7 @@ const Home = () => {
                         Jaimin Detroja
                     </h1>
                     <div className="text-blue-400 text-lg md:text-2xl text-center z-50 md:text-left">
-                        <TypeAnimation
+                        {/* <TypeAnimation
                             sequence={[
                                 "DSA Enthusiast",
                                 1000,
@@ -35,7 +43,8 @@ const Home = () => {
                             ]}
                             speed={50}
                             repeat={Infinity}
-                        />
+                        /> */}
+                        <FlipWords words={words} />
                     </div>
                 </div>
 
