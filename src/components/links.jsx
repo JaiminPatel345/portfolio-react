@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { FloatingDock } from "./floating-dock"
 import {
     IconHome,

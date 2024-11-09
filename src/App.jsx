@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import { Navbar } from "./components"
 import { Home } from "./pages"
+import AnimatedCursor from "react-animated-cursor"
 
 function App() {
     useEffect(() => {
@@ -9,6 +10,9 @@ function App() {
 
     return (
         <>
+            <div>
+                <AnimatedCursor color="102, 255, 255" />
+            </div>
             <div>
                 <Navbar />
             </div>

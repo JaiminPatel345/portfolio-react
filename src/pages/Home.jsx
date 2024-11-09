@@ -4,7 +4,7 @@ import { TypeAnimation } from "react-type-animation"
 const Home = () => {
     return (
         <div className="h-screen relative w-full overflow-hidden bg-slate-900 flex items-center justify-center ">
-            <div className="absolute inset-0 w-full h-full bg-red-900 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
+            <div className="absolute inset-0 w-full h-full bg-black z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
 
             {/* <Boxes /> */}
 
