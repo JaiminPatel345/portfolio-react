@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { FloatingDock } from "./ui/floating-dock"
+import { FloatingDock } from "./floating-dock"
 import {
     IconHome,
     IconUser,

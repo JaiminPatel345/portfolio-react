@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { cn } from "../../lib/utils"
+import { cn } from "../lib/utils"
 import { IconLayoutNavbarCollapse } from "@tabler/icons-react"
 import {
     AnimatePresence,

@@ -1,5 +1,5 @@
 import { Navbar } from "./links"
-import { FloatingDock } from "./ui/floating-dock"
+import { FloatingDock } from "./floating-dock"
 
 
 export { FloatingDock, Navbar }
