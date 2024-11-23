@@ -49,12 +49,14 @@ const Home = () => {
                 </div>
 
                 {/* Right Section: Image */}
-                <div className="flex-shrink-0 z-50">
-                    <img
-                        src="/cool-home.png"
-                        alt="Cool photo"
-                        className="w-48 md:w-64 lg:w-80 object-cover "
-                    />
+                <div className="avatar">
+                    <div className="flex-shrink-0 z-50 w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full">
+                        <img
+                            src="/assets/myPhoto-home.png"
+                            alt="My  photo"
+                            className=" object-cover"
+                        />
+                    </div>
                 </div>
             </div>
         </div>
