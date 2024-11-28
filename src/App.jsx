@@ -2,13 +2,12 @@ import { useEffect, useState } from "react"
 import { Navbar , MyCursor } from "./components"
 import {
     Home,
-    // AboutMe,
+    DSAProfiles,
     Experience,
     Projects,
     SkillSet,
     Achievements,
     Connect,
-    Feedback,
 } from "./pages"
 
 
@@ -40,13 +39,12 @@ function App() {
                     <Navbar />
                 </div>
                 <Home />
-                {/* <AboutMe /> */}
+                <DSAProfiles />
                 <Experience />
                 <Projects />
                 <SkillSet />
                 <Achievements />
                 <Connect />
-                <Feedback />
             </div>
         </>
     )

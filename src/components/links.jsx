@@ -6,7 +6,6 @@ import {
     IconDeviceLaptop,
     IconTool,
     IconAward,
-    IconMessageCircle,
     IconLink,
 } from "@tabler/icons-react"
 
@@ -20,11 +19,11 @@ export function Navbar() {
             href: "#home",
         },
         {
-            title: "About ME",
+            title: "DSAProfiles",
             icon: (
                 <IconUser className="h-full w-full text-neutral-500 dark:text-neutral-300" />
             ),
-            href: "#about",
+            href: "#profiles",
         },
         {
             title: "Experience",
@@ -60,13 +59,6 @@ export function Navbar() {
                 <IconLink className="h-full w-full text-neutral-500 dark:text-neutral-300" />
             ),
             href: "#connect",
-        },
-        {
-            title: "Feedback",
-            icon: (
-                <IconMessageCircle className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-            ),
-            href: "#feedback",
         },
     ]
 

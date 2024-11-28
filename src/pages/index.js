@@ -1,20 +1,18 @@
 import Home from "./Home";
 import Projects from "./projects";
-import AboutMe from './about';
+import DSAProfiles from './dsaProfiles';
 import Experience from './experience';
 import SkillSet from "./skills"
 import Achievements from './achievements';
 import Connect from './connect';
-import Feedback from './feedback';
 
 
 export {
     Home,
-    AboutMe,
+    DSAProfiles,
     Experience,
     Projects,
     SkillSet,
     Achievements,
     Connect,
-    Feedback,
 }
