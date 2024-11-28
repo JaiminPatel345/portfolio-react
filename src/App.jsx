@@ -5,7 +5,7 @@ import {
     // AboutMe,
     Experience,
     Projects,
-    Skills,
+    SkillSet,
     Achievements,
     Connect,
     Feedback,
@@ -43,7 +43,7 @@ function App() {
                 {/* <AboutMe /> */}
                 <Experience />
                 <Projects />
-                <Skills />
+                <SkillSet />
                 <Achievements />
                 <Connect />
                 <Feedback />

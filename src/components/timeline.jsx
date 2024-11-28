@@ -71,14 +71,14 @@ const Timeline = ({ experiences }) => {
                                         />
                                     </a>
                                     <div>
-                                        <h3 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100">
+                                        <h3 className="text-2xl font-bold text-primary">
                                             {experience.role}
                                         </h3>
                                         <a
                                             href={experience.link}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="text-lg text-blue-500 hover:text-blue-600 dark:text-blue-400"
+                                            className="text-lg text-white"
                                         >
                                             {experience.name}
                                         </a>

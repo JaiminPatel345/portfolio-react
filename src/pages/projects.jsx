@@ -149,7 +149,7 @@ const Projects = () => {
                 {/* Navigation Buttons */}
                 <button
                     onClick={prevProject}
-                    className={`absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-[#2e2e2e] p-4 rounded-full shadow-lg transition-all duration-300 hover:bg-[#3a3a3a] ${
+                    className={`absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-[#2e2e2e] p:3  md:p-4 rounded-full shadow-lg transition-all duration-300 hover:bg-[#3a3a3a] ${
                         currentIndex === 0
                             ? "opacity-50 cursor-not-allowed"
                             : "hover:scale-110"
@@ -160,7 +160,7 @@ const Projects = () => {
 
                 <button
                     onClick={nextProject}
-                    className={`absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-[#2e2e2e] p-4 rounded-full shadow-lg transition-all duration-300 hover:bg-[#3a3a3a] ${
+                    className={`absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-[#2e2e2e] p:3  md:p-4 rounded-full shadow-lg transition-all duration-300 hover:bg-[#3a3a3a] ${
                         currentIndex === projects.length - 1
                             ? "opacity-50 cursor-not-allowed"
                             : "hover:scale-110"
@@ -171,7 +171,7 @@ const Projects = () => {
                 </button>
 
                 {/* Single Project Card */}
-                <div className="flex justify-center px-16">
+                <div className="flex justify-center px-8 md:px-16">
                     <div className="w-full max-w-3xl bg-[#2e2e2e] rounded-xl shadow-xl transition-all duration-500">
                         <div className="p-8 lg:p-12">
                             <div className="text-center mb-4">
@@ -182,7 +182,9 @@ const Projects = () => {
                                     {projects[currentIndex].description}
                                 </p>
                             </div>
-                            <div className="flex justify-center gap-6 mt-8">
+
+                            {/* Links */}
+                            <div className="flex flex-col md:flex-row justify-center gap-6 mt-8">
                                 <a
                                     href={projects[currentIndex].github}
                                     target="_blank"
