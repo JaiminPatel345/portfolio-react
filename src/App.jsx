@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
-import { Navbar } from "./components"
+import { Navbar , MyCursor } from "./components"
 import {
     Home,
-    AboutMe,
+    // AboutMe,
     Experience,
     Projects,
     Skills,
@@ -10,7 +10,8 @@ import {
     Connect,
     Feedback,
 } from "./pages"
-import AnimatedCursor from "react-animated-cursor"
+
+
 
 function App() {
     const [isMobile, setIsMobile] = useState(false)
@@ -32,16 +33,14 @@ function App() {
     return (
         <>
             {!isMobile && (
-                <div className="hidden md:block">
-                    <AnimatedCursor color="102, 255, 255" />
-                </div>
+                <MyCursor />
             )}
             <div className="bg-[#202020]">
                 <div>
                     <Navbar />
                 </div>
                 <Home />
-                <AboutMe />
+                {/* <AboutMe /> */}
                 <Experience />
                 <Projects />
                 <Skills />

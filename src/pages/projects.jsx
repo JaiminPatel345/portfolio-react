@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { useState } from "react"
 import {
     IconBrandGithub,
     IconExternalLink,
@@ -9,9 +10,13 @@ import {
     IconDeviceDesktop,
     IconBrandDocker,
     IconCloud,
+    IconChevronLeft,
+    IconChevronRight,
 } from "@tabler/icons-react"
 
 const Projects = () => {
+    const [currentIndex, setCurrentIndex] = useState(0)
+
     const projects = [
         {
             title: "Wanderlust",
@@ -25,7 +30,7 @@ const Projects = () => {
                 session: ["Redis"],
                 packageManager: ["Yarn"],
                 deployment: ["Azure", "Vercel"],
-                ciCd: ["Github Action"],
+                ciCd: null,
                 others: ["REST APIs", "Socket.io"],
             },
             github: "https://github.com/JaiminPatel345/wanderlust",
@@ -42,11 +47,11 @@ const Projects = () => {
                 session: ["Redis"],
                 packageManager: ["Yarn"],
                 deployment: ["Azure", "Vercel"],
-                ciCd: ["Github Action"],
+                ciCd: null,
                 others: ["REST APIs", "Socket.io"],
             },
             github: "https://github.com/JaiminPatel345/BarterTalk",
-            live: null,
+            live: "https://barter-talk.vercel.app/",
         },
         {
             title: "Health Pie",
@@ -77,14 +82,26 @@ const Projects = () => {
                 auth: null,
                 session: null,
                 packageManager: ["Yarn"],
-                deployment: [ "Vercel"],
-                ciCd: ["Github Action"],
+                deployment: ["Vercel"],
+                ciCd: null,
                 others: null,
             },
             github: "https://github.com/Naren7874/GDGC",
             live: "https://gdgc-seven.vercel.app/",
         },
     ]
+
+    const nextProject = () => {
+        setCurrentIndex((currentIndex + 1) % projects.length)
+    }
+
+    const prevProject = () => {
+        if(currentIndex == 0){
+        setCurrentIndex( projects.length - 1)
+        }else
+        setCurrentIndex(currentIndex - 1)
+
+    }
 
     const TechBadge = ({ text }) => (
         <span className="px-4 py-1 rounded-full bg-[#363535] text-[#f5f5f5] font-normal m-1.5 transition-all duration-300 hover:scale-105 hover:bg-[#3a3a3a] inline-flex items-center">
@@ -96,12 +113,12 @@ const Projects = () => {
         <div className="mb-3">
             <div className="flex items-center gap-4 text-[#d1d5db] mb-1">
                 <div className="p-2 rounded-lg bg-[#4e4d4d]">
-                    <Icon size={16} stroke={1.5} />
+                    <Icon size={20} stroke={1.5} />
                 </div>
                 <span className="font-semibold text-md">{title}</span>
             </div>
             <div className="flex flex-wrap gap-2 pl-11">
-                {items.map((item, index) => (
+                {items?.map((item, index) => (
                     <TechBadge key={index} text={item} />
                 ))}
             </div>
@@ -109,118 +126,165 @@ const Projects = () => {
     )
 
     return (
-        <div className="min-h-screen  text-[#f5f5f5] py-16 px-2">
-            <div className="max-w-5xl mx-auto">
-                <h1 className="text-5xl font-bold text-center mb-20 animate-slide-in">
-                    My Projects
-                </h1>
+        <div className="min-h-screen text-[#f5f5f5] py-16 relative">
+            <h1 className="text-5xl font-bold text-center mb-20 animate-slide-in">
+                My Projects
+            </h1>
 
-                <div className="flex w-full h-full gap-12 flex-wrap ">
-                    {projects.map((project, index) => (
-                        <div
-                            key={index}
-                            className="card  bg-[#2e2e2e] shadow-xl transition-all duration-500  animate-slide-in hover:shadow-[0_0_20px_5px_rgba(200,200,255,0.5)]"
-                            style={{
-                                animationDelay: `${index * 200}ms`,
-                            }}
-                        >
-                            <div className="card-body p-8 lg:p-12 w-[70vw]">
-                                <div className="text-center mb-4">
-                                    <h2 className="text-3xl font-bold text-primary mb-4">
-                                        {project.title}
-                                    </h2>
-                                    <p className="text-lg text-[#b5b5b5] max-w-2xl mx-auto">
-                                        {project.description}
-                                    </p>
-                                </div>
+            {/* Project Navigation Indicators */}
+            <div className="flex justify-center gap-2 m-4">
+                {projects.map((_, index) => (
+                    <div
+                        key={index}
+                        className={`h-2 rounded-full transition-all duration-300 ${
+                            index === currentIndex
+                                ? "w-8 bg-primary"
+                                : "w-2 bg-[#4e4d4d]"
+                        }`}
+                    />
+                ))}
+            </div>
 
-                                <div className="divider before:bg-[#444444] after:bg-[#444444]"></div>
+            <div className="max-w-6xl mx-auto px-4 relative">
+                {/* Navigation Buttons */}
+                <button
+                    onClick={prevProject}
+                    className={`absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-[#2e2e2e] p-4 rounded-full shadow-lg transition-all duration-300 hover:bg-[#3a3a3a] ${
+                        currentIndex === 0
+                            ? "opacity-50 cursor-not-allowed"
+                            : "hover:scale-110"
+                    }`}
+                >
+                    <IconChevronLeft size={24} />
+                </button>
 
-                                <div className="space-y-4 my-4">
-                                    {project.technology.frontEnd && (
-                                        <TechSection
-                                            title="Frontend Technologies"
-                                            items={project.technology.frontEnd}
-                                            icon={IconDeviceDesktop}
-                                        />
-                                    )}
-                                    {project.technology.backEnd && (
-                                        <TechSection
-                                            title="Backend Stack"
-                                            items={project.technology.backEnd}
-                                            icon={IconServer}
-                                        />
-                                    )}
-                                    {project.technology.database && (
-                                        <TechSection
-                                            title="Database Solutions"
-                                            items={project.technology.database}
-                                            icon={IconDatabase}
-                                        />
-                                    )}
-                                    {project.technology.auth && (
-                                        <TechSection
-                                            title="Authentication"
-                                            items={project.technology.auth}
-                                            icon={IconLock}
-                                        />
-                                    )}
-                                    {project.technology.deployment && (
-                                        <TechSection
-                                            title="Deployment"
-                                            items={
-                                                project.technology.deployment
-                                            }
-                                            icon={IconCloud}
-                                        />
-                                    )}
-                                    {project.technology.ciCd && (
-                                        <TechSection
-                                            title="CI/CD"
-                                            items={project.technology.ciCd}
-                                            icon={IconBrandDocker}
-                                        />
-                                    )}
-                                    {project.technology.others && (
-                                        <TechSection
-                                            title="Additional Technologies"
-                                            items={project.technology.others}
-                                            icon={IconCode}
-                                        />
-                                    )}
-                                </div>
+                <button
+                    onClick={nextProject}
+                    className={`absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-[#2e2e2e] p-4 rounded-full shadow-lg transition-all duration-300 hover:bg-[#3a3a3a] ${
+                        currentIndex === projects.length - 1
+                            ? "opacity-50 cursor-not-allowed"
+                            : "hover:scale-110"
+                    }`}
+                    // disabled={}
+                >
+                    <IconChevronRight size={24} />
+                </button>
 
-                                <div className="flex justify-center gap-6 mt-2 flex-wrap">
+                {/* Single Project Card */}
+                <div className="flex justify-center px-16">
+                    <div className="w-full max-w-3xl bg-[#2e2e2e] rounded-xl shadow-xl transition-all duration-500">
+                        <div className="p-8 lg:p-12">
+                            <div className="text-center mb-4">
+                                <h2 className="text-3xl font-bold text-primary mb-4">
+                                    {projects[currentIndex].title}
+                                </h2>
+                                <p className="text-lg text-[#b5b5b5] max-w-2xl mx-auto">
+                                    {projects[currentIndex].description}
+                                </p>
+                            </div>
+                            <div className="flex justify-center gap-6 mt-8">
+                                <a
+                                    href={projects[currentIndex].github}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="btn btn-outline btn-primary btn-md gap-3 hover:scale-105 transition-transform px-6"
+                                >
+                                    <IconBrandGithub size={20} stroke={1.5} />
+                                    View Source
+                                </a>
+                                {projects[currentIndex].live && (
                                     <a
-                                        href={project.github}
+                                        href={projects[currentIndex].live}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="btn btn-outline btn-primary btn-md gap-3 hover:scale-105 transition-transform px-4"
+                                        className="btn btn-primary btn-md gap-3 hover:scale-105 transition-transform px-6"
                                     >
-                                        <IconBrandGithub
-                                            size={16}
+                                        <IconExternalLink
+                                            size={20}
                                             stroke={1.5}
                                         />
-                                        View Source
+                                        Live Demo
                                     </a>
-                                    {project.live && (
-                                        <a
-                                            href={project.live}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="btn btn-primary btn-md gap-3 hover:scale-105 transition-transform px-4"
-                                        >
-                                            <IconExternalLink
-                                                size={16}
-                                                stroke={1.5}
-                                            />
-                                            Live Demo
-                                        </a>
-                                    )}
-                                </div>
+                                )}
+                            </div>
+
+                            <div className="divider before:bg-[#444444] after:bg-[#444444]"></div>
+
+                            <div className="space-y-4 my-4">
+                                {projects[currentIndex].technology.frontEnd && (
+                                    <TechSection
+                                        title="Frontend Technologies"
+                                        items={
+                                            projects[currentIndex].technology
+                                                .frontEnd
+                                        }
+                                        icon={IconDeviceDesktop}
+                                    />
+                                )}
+                                {projects[currentIndex].technology.backEnd && (
+                                    <TechSection
+                                        title="Backend Stack"
+                                        items={
+                                            projects[currentIndex].technology
+                                                .backEnd
+                                        }
+                                        icon={IconServer}
+                                    />
+                                )}
+                                {projects[currentIndex].technology.database && (
+                                    <TechSection
+                                        title="Database Solutions"
+                                        items={
+                                            projects[currentIndex].technology
+                                                .database
+                                        }
+                                        icon={IconDatabase}
+                                    />
+                                )}
+                                {projects[currentIndex].technology.auth && (
+                                    <TechSection
+                                        title="Authentication"
+                                        items={
+                                            projects[currentIndex].technology
+                                                .auth
+                                        }
+                                        icon={IconLock}
+                                    />
+                                )}
+                                {projects[currentIndex].technology
+                                    .deployment && (
+                                    <TechSection
+                                        title="Deployment"
+                                        items={
+                                            projects[currentIndex].technology
+                                                .deployment
+                                        }
+                                        icon={IconCloud}
+                                    />
+                                )}
+                                {projects[currentIndex].technology.ciCd && (
+                                    <TechSection
+                                        title="CI/CD"
+                                        items={
+                                            projects[currentIndex].technology
+                                                .ciCd
+                                        }
+                                        icon={IconBrandDocker}
+                                    />
+                                )}
+                                {projects[currentIndex].technology.others && (
+                                    <TechSection
+                                        title="Additional Technologies"
+                                        items={
+                                            projects[currentIndex].technology
+                                                .others
+                                        }
+                                        icon={IconCode}
+                                    />
+                                )}
                             </div>
                         </div>
-                    ))}
+                    </div>
                 </div>
             </div>
 
@@ -237,9 +301,6 @@ const Projects = () => {
                 }
                 .animate-slide-in {
                     animation: slideIn 1s ease-out forwards;
-                }
-                .card:hover {
-                    box-shadow: 0 0 20px 5px rgba(200, 200, 255, 0.5);
                 }
             `}</style>
         </div>

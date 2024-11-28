@@ -1,6 +1,4 @@
 import { FlipWords } from "../components/"
-import { cn } from "../lib/utils"
-// import { TypeAnimation } from "react-type-animation"
 
 const Home = () => {
     const words = [
@@ -21,7 +19,7 @@ const Home = () => {
                 {/* Left Section: Text and Animation */}
                 <div className="flex flex-col items-center md:items-start space-y-4 mb-6">
                     <h1
-                        className={cn(
+                        className={(
                             "text-white text-3xl md:text-5xl text-center md:text-left z-50"
                         )}
                     >
