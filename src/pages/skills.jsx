@@ -201,11 +201,11 @@ const mySills = [
 const ThreeDCard = ({ name, photo, progress, Icon }) => {
     return (
         <CardContainer className="inter-var">
-            <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-64 h-80 rounded-xl p-6 border">
+            <CardBody className="bg-neutral-800 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1]  dark:border-white/[0.2] border-black/[0.1] w-64 h-80 rounded-xl p-6 border">
                 {/* Category Badge */}
                 <CardItem
                     translateZ="20"
-                    className="absolute top-4 right-4 bg-black/[0.8] dark:bg-white/[0.8] px-3 py-1 rounded-full"
+                    className="absolute top-3 right-3 bg-black/[0.8] dark:bg-white/[0.8] px-3 py-1 rounded-full"
                 >
                     <Icon className="w-4 h-4 text-white dark:text-black" />
                 </CardItem>
@@ -213,7 +213,7 @@ const ThreeDCard = ({ name, photo, progress, Icon }) => {
                 {/* Skill Image */}
                 <CardItem
                     translateZ="100"
-                    className="w-full flex justify-center items-center h-32 mb-4"
+                    className="w-full flex justify-center items-center h-32 mb-4 "
                 >
                     <img
                         src={photo}
@@ -248,9 +248,9 @@ const ThreeDCard = ({ name, photo, progress, Icon }) => {
 
 const SkillCategory = ({ category }) => {
     return (
-        <div className="mb-12">
+        <div className="mb-12 bg-neutral-900 p-4">
             {/* Category Header */}
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-6 ">
                 <category.icon
                     className="w-8 h-8 text-emerald-500"
                     strokeWidth={1.5}
@@ -261,7 +261,7 @@ const SkillCategory = ({ category }) => {
             </div>
 
             {/* Skills Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                 {category.skills.map((skill, index) => (
                     <ThreeDCard
                         key={`${category.title}-${index}`}
@@ -279,14 +279,19 @@ const SkillCategory = ({ category }) => {
 
 const SkillSet = () => {
     return (
-        <div className="w-full p-4 space-y-8 flex flex-col gap-6 justify-center items-center">
-            <div>
-                <p className="text-white font-bold text-5xl" >My SkillSet</p>
-            </div>
-            <div>
-                {mySills.map((category, index) => (
-                    <SkillCategory key={index} category={category} />
-                ))}
+        <div className="w-full font-sans px-3 md:px-10">
+            <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
+                <h2 className="text-2xl md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
+                    Skill set
+                </h2>
+                <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm">
+                    Skills that I have
+                </p>
+                <div className="mt-24 ">
+                    {mySills.map((category, index) => (
+                        <SkillCategory key={index} category={category} />
+                    ))}
+                </div>
             </div>
         </div>
     )

@@ -4,9 +4,11 @@ import { motion, AnimatePresence } from "framer-motion"
 import {
     IconBrandLeetcode,
     IconBrandCodepen,
-    IconBrandCodesandbox,
-    IconBrandHackerrank,
+    // IconBrandCodesandbox,
+    // IconBrandHackerrank,
+    IconExternalLink,
     IconX,
+    IconStar,
 } from "@tabler/icons-react"
 
 // LeetCode Detail Modal Component
@@ -14,24 +16,19 @@ const LeetCodeDetailModal = ({ isOpen, onClose, data }) => {
     if (!isOpen) return null
 
     const totalSolved = data.solved.easy + data.solved.medium + data.solved.hard
-    const solvedPercentage = {
-        easy: (data.solved.easy / data.total.easy) * 100,
-        medium: (data.solved.medium / data.total.medium) * 100,
-        hard: (data.solved.hard / data.total.hard) * 100,
-    }
 
     return (
         <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 p-4"
         >
             <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.8, opacity: 0 }}
-                className="bg-gray-800 w-[90%] max-w-4xl rounded-2xl p-8 relative"
+                className="bg-gray-800 w-full max-w-4xl rounded-2xl p-4 sm:p-6 md:p-8 overflow-y-auto max-h-[90vh] relative"
             >
                 <button
                     onClick={onClose}
@@ -40,90 +37,121 @@ const LeetCodeDetailModal = ({ isOpen, onClose, data }) => {
                     <IconX size={24} />
                 </button>
 
-                <div className="flex items-center space-x-6 mb-8">
-                    <IconBrandLeetcode size={64} className="text-orange-500" />
-                    <div>
-                        <h2 className="text-3xl font-bold text-white">
-                            LeetCode Profile
-                        </h2>
+                <div className="flex flex-col sm:flex-row items-center sm:space-x-6 mb-6 sm:mb-8">
+                    <IconBrandLeetcode
+                        size={48}
+                        className="text-orange-500 mb-4 sm:mb-0"
+                    />
+                    <div className="text-center sm:text-left">
+                        <div className="flex flex-col gap-2 ">
+                            <h2 className="text-2xl sm:text-3xl font-bold text-white">
+                                LeetCode Profile
+                            </h2>
+                            <a
+                                href={data.url}
+                                className="flex gap-3  hover:underline items-center text-xl"
+                                target="_blank"
+                            >
+                                Show more on LeetCode
+                                <IconExternalLink stroke={2} />
+                            </a>
+                        </div>
                         <p className="text-gray-400">
                             Total Problems Solved: {totalSolved}
                         </p>
                     </div>
                 </div>
 
-                <div className="grid grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                     {["easy", "medium", "hard"].map((difficulty) => (
                         <div
                             key={difficulty}
-                            className="bg-gray-900 rounded-xl p-6 text-center"
+                            className="bg-gray-900 rounded-xl p-4 sm:p-6"
                         >
-                            <div className="relative w-40 h-40 mx-auto mb-4">
-                                <svg
-                                    viewBox="0 0 36 36"
-                                    className="w-full h-full"
-                                >
-                                    <motion.path
-                                        d="M18 2.0845
-                      a 15.9155 15.9155 0 0 1 0 31.831
-                      a 15.9155 15.9155 0 0 1 0 -31.831"
-                                        fill="none"
-                                        stroke="#232323"
-                                        strokeWidth="3"
-                                    />
-                                    <motion.path
-                                        d="M18 2.0845
-                      a 15.9155 15.9155 0 0 1 0 31.831
-                      a 15.9155 15.9155 0 0 1 0 -31.831"
-                                        fill="none"
-                                        stroke={
-                                            difficulty === "easy"
-                                                ? "green"
-                                                : difficulty === "medium"
-                                                ? "orange"
-                                                : "red"
-                                        }
-                                        strokeWidth="3"
-                                        strokeDasharray={`${solvedPercentage[difficulty]}, 100`}
-                                    />
-                                </svg>
-                                <div className="absolute inset-0 flex flex-col justify-center items-center">
-                                    <span className="text-2xl font-bold text-white">
-                                        {data.solved[difficulty]}
-                                    </span>
-                                    <span className="text-gray-400 capitalize">
-                                        {difficulty}
-                                    </span>
+                            <div className="flex flex-col items-center">
+                                <div className="relative w-24 h-24 sm:w-32 sm:h-32 mb-4">
+                                    <svg
+                                        viewBox="0 0 36 36"
+                                        className="w-full h-full"
+                                    >
+                                        <circle
+                                            cx="18"
+                                            cy="18"
+                                            r="16"
+                                            fill="none"
+                                            stroke="#232323"
+                                            strokeWidth="3"
+                                        />
+                                        <circle
+                                            cx="18"
+                                            cy="18"
+                                            r="16"
+                                            fill="none"
+                                            stroke={
+                                                difficulty === "easy"
+                                                    ? "#22c55e"
+                                                    : difficulty === "medium"
+                                                    ? "#f97316"
+                                                    : "#ef4444"
+                                            }
+                                            strokeWidth="3"
+                                            strokeDasharray={`${
+                                                (data.solved[difficulty] /
+                                                    data.total[difficulty]) *
+                                                100
+                                            }, 100`}
+                                            transform="rotate(-90 18 18)"
+                                        />
+                                    </svg>
+                                    <div className="absolute inset-0 flex flex-col justify-center items-center">
+                                        <span className="text-xl sm:text-2xl font-bold text-white">
+                                            {data.solved[difficulty]}
+                                        </span>
+                                        <span className="text-sm text-gray-400 capitalize">
+                                            {difficulty}
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="text-center">
-                                <p className="text-white">
+                                <p className="text-white text-sm sm:text-base">
                                     {data.solved[difficulty]} /{" "}
-                                    {data.total[difficulty]} Solved
+                                    {data.total[difficulty]}
                                 </p>
-                                <p className="text-gray-400">
-                                    {solvedPercentage[difficulty].toFixed(1)}%
+                                <p className="text-gray-400 text-sm">
+                                    {(
+                                        (data.solved[difficulty] /
+                                            data.total[difficulty]) *
+                                        100
+                                    ).toFixed(1)}
+                                    %
                                 </p>
                             </div>
                         </div>
                     ))}
                 </div>
 
-                <div className="mt-8 grid grid-cols-2 gap-6 text-center">
+                <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
                     <div className="bg-gray-900 rounded-xl p-4">
-                        <h3 className="text-xl font-semibold text-white mb-2">
+                        <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
                             Acceptance Rate
                         </h3>
-                        <p className="text-2xl font-bold text-green-500">
+                        <p className="text-xl sm:text-2xl font-bold text-green-500">
                             {data.acceptanceRate}%
                         </p>
                     </div>
                     <div className="bg-gray-900 rounded-xl p-4">
-                        <h3 className="text-xl font-semibold text-white mb-2">
+                        <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
                             Contest Rating
                         </h3>
-                        <p className="text-2xl font-bold text-blue-500">
+                        <p className="text-xl sm:text-2xl font-bold text-blue-500">
                             {data.contestRating}
+                        </p>
+                    </div>
+                    <div className="bg-gray-900 rounded-xl p-4">
+                        <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
+                            Top
+                        </h3>
+                        <p className="text-xl sm:text-2xl font-bold text-orange-500">
+                            {data.top}
                         </p>
                     </div>
                 </div>
@@ -131,7 +159,6 @@ const LeetCodeDetailModal = ({ isOpen, onClose, data }) => {
         </motion.div>
     )
 }
-
 // CodeChef Detail Modal Component
 const CodeChefDetailModal = ({ isOpen, onClose, data }) => {
     if (!isOpen) return null
@@ -141,13 +168,13 @@ const CodeChefDetailModal = ({ isOpen, onClose, data }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 p-4"
         >
             <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.8, opacity: 0 }}
-                className="bg-gray-800 w-[90%] max-w-4xl rounded-2xl p-8 relative"
+                className="bg-gray-800 w-full max-w-4xl rounded-2xl p-4 sm:p-6 md:p-8 relative overflow-y-auto max-h-[90vh]"
             >
                 <button
                     onClick={onClose}
@@ -156,60 +183,90 @@ const CodeChefDetailModal = ({ isOpen, onClose, data }) => {
                     <IconX size={24} />
                 </button>
 
-                <div className="flex items-center space-x-6 mb-8">
-                    <IconBrandCodepen size={64} className="text-blue-500" />
-                    <div>
-                        <h2 className="text-3xl font-bold text-white">
-                            CodeChef Profile
-                        </h2>
+                <div className="flex flex-col sm:flex-row items-center sm:space-x-6 mb-6 sm:mb-8">
+                    <IconBrandCodepen
+                        size={48}
+                        className="text-blue-500 mb-4 sm:mb-0"
+                    />
+                    <div className="flex flex-col gap-2 ">
+                            <h2 className="text-2xl sm:text-3xl font-bold text-white">
+                                CodeChef Profile
+                            </h2>
+                            <a
+                                href={data.url}
+                                className="flex gap-3  hover:underline items-center text-xl"
+                                target="_blank"
+                            >
+                                Show more on CodeChef
+                                <IconExternalLink stroke={2} />
+                            </a>
                         <p className="text-gray-400">
                             Total Problems Solved: {data.solved}
                         </p>
                     </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-6">
-                    <div className="bg-gray-900 rounded-xl p-6 text-center">
-                        <h3 className="text-xl font-semibold text-white mb-4">
+                <div className="flex justify-center mb-6">
+                    <div className="flex space-x-2">
+                        {[1, 2, 3, 4, 5 , 6 ,7].map((star) => (
+                            <IconStar
+                                key={star}
+                                size={32}
+                                className={
+                                    star <= data.stars
+                                        ? "text-yellow-400"
+                                        : "text-gray-600"
+                                }
+                                fill={
+                                    star <= data.stars ? "currentColor" : "none"
+                                }
+                            />
+                        ))}
+                    </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                    <div className="bg-gray-900 rounded-xl p-4 text-center">
+                        <h3 className="text-lg font-semibold text-white mb-2">
+                            Total Contests
+                        </h3>
+                        <p className="text-2xl font-bold text-blue-500">
+                            {data.totalContests}
+                        </p>
+                    </div>
+                    <div className="bg-gray-900 rounded-xl p-4 text-center">
+                        <h3 className="text-lg font-semibold text-white mb-2">
                             Global Ranking
                         </h3>
-                        <p className="text-3xl font-bold text-blue-500">
+                        <p className="text-2xl font-bold text-green-500">
                             {data.globalRanking}
                         </p>
                     </div>
-                    <div className="bg-gray-900 rounded-xl p-6 text-center">
-                        <h3 className="text-xl font-semibold text-white mb-4">
+                    <div className="bg-gray-900 rounded-xl p-4 text-center">
+                        <h3 className="text-lg font-semibold text-white mb-2">
                             Rating
                         </h3>
-                        <p className="text-3xl font-bold text-green-500">
+                        <p className="text-2xl font-bold text-purple-500">
                             {data.rating}
                         </p>
                     </div>
                 </div>
 
-                <div className="mt-8 grid grid-cols-3 gap-6 text-center">
+                <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                     <div className="bg-gray-900 rounded-xl p-4">
                         <h3 className="text-lg font-semibold text-white mb-2">
-                            Fully Solved
-                        </h3>
-                        <p className="text-2xl font-bold text-green-500">
-                            {data.fullySolved}
-                        </p>
-                    </div>
-                    <div className="bg-gray-900 rounded-xl p-4">
-                        <h3 className="text-lg font-semibold text-white mb-2">
-                            Partially Solved
+                            Division
                         </h3>
                         <p className="text-2xl font-bold text-orange-500">
-                            {data.partiallySolved}
+                            Division {data.division}
                         </p>
                     </div>
                     <div className="bg-gray-900 rounded-xl p-4">
                         <h3 className="text-lg font-semibold text-white mb-2">
-                            Attempted
+                            Country Rank
                         </h3>
-                        <p className="text-2xl font-bold text-blue-500">
-                            {data.attempted}
+                        <p className="text-2xl font-bold text-teal-500">
+                            {data.countryRank}
                         </p>
                     </div>
                 </div>
@@ -226,75 +283,67 @@ const DSAProfiles = () => {
         {
             name: "LeetCode",
             icon: IconBrandLeetcode,
-            url: "https://leetcode.com/your-username",
             color: "text-orange-500",
             stats: {
-                solved: 150,
-                rating: 1800,
+                solved: 209,
+                rating: 1776,
             },
             details: {
+                url: "https://leetcode.com/u/soldier_of_god",
                 solved: {
-                    easy: 50,
-                    medium: 70,
-                    hard: 30,
+                    easy: 75,
+                    medium: 131,
+                    hard: 3,
                 },
                 total: {
-                    easy: 200,
-                    medium: 150,
-                    hard: 100,
+                    easy: 839,
+                    medium: 1760,
+                    hard: 770,
                 },
-                acceptanceRate: 68.5,
-                contestRating: 1845,
+                acceptanceRate: 68.14,
+                contestRating: 1776,
+                top: 8.56,
             },
         },
         {
             name: "CodeChef",
             icon: IconBrandCodepen,
-            url: "https://www.codechef.com/users/your-username",
             color: "text-blue-500",
             stats: {
-                solved: 120,
-                rating: 1700,
+                solved: 120, // Total problems solved (shown in main card)
+                rating: 1634, // Rating (shown in main card)
             },
             details: {
-                solved: 120,
-                globalRanking: 1245,
-                rating: 1700,
-                fullySolved: 80,
-                partiallySolved: 40,
-                attempted: 200,
-            },
-        },
-        {
-            name: "CodeForces",
-            icon: IconBrandCodesandbox,
-            url: "https://codeforces.com/profile/your-username",
-            color: "text-green-500",
-            stats: {
-                solved: 200,
-                rating: 1600,
-            },
-        },
-        {
-            name: "HackerRank",
-            icon: IconBrandHackerrank,
-            url: "https://www.hackerrank.com/your-username",
-            color: "text-emerald-500",
-            stats: {
-                solved: 100,
-                rating: 4,
+                // Basic profile info
+                url: "https://www.codechef.com/users/jaimin_patel_3",
+                stars: 3, // Star rating (out of 5)
+                totalContests: 27, // Number of contests participated
+
+                // Rankings
+                globalRanking: 15736, // Global rank
+                countryRank: 13608, // Rank in country
+
+                // Performance metrics
+                rating: 1634, // Current rating
+                division: 2, // Current division
             },
         },
     ]
 
     return (
-        <div className="min-h-screen bg-gray-950 flex items-center justify-center p-6">
-            <div className="w-full max-w-6xl">
-                <div className="bg-gray-900 p-6 rounded-lg shadow-2xl">
-                    <h2 className="text-2xl font-bold text-white mb-6 text-center">
-                        Competitive Programming Profiles
-                    </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+        <div className="min-h-screen px-3 md:px-10  w-screen">
+            <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
+                <h2 className="text-lg md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
+                    Profiles
+                </h2>
+                <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm">
+                    Competitive Programming
+                </p>
+            </div>
+            <div className="w-full flex justify-center items-center px-7 md:px-15 ">
+                <div className="bg-neutral-900 p-12 md:p-24 rounded-lg shadow-2xl flex items-center justify-center relative">
+                    <p className="absolute top-5 left-5">click to show more</p>
+                    <div className="grid grid-cols-1 md:grid-cols-2  gap-6">
                         {profiles.map((profile, index) => (
                             <motion.div
                                 key={profile.name}
@@ -312,15 +361,15 @@ const DSAProfiles = () => {
                                 }}
                                 whileTap={{ scale: 0.95 }}
                             >
-                                <div className="bg-gray-800 rounded-xl p-6 flex items-center space-x-6 hover:bg-gray-700 transition-colors">
+                                <div className="relative bg-gray-900 rounded-xl p-6 flex flex-col md:flex-row gap-5 w-full items-center space-x-6 hover:bg-gray-800 transition-colors group">
                                     <div className="bg-gray-700 p-4 rounded-full">
                                         <profile.icon
                                             className={`${profile.color} stroke-current`}
                                             size={40}
                                         />
                                     </div>
-                                    <div className="flex-grow">
-                                        <h3 className="text-xl font-semibold text-white mb-2">
+                                    <div className="flex-grow cursor-pointer">
+                                        <h3 className="text-xl font-semibold text-white mb-2 items-self-start">
                                             {profile.name}
                                         </h3>
                                         <div className="text-gray-400">
@@ -333,20 +382,7 @@ const DSAProfiles = () => {
                                             </p>
                                         </div>
                                     </div>
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        className="h-6 w-6 text-gray-500"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M14 5l7 7m0 0l-7 7m7-7H3"
-                                        />
-                                    </svg>
+                                    
                                 </div>
                             </motion.div>
                         ))}

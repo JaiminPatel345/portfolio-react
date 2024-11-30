@@ -126,10 +126,12 @@ const Projects = () => {
     )
 
     return (
-        <div className="min-h-screen text-[#f5f5f5] py-16 relative">
-            <h1 className="text-5xl font-bold text-center mb-20 animate-slide-in">
-                My Projects
-            </h1>
+        <div className="min-h-screen text-[#f5f5f5] py-16 relative p-3 md:p-10" >
+            <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
+                <h2 className="text-xl md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
+                    My Projects
+                </h2>
+            </div>
 
             {/* Project Navigation Indicators */}
             <div className="flex justify-center gap-2 m-4">
