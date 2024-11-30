@@ -46,7 +46,7 @@ function Experience() {
     ]
 
     return (
-        <div className="w-full">
+        <div className="w-full" id="experience">
             <Timeline experiences={experiences} />
         </div>
     )

@@ -23,9 +23,9 @@ const Timeline = ({ experiences }) => {
     const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1])
 
     return (
-        <div className="w-full font-sans md:px-10" ref={containerRef}>
+        <div className="w-full font-sans px-3 md:px-10" ref={containerRef}>
             <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
-                <h2 className="text-lg md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
+                <h2 className="text-xl md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
                     Professional Experience
                 </h2>
                 <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm">

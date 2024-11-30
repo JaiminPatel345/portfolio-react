@@ -34,7 +34,7 @@ function App() {
             {!isMobile && (
                 <MyCursor />
             )}
-            <div className="bg-[#202020]">
+            <div className="bg-[#202020] overflow-x-hidden">
                 <div>
                     <Navbar />
                 </div>

@@ -1,4 +1,4 @@
-import { FloatingDock } from "./floating-dock"
+import {FloatingDock} from "./floating-dock"
 import {
     IconHome,
     IconUser,
@@ -7,6 +7,7 @@ import {
     IconTool,
     IconAward,
     IconLink,
+    IconFileDescription,
 } from "@tabler/icons-react"
 
 export function Navbar() {
@@ -14,51 +15,59 @@ export function Navbar() {
         {
             title: "Home",
             icon: (
-                <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+                <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300"/>
             ),
             href: "#home",
         },
         {
-            title: "DSAProfiles",
+            title: "Profiles",
             icon: (
-                <IconUser className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+                <IconUser className="h-full w-full text-neutral-500 dark:text-neutral-300"/>
             ),
             href: "#profiles",
         },
         {
             title: "Experience",
             icon: (
-                <IconBriefcase className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+                <IconBriefcase className="h-full w-full text-neutral-500 dark:text-neutral-300"/>
             ),
             href: "#experience",
         },
         {
             title: "Projects",
             icon: (
-                <IconDeviceLaptop className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+                <IconDeviceLaptop className="h-full w-full text-neutral-500 dark:text-neutral-300"/>
             ),
             href: "#projects",
         },
         {
             title: "Skill Set",
             icon: (
-                <IconTool className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+                <IconTool className="h-full w-full text-neutral-500 dark:text-neutral-300"/>
             ),
             href: "#skills",
         },
         {
             title: "Achievements",
             icon: (
-                <IconAward className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+                <IconAward className="h-full w-full text-neutral-500 dark:text-neutral-300"/>
             ),
             href: "#achievements",
         },
         {
             title: "Connect",
             icon: (
-                <IconLink className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+                <IconLink className="h-full w-full text-neutral-500 dark:text-neutral-300"/>
             ),
             href: "#connect",
+        },
+        {
+            title: "Resume",
+            icon: (
+                <IconFileDescription className="h-full w-full text-neutral-500 dark:text-neutral-300"/>
+            ),
+            target: "_blank",
+            href: "https://drive.google.com/drive/folders/1nZtEwQeZXatneEilDkSel_jTYtBRgjhv?usp=sharing",
         },
     ]
 
@@ -69,6 +78,7 @@ export function Navbar() {
                     // only for demo, remove for production
                     mobileClassName="left-7  w-screen"
                     items={links}
+
                 />
             </div>
         </div>

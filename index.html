@@ -4,13 +4,23 @@
 <head>
   <meta charset="UTF-8" />
   <!-- <link rel="icon" type="image/svg+xml" href="" /> -->
-  <link rel="icon" type="image/gif" href="/cool-home.png">
+  <link rel="icon" type="image/gif" href="/assets/cool-home.png ">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jaimin Detroja </title>
 </head>
 
 <body>
-  <div id="root"></div>
+  <div id="root">
+    <div class="loader h-screen w-screen flex justify-center items-center flex-col top-0 left-0 z-50 bg-white">
+<!--        <span>-->
+<!--        <img-->
+<!--                src="/loader.gif" alt="loading" class=""-->
+<!--        >-->
+<!--      </span>-->
+      <h1 class="text-2xl font-bold">Loading...</h1>
+      <img src="/preload.gif" alt="loading" />
+    </div>
+  </div>
   <script type="module" src="/src/main.jsx"></script>
 </body>
 

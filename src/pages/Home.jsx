@@ -9,19 +9,21 @@ const Home = () => {
         "Continuous Learner",
     ]
     return (
-        <div className="h-screen relative w-full overflow-hidden bg-slate-900 flex items-center justify-center ">
+        <div className="h-screen relative w-full overflow-hidden bg-slate-900 flex items-center justify-center "
+        id="home"
+        >
             <div className="absolute inset-0 w-full h-full bg-black z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
 
             {/* <Boxes /> */}
 
             {/* Main Content */}
-            <div className=" flex flex-col md:flex-row items-center md:items-center justify-center md:justify-between w-full max-w-6xl px-4 md:px-8">
+            <div className=" flex flex-col md:flex-row items-center md:items-center justify-center md:justify-between w-full max-w-6xl h-full px-4 md:px-8">
                 {/* Left Section: Text and Animation */}
                 <div className="flex flex-col items-center md:items-start space-y-4 mb-6">
                     <h1
-                        className={(
+                        className={
                             "text-white text-3xl md:text-5xl text-center md:text-left z-50"
-                        )}
+                        }
                     >
                         Jaimin Detroja
                     </h1>
@@ -47,14 +49,11 @@ const Home = () => {
                 </div>
 
                 {/* Right Section: Image */}
-                <div className="avatar">
-                    <div className="flex-shrink-0 z-50 w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full">
+                    <div className="mask z-50 h-40 w-40 md:w-80 md:h-80">
                         <img
-                            src="/assets/myPhoto-home.png"
+                            src="/assets/Cool-Photo.png"
                             alt="My  photo"
-                            className=" object-cover"
                         />
-                    </div>
                 </div>
             </div>
         </div>

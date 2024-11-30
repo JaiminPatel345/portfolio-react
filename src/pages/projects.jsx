@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react"
+import { useState } from "react";
 import {
     IconBrandGithub,
     IconExternalLink,
@@ -12,162 +12,148 @@ import {
     IconCloud,
     IconChevronLeft,
     IconChevronRight,
-} from "@tabler/icons-react"
+}                   from "@tabler/icons-react";
 
 const Projects = () => {
-    const [currentIndex, setCurrentIndex] = useState(0)
+    const [currentIndex, setCurrentIndex] = useState( 0 );
 
     const projects = [
         {
-            title: "Wanderlust",
-            description:
-                "A listing website where users can book and add their property.owner can edit and delete their property . other users can give review and rating to the property as well as chat with owner ",
-            technology: {
-                frontEnd: ["React", "Tailwind"],
-                backEnd: ["Node Js", "Express Js"],
-                database: ["Mongo Db"],
-                auth: ["Firebase"],
-                session: ["Redis"],
-                packageManager: ["Yarn"],
-                deployment: ["Azure", "Vercel"],
-                ciCd: null,
-                others: ["REST APIs", "Socket.io"],
-            },
-            github: "https://github.com/JaiminPatel345/wanderlust",
-            live: "https://wanderlust-ten.vercel.app/",
+        title: "Wanderlust",
+        description: "A listing website where users can book and add their property.owner can edit and delete their property . other users can give review and rating to the property as well as chat with owner ",
+        technology: {
+            frontEnd: ["React", "Tailwind"],
+            backEnd: ["Node Js", "Express Js"],
+            database: ["Mongo Db"],
+            auth: ["Firebase"],
+            session: ["Redis"],
+            packageManager: ["Yarn"],
+            deployment: ["Azure", "Vercel"],
+            ciCd: null,
+            others: ["REST APIs", "Socket.io"],
         },
-        {
-            title: "Barter Talk",
-            description: "Real time chat app",
-            technology: {
-                frontEnd: ["React", "Tailwind", "Daisy UI"],
-                backEnd: ["Node Js", "Express Js"],
-                database: ["Mongo Db"],
-                auth: ["JWT", "Crypto"],
-                session: ["Redis"],
-                packageManager: ["Yarn"],
-                deployment: ["Azure", "Vercel"],
-                ciCd: null,
-                others: ["REST APIs", "Socket.io"],
-            },
-            github: "https://github.com/JaiminPatel345/BarterTalk",
-            live: "https://barter-talk.vercel.app/",
+        github: "https://github.com/JaiminPatel345/wanderlust",
+        live: "https://wanderlust-ten.vercel.app/",
+    }, {
+        title: "Barter Talk",
+        description: "Real time chat app",
+        technology: {
+            frontEnd: ["React", "Tailwind", "Daisy UI"],
+            backEnd: ["Node Js", "Express Js"],
+            database: ["Mongo Db"],
+            auth: ["JWT", "Crypto"],
+            session: ["Redis"],
+            packageManager: ["Yarn"],
+            deployment: ["Azure", "Vercel"],
+            ciCd: null,
+            others: ["REST APIs", "Socket.io"],
         },
-        {
-            title: "Health Pie",
-            description:
-                "Health website where users can track their daily activities and get recommendations based on their health goals and doctor can connect with patients and track their health progress",
-            technology: {
-                frontEnd: ["EJS", "Bootstrap", "CSS"],
-                backEnd: ["Node Js", "Express Js"],
-                database: ["Mongo Db"],
-                auth: ["JWT"],
-                session: null,
-                packageManager: ["npm"],
-                deployment: ["OnRender"],
-                ciCd: null,
-                others: ["REST APIs"],
-            },
-            github: "https://github.com/JaiminPatel345/Health-Pie",
-            live: "https://health-pie.onrender.com/",
+        github: "https://github.com/JaiminPatel345/BarterTalk",
+        live: "https://barter-talk.vercel.app/",
+    }, {
+        title: "Health Pie",
+        description: "Health website where users can track their daily activities and get recommendations based on their health goals and doctor can connect with patients and track their health progress",
+        technology: {
+            frontEnd: ["EJS", "Bootstrap", "CSS"],
+            backEnd: ["Node Js", "Express Js"],
+            database: ["Mongo Db"],
+            auth: ["JWT"],
+            session: null,
+            packageManager: ["npm"],
+            deployment: ["OnRender"],
+            ciCd: null,
+            others: ["REST APIs"],
         },
-        {
-            title: "GDGC BVM",
-            description:
-                "As  a Tech gig of Google Developer Groups On Campus BVM , make this awesome GDGC website ",
-            technology: {
-                frontEnd: ["Next", "Tailwind", "Three.js", "Framer Motion"],
-                backEnd: null,
-                database: null,
-                auth: null,
-                session: null,
-                packageManager: ["Yarn"],
-                deployment: ["Vercel"],
-                ciCd: null,
-                others: null,
-            },
-            github: "https://github.com/Naren7874/GDGC",
-            live: "https://gdgc-seven.vercel.app/",
+        github: "https://github.com/JaiminPatel345/Health-Pie",
+        live: "https://health-pie.onrender.com/",
+    }, {
+        title: "GDGC BVM",
+        description: "As  a Tech gig of Google Developer Groups On Campus BVM , make this awesome GDGC website ",
+        technology: {
+            frontEnd: ["Next", "Tailwind", "Three.js", "Framer Motion"],
+            backEnd: null,
+            database: null,
+            auth: null,
+            session: null,
+            packageManager: ["Yarn"],
+            deployment: ["Vercel"],
+            ciCd: null,
+            others: null,
         },
-    ]
+        github: "https://github.com/Naren7874/GDGC",
+        live: "https://gdgc-seven.vercel.app/",
+    },];
 
     const nextProject = () => {
-        setCurrentIndex((currentIndex + 1) % projects.length)
-    }
+        setCurrentIndex( (
+                             currentIndex + 1
+                         ) % projects.length );
+    };
 
     const prevProject = () => {
-        if(currentIndex == 0){
-        setCurrentIndex( projects.length - 1)
-        }else
-        setCurrentIndex(currentIndex - 1)
+        if (currentIndex === 0) {
+            setCurrentIndex( projects.length - 1 );
+        } else setCurrentIndex( currentIndex - 1 );
 
-    }
+    };
 
-    const TechBadge = ({ text }) => (
+    const TechBadge = ( {text} ) => (
         <span className="px-4 py-1 rounded-full bg-[#363535] text-[#f5f5f5] font-normal m-1.5 transition-all duration-300 hover:scale-105 hover:bg-[#3a3a3a] inline-flex items-center">
             {text}
         </span>
-    )
+    );
 
-    const TechSection = ({ title, items, icon: Icon }) => (
+    const TechSection = ( {title, items, icon: Icon} ) => (
         <div className="mb-3">
             <div className="flex items-center gap-4 text-[#d1d5db] mb-1">
                 <div className="p-2 rounded-lg bg-[#4e4d4d]">
-                    <Icon size={20} stroke={1.5} />
+                    <Icon size={20} stroke={1.5}/>
                 </div>
                 <span className="font-semibold text-md">{title}</span>
             </div>
             <div className="flex flex-wrap gap-2 pl-11">
-                {items?.map((item, index) => (
-                    <TechBadge key={index} text={item} />
-                ))}
+                {items?.map( ( item, index ) => (
+                    <TechBadge key={index} text={item}/>
+                ) )}
             </div>
         </div>
-    )
+    );
 
     return (
-        <div className="min-h-screen text-[#f5f5f5] py-16 relative">
-            <h1 className="text-5xl font-bold text-center mb-20 animate-slide-in">
-                My Projects
-            </h1>
+        <div className="min-h-screen text-[#f5f5f5] py-16 relative p-3 md:p-10"
+        id="projects"
+        >
+            <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
+                <h2 className="text-xl md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
+                    My Projects
+                </h2>
+            </div>
 
             {/* Project Navigation Indicators */}
             <div className="flex justify-center gap-2 m-4">
-                {projects.map((_, index) => (
+                {projects.map( ( _, index ) => (
                     <div
                         key={index}
-                        className={`h-2 rounded-full transition-all duration-300 ${
-                            index === currentIndex
-                                ? "w-8 bg-primary"
-                                : "w-2 bg-[#4e4d4d]"
-                        }`}
+                        className={`h-2 rounded-full transition-all duration-300 ${index === currentIndex ? "w-8 bg-primary" : "w-2 bg-[#4e4d4d]"}`}
                     />
-                ))}
+                ) )}
             </div>
 
             <div className="max-w-6xl mx-auto px-4 relative">
                 {/* Navigation Buttons */}
                 <button
                     onClick={prevProject}
-                    className={`absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-[#2e2e2e] p:3  md:p-4 rounded-full shadow-lg transition-all duration-300 hover:bg-[#3a3a3a] ${
-                        currentIndex === 0
-                            ? "opacity-50 cursor-not-allowed"
-                            : "hover:scale-110"
-                    }`}
+                    className={`absolute left-1 md:left-4 top-24  translate-y-1/2 z-10 bg-[#2e2e2e] p-2  md:p-4 rounded-full shadow-lg transition-all duration-300 hover:bg-[#3a3a3a] ${currentIndex === 0 ? "opacity-50 cursor-not-allowed" : " md:hover:scale-110"}`}
                 >
-                    <IconChevronLeft size={24} />
+                    <IconChevronLeft size={24}/>
                 </button>
 
                 <button
                     onClick={nextProject}
-                    className={`absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-[#2e2e2e] p:3  md:p-4 rounded-full shadow-lg transition-all duration-300 hover:bg-[#3a3a3a] ${
-                        currentIndex === projects.length - 1
-                            ? "opacity-50 cursor-not-allowed"
-                            : "hover:scale-110"
-                    }`}
+                    className={`absolute right-1 md:right-4 top-24 translate-y-1/2 z-10 bg-[#2e2e2e] p-2  md:p-4 rounded-full shadow-lg transition-all duration-300 hover:bg-[#3a3a3a] ${currentIndex === projects.length - 1 ? "opacity-50 cursor-not-allowed" : "md:hover:scale-110"}`}
                     // disabled={}
                 >
-                    <IconChevronRight size={24} />
+                    <IconChevronRight size={24}/>
                 </button>
 
                 {/* Single Project Card */}
@@ -191,7 +177,7 @@ const Projects = () => {
                                     rel="noopener noreferrer"
                                     className="btn btn-outline btn-primary btn-md gap-3 hover:scale-105 transition-transform px-6"
                                 >
-                                    <IconBrandGithub size={20} stroke={1.5} />
+                                    <IconBrandGithub size={20} stroke={1.5}/>
                                     View Source
                                 </a>
                                 {projects[currentIndex].live && (
@@ -216,71 +202,49 @@ const Projects = () => {
                                 {projects[currentIndex].technology.frontEnd && (
                                     <TechSection
                                         title="Frontend Technologies"
-                                        items={
-                                            projects[currentIndex].technology
-                                                .frontEnd
-                                        }
+                                        items={projects[currentIndex].technology.frontEnd}
                                         icon={IconDeviceDesktop}
                                     />
                                 )}
                                 {projects[currentIndex].technology.backEnd && (
                                     <TechSection
                                         title="Backend Stack"
-                                        items={
-                                            projects[currentIndex].technology
-                                                .backEnd
-                                        }
+                                        items={projects[currentIndex].technology.backEnd}
                                         icon={IconServer}
                                     />
                                 )}
                                 {projects[currentIndex].technology.database && (
                                     <TechSection
                                         title="Database Solutions"
-                                        items={
-                                            projects[currentIndex].technology
-                                                .database
-                                        }
+                                        items={projects[currentIndex].technology.database}
                                         icon={IconDatabase}
                                     />
                                 )}
                                 {projects[currentIndex].technology.auth && (
                                     <TechSection
                                         title="Authentication"
-                                        items={
-                                            projects[currentIndex].technology
-                                                .auth
-                                        }
+                                        items={projects[currentIndex].technology.auth}
                                         icon={IconLock}
                                     />
                                 )}
-                                {projects[currentIndex].technology
-                                    .deployment && (
+                                {projects[currentIndex].technology.deployment && (
                                     <TechSection
                                         title="Deployment"
-                                        items={
-                                            projects[currentIndex].technology
-                                                .deployment
-                                        }
+                                        items={projects[currentIndex].technology.deployment}
                                         icon={IconCloud}
                                     />
                                 )}
                                 {projects[currentIndex].technology.ciCd && (
                                     <TechSection
                                         title="CI/CD"
-                                        items={
-                                            projects[currentIndex].technology
-                                                .ciCd
-                                        }
+                                        items={projects[currentIndex].technology.ciCd}
                                         icon={IconBrandDocker}
                                     />
                                 )}
                                 {projects[currentIndex].technology.others && (
                                     <TechSection
                                         title="Additional Technologies"
-                                        items={
-                                            projects[currentIndex].technology
-                                                .others
-                                        }
+                                        items={projects[currentIndex].technology.others}
                                         icon={IconCode}
                                     />
                                 )}
@@ -306,7 +270,7 @@ const Projects = () => {
                 }
             `}</style>
         </div>
-    )
-}
+    );
+};
 
-export default Projects
+export default Projects;
