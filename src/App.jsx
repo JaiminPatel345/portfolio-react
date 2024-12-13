@@ -1,5 +1,6 @@
-import React, { useEffect, useState, } from "react";
-import { Navbar, MyCursor }            from "./components";
+import React, {useEffect, useState,} from "react";
+import {Navbar, MyCursor} from "./components";
+import PreLoader from "./components/loader";
 
 // Each component should be lazily loaded separately
 const Home = React.lazy(() => import("./pages/Home"));
@@ -10,43 +11,42 @@ const SkillSet = React.lazy(() => import("./pages/skills"));
 const Achievements = React.lazy(() => import("./pages/achievements"));
 const Connect = React.lazy(() => import("./pages/connect"));
 
-import PreLoader                       from "./components/loader";
 
 function App() {
-    const [isMobile, setIsMobile] = useState( false );
+    const [isMobile, setIsMobile] = useState(false);
 
-    const [showInitialLoader, setShowInitialLoader] = useState( true );
+    const [showInitialLoader, setShowInitialLoader] = useState(true);
 
-    useEffect( () => {
-                   const timer = setTimeout( () => {
-                                                 setShowInitialLoader( false );
-                                             },
-                                             4000
-                   );
+    useEffect(() => {
+            const timer = setTimeout(() => {
+                    setShowInitialLoader(false);
+                },
+                4000
+            );
 
-                   return () => clearTimeout( timer );
-               },
-               []
+            return () => clearTimeout(timer);
+        },
+        []
     );
 
-    useEffect( () => {
-                   document.documentElement.classList.add( "dark" );
-                   const handleResize = () => {
-                       setIsMobile( window.innerWidth < 745 );
-                   };
-                   handleResize();
-                   window.addEventListener( "resize",
-                                            handleResize
-                   );
+    useEffect(() => {
+            document.documentElement.classList.add("dark");
+            const handleResize = () => {
+                setIsMobile(window.innerWidth < 745);
+            };
+            handleResize();
+            window.addEventListener("resize",
+                handleResize
+            );
 
-                   // Cleanup on component unmount
-                   return () => {
-                       window.removeEventListener( "resize",
-                                                   handleResize
-                       );
-                   };
-               },
-               []
+            // Cleanup on component unmount
+            return () => {
+                window.removeEventListener("resize",
+                    handleResize
+                );
+            };
+        },
+        []
     );
 
     if (showInitialLoader) {
@@ -58,7 +58,7 @@ function App() {
             {!isMobile && (
                 <MyCursor/>
             )}
-            <div className = "bg-[#202020] overflow-x-hidden">
+            <div className="bg-[#202020] overflow-x-hidden">
                 <div>
                     <Navbar/>
                 </div>

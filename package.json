@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@coreui/icons": "^3.0.1",
+    "@coreui/icons-react": "^2.3.0",
     "@tabler/icons-react": "^3.21.0",
     "autoprefixer": "^10.4.20",
     "clsx": "^2.1.1",

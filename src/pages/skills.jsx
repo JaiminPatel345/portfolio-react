@@ -9,7 +9,8 @@ import {
     IconBrain,
 }                                            from "@tabler/icons-react";
 
-const mySills = [{
+const mySills = [
+    {
     title: "Frontend", icon: IconDeviceDesktop, skills: [{
         name: "React", photo: "/assets/react.jpg", progress: 80,
     }, {
@@ -172,7 +173,7 @@ const SkillSet = () => {
                     Skill Set
                 </h2>
                 <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm">
-                    Skills that I have
+                    Tools and technologies I excel at.
                 </p>
                 <div className="mt-24 ">
                     {mySills.map( ( category, index ) => (

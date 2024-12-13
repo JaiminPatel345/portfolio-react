@@ -336,8 +336,8 @@ const DSAProfiles = () => {
                 <h2 className="text-lg md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
                     Profiles
                 </h2>
-                <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm">
-                    Competitive Programming
+                <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base ">
+                    Discover my coding journey and problem-solving skills.
                 </p>
             </div>
             <div className="w-full flex justify-center items-center px-7 md:px-15 ">

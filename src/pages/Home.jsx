@@ -49,10 +49,11 @@ const Home = () => {
                 </div>
 
                 {/* Right Section: Image */}
-                    <div className="mask z-50 h-40 w-40 md:w-80 md:h-80">
+                    <div className="mask z-50 ">
                         <img
-                            src="/assets/Cool-Photo.png"
+                            src="/preload.gif"
                             alt="My  photo"
+                            className="rounded-full h-40 w-40 md:w-80 md:h-80 "
                         />
                 </div>
             </div>
