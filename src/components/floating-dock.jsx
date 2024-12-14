@@ -23,7 +23,7 @@ const FloatingDockMobile = ( {items, className} ) => {
                 {open && (
                     <motion.div
                         layoutId="nav"
-                        className="absolute bottom-full mb-2 inset-x-0 flex flex-col gap-2"
+                        className="absolute bottom-full mb-2 inset-x-0 flex flex-col gap-2 "
                     >
                         {items.map( ( item, idx ) => (
                             <motion.div
@@ -59,7 +59,7 @@ const FloatingDockMobile = ( {items, className} ) => {
             </AnimatePresence>
             <button
                 onClick={() => setOpen( !open )}
-                className="h-10 w-10 rounded-full bg-gray-50 dark:bg-neutral-800 flex items-center justify-center"
+                className="h-10 w-10 rounded-full  bg-neutral-800 flex items-center justify-center border border-gray-500"
             >
                 <IconLayoutNavbarCollapse className="h-5 w-5 text-neutral-500 dark:text-neutral-400"/>
             </button>

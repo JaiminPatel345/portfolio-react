@@ -10,7 +10,7 @@ import {
 
 // Icon mapping function
 const getSkillIcon = (skillName) => {
-    const ICON_SIZE = 64; // Increased size for all icons
+    const ICON_SIZE = 42; // Increased size for all icons
                                                                                             
     const iconMap = {
         'React': <svg xmlns="http://www.w3.org/2000/svg" width={ICON_SIZE} height={ICON_SIZE} viewBox="0 0 128 128">

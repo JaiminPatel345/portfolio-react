@@ -76,7 +76,7 @@ export function Navbar() {
             <div className="flex items-center justify-center">
                 <FloatingDock
                     // only for demo, remove for production
-                    mobileClassName="left-7  w-screen"
+                    mobileClassName="left-7  w-screen "
                     items={links}
 
                 />

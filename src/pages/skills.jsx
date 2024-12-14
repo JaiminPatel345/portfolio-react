@@ -46,18 +46,18 @@ const skills = {
 const SkillCard = ({ name }) => {
     return (
         <CardContainer className="inter-var">
-            <CardBody className="bg-neutral-800 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:border-white/[0.2] border-black/[0.1] w-64 h-64 rounded-xl p-6 border">
+            <CardBody className="bg-neutral-800 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:border-white/[0.2] border-black/[0.1]  min-h-32 w-64 rounded-xl p-6 border flex  justify-center items-center">
                 <CardItem
                     translateZ="100"
-                    className="w-full flex justify-center items-center h-32 mb-4"
+                    className="w-full flex justify-center items-center "
                 >
-                   <div className={`h-24 w-24  `}>
+                   <div className={`  `}>
                        {getSkillIcon(name)}
                    </div>
                 </CardItem>
                 <CardItem
                     translateZ="50"
-                    className="text-2xl font-bold text-center text-neutral-600 dark:text-white"
+                    className=" w-full text-2xl font-bold text-center text-neutral-600 dark:text-white"
                 >
                     {name}
                 </CardItem>
@@ -86,7 +86,7 @@ const SkillCategory = ({ title, skills }) => {
     };
 
     return (
-        <div className="mb-12 bg-neutral-900 p-4 rounded-lg">
+        <div className="mb-3 bg-neutral-900 p-4 rounded-lg">
             <div className="flex justify-between items-center mb-6">
                 <h2 className="text-2xl font-bold text-white">{title}</h2>
                 <button
@@ -109,7 +109,7 @@ const SkillCategory = ({ title, skills }) => {
                     </div>
 
                     {skills.length > 3 && (
-                        <div className="flex justify-center " ref={buttonRef}>
+                        <div className="flex justify-center mt-7 mb-3" ref={buttonRef}>
                             <button
                                 onClick={handleShowMore}
                                 className="bg-primary hover:bg-primary/70 text-white px-6 py-2 rounded-full transition-colors"
