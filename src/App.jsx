@@ -14,7 +14,7 @@ const Connect = React.lazy(() => import("./pages/connect"));
 
 function App() {
     const [isMobile, setIsMobile] = useState(false);
-
+                                                                                           
     const [showInitialLoader, setShowInitialLoader] = useState(true);
 
     useEffect(() => {

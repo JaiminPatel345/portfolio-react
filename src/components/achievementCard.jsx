@@ -21,7 +21,7 @@ const AchievementCard = ({
     return (
         <div className="group relative w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1rem)] p-4 ">
             <div
-                className="relative overflow-hidden rounded-xl bg-neutral-900 p-6 md:p-10 shadow-lg min-h-[320px]  md:min-h-[350px]
+                className="relative overflow-hidden rounded-xl bg-neutral-900 p-6 md:p-10 shadow-lg min-h-[320px]  md:min-h-[400px] min-w-[330px]
                     transition-all duration-300 hover:scale-105 hover:shadow-2xl
                     hover:bg-neutral-800 active:scale-95"
             >
