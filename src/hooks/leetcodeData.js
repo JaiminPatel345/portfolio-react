@@ -1,4 +1,4 @@
-const BASEURL = "http://localhost:3000";
+const BASEURL = "https://alfa-leetcode-api.onrender.com";
 const USERNAME = 'soldier_of_god'
 
   export const getProblemData = async () => {
