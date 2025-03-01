@@ -5,8 +5,8 @@ const Achievements = () => {
     {
       title: 'GeeksForGeeks Champion',
       date: '2022-24',
-      icon: 'Brain',
-      iconColor: '#2F8D46',
+      icon: 'Award',
+      iconColor: '#e64d33',
       link: 'https://www.geeksforgeeks.org/user/officialj9h58',
       btnText: 'View GFG Profile',
       description: [
@@ -28,13 +28,24 @@ const Achievements = () => {
     }, {
       title: 'Code Ramzat',
       date: 'Oct 2023',
-      icon: 'Award',
-      iconColor: '#0cb37c',
+      icon: 'Crown',
+      iconColor: '#a252d9',
       link: 'https://drive.google.com/file/d/1XjM_b_F_J35P0Y43_Lsgko8gSfZVP3SW/view?usp=sharing',
       btnText: 'View Certificate',
       description: [
         'Secured 3rd position among all year students',
         'DSA competition on CodeChef ',
+      ],
+    }, {
+      title: 'SIH 2024',
+      date: 'Dec 2024',
+      icon: 'Brain',
+      iconColor: '#34bba9',
+      link: 'https://drive.google.com/file/d/1SJkA4exajP7UOF0JQhoJ3NB4yD2tkLNP/view?usp=sharing',
+      btnText: 'View Photo',
+      description: [
+        'Shortlist name in waiting list',
+        '7th out of 500 teams across India',
       ],
     },
   ];

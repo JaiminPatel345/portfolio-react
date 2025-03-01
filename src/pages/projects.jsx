@@ -1,26 +1,12 @@
 /* eslint-disable react/prop-types */
-import {useState} from 'react';
-import {
-  IconBrandDocker,
-  IconBrandGithub,
-  IconChevronLeft,
-  IconChevronRight,
-  IconCloud,
-  IconCode,
-  IconDatabase,
-  IconDeviceDesktop,
-  IconExternalLink,
-  IconLock,
-  IconServer,
-} from '@tabler/icons-react';
+import {IconBrandGithub, IconExternalLink} from '@tabler/icons-react';
 
 const Projects = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
 
   const projects = [
     {
       title: 'Abhinavam',
-      description: 'Social Media app for Artist ',
+      description: `Social Media App for Artists.This app is built with production-level standards, ensuring high security and exceptional performance. It utilizes MongoDB aggregation for efficient data processing, implements access and refresh tokens for secure authentication, and supports pagination for seamless content browsing.`,
       technology: {
         frontEnd: ['React Native', 'Expo', 'Nativewind'],
         backEnd: ['Node Js', 'Express Js', 'Redis'],
@@ -28,6 +14,7 @@ const Projects = () => {
         auth: ['JWT', 'Oauth'],
         session: ['Redis'],
         packageManager: ['Yarn'],
+        ciCd: ['EAS Workflows'],
       },
       time: 'Feb 2025 - Current',
       github: 'https://github.com/JaiminPatel345/Abhinavam',
@@ -35,7 +22,7 @@ const Projects = () => {
     },
     {
       title: 'Barter Talk',
-      description: 'Real time chat app',
+      description: 'Real time chat app and video calling app',
       technology: {
         frontEnd: ['React', 'Tailwind', 'Daisy UI'],
         backEnd: ['Node Js', 'Express Js'],
@@ -67,7 +54,6 @@ const Projects = () => {
       apk: 'https://drive.google.com/drive/folders/1jk1cnW5aRTltLMa6XyVhvZ7VD845Gyrx',
 
     },
-
     {
       title: 'Wanderlust',
       description: 'A listing website where users can book and add their property.owner can edit and delete their property . other users can give review and rating to the property as well as chat with owner ',
@@ -124,44 +110,6 @@ const Projects = () => {
     },
   ];
 
-  const nextProject = () => {
-    setCurrentIndex((
-        currentIndex + 1
-    ) % projects.length);
-  };
-
-  const prevProject = () => {
-    if (currentIndex === 0) {
-      setCurrentIndex(projects.length - 1);
-    } else {
-      setCurrentIndex(currentIndex - 1);
-    }
-
-  };
-
-  const TechBadge = ({text}) => (
-      <span
-          className="px-4 py-1 rounded-full bg-[#363535] text-[#f5f5f5] font-normal m-1.5 transition-all duration-300 hover:scale-105 hover:bg-[#3a3a3a] inline-flex items-center">
-            {text}
-        </span>
-  );
-
-  const TechSection = ({title, items, icon: Icon}) => (
-      <div className="mb-3">
-        <div className="flex items-center gap-4 text-[#d1d5db] mb-1">
-          <div className="p-2 rounded-lg bg-[#4e4d4d]">
-            <Icon size={20} stroke={1.5}/>
-          </div>
-          <span className="font-semibold text-md">{title}</span>
-        </div>
-        <div className="flex flex-wrap gap-2 pl-11">
-          {items?.map((item, index) => (
-              <TechBadge key={index} text={item}/>
-          ))}
-        </div>
-      </div>
-  );
-
   return (
       <div className="min-h-screen text-[#f5f5f5] py-16 relative p-3 md:p-10"
            id="projects"
@@ -175,173 +123,116 @@ const Projects = () => {
           </p>
         </div>
 
-        {/* Project Navigation Indicators */}
-        <div className="flex justify-center gap-2 m-4">
-          {projects.map((_, index) => (
-              <div
-                  key={index}
-                  className={`h-2 rounded-full transition-all duration-300 ${index ===
-                  currentIndex ? 'w-8 bg-primary' : 'w-2 bg-[#4e4d4d]'}`}
-              />
-          ))}
-        </div>
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {projects.map((project, index) => (
+                <div key={index}
+                     className="bg-[#2e2e2e] rounded-xl shadow-xl transition-all duration-300 hover:shadow-2xl">
+                  <div className="p-6 md:p-8 relative">
+                    <div
+                        className="absolute right-4 top-4 text-sm text-gray-400 font-medium">
+                      {project.time}
+                    </div>
 
-        <div className="max-w-6xl mx-auto px-4 relative">
-          {/* Navigation Buttons */}
-          <button
-              onClick={prevProject}
-              className={`absolute left-1 md:left-4 top-24  translate-y-1/2 z-10 bg-[#2e2e2e] p-2  md:p-4 rounded-full shadow-lg transition-all duration-300 hover:bg-[#3a3a3a] ${currentIndex ===
-              0 ? 'opacity-50 cursor-not-allowed' : ' md:hover:scale-110'}`}
-          >
-            <IconChevronLeft size={24}/>
-          </button>
+                    <div className="mb-5 pt-4">
+                      <h2 className="text-2xl font-bold text-primary mb-3">{project.title}</h2>
+                      <p className="text-base text-[#b5b5b5]">{project.description}</p>
+                    </div>
 
-          <button
-              onClick={nextProject}
-              className={`absolute right-1 md:right-4 top-24 translate-y-1/2 z-10 bg-[#2e2e2e] p-2  md:p-4 rounded-full shadow-lg transition-all duration-300 hover:bg-[#3a3a3a] ${currentIndex ===
-              projects.length - 1
-                  ? 'opacity-50 cursor-not-allowed'
-                  : 'md:hover:scale-110'}`}
-              // disabled={}
-          >
-            <IconChevronRight size={24}/>
-          </button>
+                    <div
+                        className="divider before:bg-[#444444] after:bg-[#444444] my-4"></div>
 
-          {/* Single Project Card */}
-          <div className="flex justify-center px-8 md:px-16 relative">
+                    {/* Tech stack summary */}
+                    <div className="mb-5">
+                      {project.technology.frontEnd && (
+                          <div className="mb-3">
+                            <p className="text-sm font-semibold text-gray-300 mb-1">Frontend:</p>
+                            <div className="flex flex-wrap gap-2">
+                              {project.technology.frontEnd.map((tech, idx) => (
+                                  <span key={idx}
+                                        className="px-3 py-1 text-sm rounded-full bg-[#363535] text-[#f5f5f5]">{tech}</span>
+                              ))}
+                            </div>
+                          </div>
+                      )}
 
-            <div
-                className="w-full max-w-3xl bg-[#2e2e2e] rounded-xl shadow-xl transition-all duration-500">
-              <div className="p-8 lg:p-12 relative">
-                <div className={'absolute right-3 top-3'}>
-                  <p>{projects[currentIndex].time}</p>
-                </div>
-                <div className="text-center mb-4">
-                  <h2 className="text-3xl font-bold text-primary mb-4">
-                    {projects[currentIndex].title}
-                  </h2>
-                  <p className="text-lg text-[#b5b5b5] max-w-2xl mx-auto">
-                    {projects[currentIndex].description}
-                  </p>
-                </div>
+                      {project.technology.backEnd && (
+                          <div className="mb-3">
+                            <p className="text-sm font-semibold text-gray-300 mb-1">Backend:</p>
+                            <div className="flex flex-wrap gap-2">
+                              {project.technology.backEnd.map((tech, idx) => (
+                                  <span key={idx}
+                                        className="px-3 py-1 text-sm rounded-full bg-[#363535] text-[#f5f5f5]">{tech}</span>
+                              ))}
+                            </div>
+                          </div>
+                      )}
 
+                      {project.technology.database && (
+                          <div className="mb-3">
+                            <p className="text-sm font-semibold text-gray-300 mb-1">Database:</p>
+                            <div className="flex flex-wrap gap-2">
+                              {project.technology.database.map((tech, idx) => (
+                                  <span key={idx}
+                                        className="px-3 py-1 text-sm rounded-full bg-[#363535] text-[#f5f5f5]">{tech}</span>
+                              ))}
+                            </div>
+                          </div>
+                      )}
 
-                {/* Links */}
-                <div
-                    className="flex flex-col md:flex-row justify-center gap-6 mt-8">
-                  <a
-                      href={projects[currentIndex].github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn-outline btn-primary btn-md gap-3 hover:scale-105 transition-transform px-6"
-                  >
-                    <IconBrandGithub size={20} stroke={1.5}/>
-                    View Source
-                  </a>
-                  {projects[currentIndex].live && (
+                      {project.technology.others && (
+                          <div>
+                            <p className="text-sm font-semibold text-gray-300 mb-1">Other
+                              Technologies:</p>
+                            <div className="flex flex-wrap gap-2">
+                              {project.technology.others.map((tech, idx) => (
+                                  <span key={idx}
+                                        className="px-3 py-1 text-sm rounded-full bg-[#363535] text-[#f5f5f5]">{tech}</span>
+                              ))}
+                            </div>
+                          </div>
+                      )}
+                    </div>
+
+                    {/* Links */}
+                    <div className="flex flex-wrap gap-3 mt-5 justify-center">
                       <a
-                          href={projects[currentIndex].live}
+                          href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="btn btn-primary btn-md gap-3 hover:scale-105 transition-transform px-6"
+                          className="btn btn-outline btn-primary gap-2 hover:scale-105"
                       >
-                        <IconExternalLink
-                            size={20}
-                            stroke={1.5}
-                        />
-                        Live Demo
+                        <IconBrandGithub size={18} stroke={1.5}/>
+                        View Source
                       </a>
-                  )}
-                  {projects[currentIndex].apk && (
-                      <a
-                          href={projects[currentIndex].apk}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="btn btn-primary btn-md gap-3 hover:scale-105 transition-transform px-6"
-                      >
-                        <IconExternalLink
-                            size={20}
-                            stroke={1.5}
-                        />
-                        APK link
-                      </a>
-                  )}
+                      {project.live && (
+                          <a
+                              href={project.live}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="btn btn-primary gap-2 hover:scale-105"
+                          >
+                            <IconExternalLink size={18} stroke={1.5}/>
+                            Live Demo
+                          </a>
+                      )}
+                      {project.apk && (
+                          <a
+                              href={project.apk}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="btn btn-primary gap-2 hover:scale-105"
+                          >
+                            <IconExternalLink size={18} stroke={1.5}/>
+                            APK Link
+                          </a>
+                      )}
+                    </div>
+                  </div>
                 </div>
-
-                <div
-                    className="divider before:bg-[#444444] after:bg-[#444444]"></div>
-
-                <div className="space-y-4 my-4">
-                  {projects[currentIndex].technology.frontEnd && (
-                      <TechSection
-                          title="Frontend Technologies"
-                          items={projects[currentIndex].technology.frontEnd}
-                          icon={IconDeviceDesktop}
-                      />
-                  )}
-                  {projects[currentIndex].technology.backEnd && (
-                      <TechSection
-                          title="Backend Stack"
-                          items={projects[currentIndex].technology.backEnd}
-                          icon={IconServer}
-                      />
-                  )}
-                  {projects[currentIndex].technology.database && (
-                      <TechSection
-                          title="Database Solutions"
-                          items={projects[currentIndex].technology.database}
-                          icon={IconDatabase}
-                      />
-                  )}
-                  {projects[currentIndex].technology.auth && (
-                      <TechSection
-                          title="Authentication"
-                          items={projects[currentIndex].technology.auth}
-                          icon={IconLock}
-                      />
-                  )}
-                  {projects[currentIndex].technology.deployment && (
-                      <TechSection
-                          title="Deployment"
-                          items={projects[currentIndex].technology.deployment}
-                          icon={IconCloud}
-                      />
-                  )}
-                  {projects[currentIndex].technology.ciCd && (
-                      <TechSection
-                          title="CI/CD"
-                          items={projects[currentIndex].technology.ciCd}
-                          icon={IconBrandDocker}
-                      />
-                  )}
-                  {projects[currentIndex].technology.others && (
-                      <TechSection
-                          title="Additional Technologies"
-                          items={projects[currentIndex].technology.others}
-                          icon={IconCode}
-                      />
-                  )}
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
-
-        <style>{`
-                @keyframes slideIn {
-                    from {
-                        opacity: 0;
-                        transform: translateX(-100px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateX(0);
-                    }
-                }
-                .animate-slide-in {
-                    animation: slideIn 1s ease-out forwards;
-                }
-            `}</style>
       </div>
   );
 };
