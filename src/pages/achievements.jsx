@@ -3,17 +3,42 @@ import AchievementCard from '../components/achievementCard.jsx';
 const Achievements = () => {
   const achievements = [
     {
-      title: 'GeeksForGeeks Champion',
-      date: '2022-24',
-      icon: 'Award',
-      iconColor: '#e64d33',
-      link: 'https://www.geeksforgeeks.org/user/officialj9h58',
-      btnText: 'View GFG Profile',
+      title: 'ODOO X Mindbend Hackathon',
+      date: '5-6 April 2025',
+      icon: 'Code',
+      iconColor: '#4CAF50',
+      link: 'https://drive.google.com/file/d/1SFpUTEYaRUykIgiGRf4PgGUB4NVPcU3B/view?usp=sharing',
+      btnText: 'View Certificate',
       description: [
-        'Weekly Coding Contest 135 | 19th rank',
-        'Weekly Coding Contest 129 | 53rd rank',
+        'Qualified as finalist in prestigious offline ODOO X Mindbend Hackathon at SVNIT',
+        'Developed innovative solutions under time constraints',
       ],
-    }, {
+    },
+    {
+      title: 'SIH 2024',
+      date: 'Dec 2024',
+      icon: 'Brain',
+      iconColor: '#34bba9',
+      link: 'https://drive.google.com/file/d/1SJkA4exajP7UOF0JQhoJ3NB4yD2tkLNP/view?usp=sharing',
+      btnText: 'View Details',
+      description: [
+        'Shortlist name in waiting list',
+        '7th out of 500 teams across India',
+      ],
+    },
+    {
+      title: 'LeetCode ',
+      date: 'Sep 15, 2024',
+      icon: 'Code',
+      iconColor: '#FF9800',
+      link: 'https://drive.google.com/file/d/1x0bW_Bsl_-ztRXMkPtTkXwH-DyF67njf/view?usp=sharing',
+      btnText: 'View Details',
+      description: [
+        'LeetCode Weekly Contest 415',
+        'Ranked 1644 out of 33,921 global participants',
+      ],
+    },
+    {
       title: 'Byte Quest',
       date: 'Feb 2024',
       icon: 'Trophy',
@@ -25,7 +50,21 @@ const Achievements = () => {
         'Solved complex algorithmic challenges',
         'Recognized for optimal solution approaches',
       ],
-    }, {
+    },
+      
+    {
+      title: 'GeeksForGeeks',
+      date: '2023',
+      icon: 'Award',
+      iconColor: '#e64d33',
+      link: 'https://www.geeksforgeeks.org/user/officialj9h58',
+      btnText: 'View GFG Profile',
+      description: [
+        'Weekly Coding Contest 135 | 19th rank',
+        'Weekly Coding Contest 129 | 53rd rank',
+      ],
+    },
+    {
       title: 'Code Ramzat',
       date: 'Oct 2023',
       icon: 'Crown',
@@ -36,16 +75,16 @@ const Achievements = () => {
         'Secured 3rd position among all year students',
         'DSA competition on CodeChef ',
       ],
-    }, {
-      title: 'SIH 2024',
-      date: 'Dec 2024',
-      icon: 'Brain',
-      iconColor: '#34bba9',
-      link: 'https://drive.google.com/file/d/1SJkA4exajP7UOF0JQhoJ3NB4yD2tkLNP/view?usp=sharing',
-      btnText: 'View Photo',
+    },
+    {
+      title: 'JEE Advanced',
+      date: '2022',
+      icon: 'Star',
+      iconColor: '#FFC107',
+      link: 'https://drive.google.com/file/d/118_UHHGKqQ_2aQP452ZRDp860UVqE_P1/view?usp=sharing',
+      btnText: 'View Details',
       description: [
-        'Shortlist name in waiting list',
-        '7th out of 500 teams across India',
+        'Cleared JEE Advanced 2022 with AIR 28k',
       ],
     },
   ];

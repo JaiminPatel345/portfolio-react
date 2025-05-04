@@ -28,30 +28,15 @@ const Home = () => {
                         Jaimin Detroja
                     </h1>
                     <div className="text-blue-400 text-lg md:text-2xl text-center z-50 md:text-left">
-                        {/* <TypeAnimation
-                            sequence={[
-                                "DSA Enthusiast",
-                                1000,
-                                "Problem Solver",
-                                1000,
-                                "Innovative Thinker",
-                                1000,
-                                "Open-Source Contributor",
-                                1000,
-                                "Continuous Learner",
-                                1000,
-                            ]}
-                            speed={50}
-                            repeat={Infinity}
-                        /> */}
                         <FlipWords words={words} />
                     </div>
+                    
                 </div>
 
                 {/* Right Section: Image */}
                     <div className="mask z-50 ">
                         <img
-                            src="/preload.gif"
+                            src="https://res.cloudinary.com/dm4xqk12g/image/upload/v1746390124/2023-04-05_001_209_t64pgt.jpg"
                             alt="My  photo"
                             className="rounded-full h-40 w-40 md:w-80 md:h-80 "
                         />

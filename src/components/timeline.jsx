@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import  { useRef, useState, useEffect } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
+import { LinkPreview } from "./ui/LinkPreview.jsx"
 
 const Timeline = ({ experiences }) => {
     const ref = useRef(null)
@@ -58,30 +59,24 @@ const Timeline = ({ experiences }) => {
                         <div className="relative pl-4 pr-4 w-full">
                             <div className="bg-white dark:bg-neutral-900 rounded-lg p-6 shadow-lg">
                                 <div className="flex flex-col md:flex-row gap-6 items-start md:items-center mb-6">
-                                    <a
-                                        href={experience.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="cursor-pointer"
-                                    >
-                                        <img
-                                            src={experience.logo}
-                                            alt={`${experience.name} logo`}
-                                            className="h-24 w-24 object-contain"
-                                        />
-                                    </a>
+                                    <LinkPreview url={experience.link}>
+                                        <div className="cursor-pointer">
+                                            <img
+                                                src={experience.logo}
+                                                alt={`${experience.name} logo`}
+                                                className="h-24 w-24 object-contain"
+                                            />
+                                        </div>
+                                    </LinkPreview>
                                     <div>
                                         <h3 className="text-2xl font-bold text-primary">
                                             {experience.role}
                                         </h3>
-                                        <a
-                                            href={experience.link}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-lg text-white"
-                                        >
-                                            {experience.name}
-                                        </a>
+                                        <LinkPreview url={experience.link}>
+                                            <span className="text-lg text-blue-400 hover:text-blue-300 hover:underline">
+                                                {experience.name}
+                                            </span>
+                                        </LinkPreview>
                                     </div>
                                 </div>
 

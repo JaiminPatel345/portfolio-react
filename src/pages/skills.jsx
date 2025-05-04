@@ -3,37 +3,44 @@ import getSkillIcon from '../utils/getSkillIcon';
 
 const skills = {
   advanced: [
-    {name: 'React'},
-    {name: 'Express.js'},
     {name: 'JavaScript'},
     {name: 'TypeScript'},
-    {name: 'Node.js'},
-    {name: 'MongoDB'},
     {name: 'Java'},
+      
+    {name: 'Node.js'},
+    {name: 'React.js'},
+    {name: 'React Native'},
+    {name: 'Express.js'},
+
+    {name: 'MongoDB'},
+    {name: 'Redis'},
 
     {name: 'Docker'},
+    {name: 'Git'},
+      
+    {name: 'Redux'},
     {name: 'Tailwind'},
     {name: 'CSS'},
     {name: 'HTML'},
-    {name: 'Git'},
   ],
   intermediate: [
-    {name: 'Spring Boot'},
-    {name: 'React Native'},
-    {name: 'Nativewind'},
-    {name: 'Linux'},
+    {name: 'Python'},
+    {name: 'TensorFlow'},
+      
     {name: 'PostgreSQL'},
-    {name: 'Socket.io'},
+
     {name: 'Azure'},
+    {name: 'Linux'},
+      
+    {name: 'Socket.io'},
     {name: 'Peer js'},
   ],
   familiar: [
     {name: 'Firebase'},
     {name: 'GCP'},
-    {name: 'Kubernetes'},
-    {name: 'GraphQL'},
     {name: 'ONDC'},
-    {name: 'Python'},
+      
+    {name: 'C++'},
     {name: 'C'},
   ],
 };

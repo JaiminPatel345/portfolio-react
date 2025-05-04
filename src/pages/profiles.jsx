@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react';
 import {AnimatePresence, motion} from 'framer-motion';
 import {
   IconBrandCodepen,
+  IconBrandGithub,
   IconBrandLeetcode,
   IconExternalLink,
   IconStar,
@@ -10,6 +11,7 @@ import {
 } from '@tabler/icons-react';
 import {getCodechefData} from '../hooks/codechefData.js';
 import {getContestData, getProblemData} from '../hooks/leetcodeData.js';
+import {LinkPreview} from '../components/ui/LinkPreview.jsx';
 
 const LeetCodeDetailModal = ({isOpen, onClose, problemData, contestData}) => {
   if (!isOpen || !problemData || !contestData) return null;
@@ -46,12 +48,12 @@ const LeetCodeDetailModal = ({isOpen, onClose, problemData, contestData}) => {
               <div className="flex flex-col gap-2">
                 <h2 className="text-2xl sm:text-3xl font-bold text-white">LeetCode
                   Profile</h2>
-                <a href="https://leetcode.com/u/soldier_of_god"
-                   className="flex gap-3 hover:underline items-center text-xl"
-                   target="_blank">
-                  Show more on LeetCode
-                  <IconExternalLink stroke={2}/>
-                </a>
+                <LinkPreview url="https://leetcode.com/u/soldier_of_god">
+                  <div className="flex gap-3 hover:underline items-center text-xl">
+                    Show more on LeetCode
+                    <IconExternalLink stroke={2}/>
+                  </div>
+                </LinkPreview>
               </div>
               <p className="text-gray-400">Total Problems
                 Solved: {totalSolved}</p>
@@ -167,14 +169,12 @@ const CodeChefDetailModal = ({isOpen, onClose, data}) => {
                      className="w-6 h-4"/>
                 <span className="text-gray-400">{data.countryName}</span>
               </div>
-              <a
-                  href={`https://www.codechef.com/users/${data.name}`}
-                  className="flex gap-3 hover:underline items-center text-xl"
-                  target="_blank"
-              >
-                Show more on CodeChef
-                <IconExternalLink stroke={2}/>
-              </a>
+              <LinkPreview url={`https://www.codechef.com/users/${data.name}`}>
+                <div className="flex gap-3 hover:underline items-center text-xl">
+                  Show more on CodeChef
+                  <IconExternalLink stroke={2}/>
+                </div>
+              </LinkPreview>
             </div>
           </div>
 
@@ -228,8 +228,8 @@ const CodeChefDetailModal = ({isOpen, onClose, data}) => {
   );
 };
 
-// Main DSA Profiles Component
-const DSAProfiles = () => {
+// Main Component
+const Profiles = () => {
   const [selectedProfile, setSelectedProfile] = useState(null);
   const [leetcodeProblemData, setLeetcodeProblemData] = useState(null);
   const [leetcodeContestData, setLeetcodeContestData] = useState(null);
@@ -277,6 +277,27 @@ const DSAProfiles = () => {
     }
   };
 
+  const contributions = [
+    {
+      name: 'freeCodeCamp',
+      url: 'https://github.com/freeCodeCamp/freeCodeCamp',
+      description: [
+        'Contributed to the platform with 1 PR merged to main branch',
+        'Open source codebase and curriculum for learning to code',
+      ],
+      image: 'https://res.cloudinary.com/dm4xqk12g/image/upload/v1746391865/da620ba4-351d-446e-943b-099e5644987c.png',
+    },
+    {
+      name: 'Cboard',
+      url: 'https://github.com/cboard-org/cboard',
+      description: [
+        'Contributed with 1 PR successfully merged to main branch',
+        'AAC communication board for the browser',
+      ],
+      image: 'https://res.cloudinary.com/dm4xqk12g/image/upload/v1746392215/ebf13c88-86ff-4938-9c32-cf6e649d5299.png',
+    },
+  ];
+
   const profiles = [
     {
       name: 'LeetCode',
@@ -317,70 +338,140 @@ const DSAProfiles = () => {
       <div className="min-h-screen px-3 md:px-10 w-screen" id="profiles">
         <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
           <h2 className="text-lg md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
-            Coding Profiles
+            Contributions & Profiles
           </h2>
           <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base">
-            Track my progress and achievements across different coding
-            platforms.
+            My open source contributions and coding achievements across
+            different platforms.
           </p>
         </div>
-        <div className="w-full flex justify-center items-center px-7 md:px-15">
-          <div
-              className="bg-neutral-900 p-12 md:p-24 rounded-lg shadow-2xl flex items-center justify-center relative">
-            <p className="absolute top-5 left-5 text-gray-400">click to show
-              details</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {profiles.map((profile, index) => (
-                  <motion.div
-                      key={profile.name}
-                      onClick={() => handleProfileClick(profile.name)}
-                      className="cursor-pointer"
-                      initial={{opacity: 0, translateY: 20}}
-                      animate={{opacity: 1, translateY: 0}}
-                      transition={{delay: index * 0.2, duration: 0.5}}
-                      whileHover={{scale: 1.05, transition: {duration: 0.2}}}
-                      whileTap={{scale: 0.95}}
-                  >
+
+        {/* Contributions Section */}
+        <div className="max-w-5xl mx-auto mb-12">
+          <h3 className="text-lg md:text-2xl mb-4 text-black dark:text-white max-w-4xl">
+            Open Source Contributions
+            {"   "}
+            <LinkPreview url="https://github.com/JaiminPatel345">
+              <span className="italic text-sm text-blue-400">My GitHub</span>
+            </LinkPreview>
+            
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {contributions.map((contribution, index) => (
+                <motion.div
+                    key={contribution.name}
+                    className="block"
+                    initial={{opacity: 0, translateY: 20}}
+                    animate={{opacity: 1, translateY: 0}}
+                    transition={{delay: index * 0.2, duration: 0.5}}
+                    whileHover={{scale: 1.03, transition: {duration: 0.2}}}
+                    whileTap={{scale: 0.97}}
+                >
+                  <div
+                      className="bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
                     <div
-                        className="relative bg-gray-900 rounded-xl p-6 flex flex-col md:flex-row gap-5 w-full items-center space-x-6 hover:bg-gray-800 transition-colors group">
-                      <div className="bg-gray-700 p-4 rounded-full">
-                        <profile.icon
-                            className={`${profile.color} stroke-current`}
-                            size={40}
-                        />
+                        className="h-40 bg-gray-800 flex items-center justify-center overflow-hidden">
+                      <img
+                          src={contribution.image}
+                          alt={contribution.name}
+                          className="w-full h-full object-contain p-4"
+                      />
+                    </div>
+                    <div className="p-5">
+                      <div className="flex items-center gap-2 mb-2">
+                        <IconBrandGithub className="text-white" size={20}/>
+                        <h3 className="text-xl font-semibold text-white">{contribution.name}</h3>
                       </div>
-                      <div className="flex-grow">
-                        <h3 className="text-xl font-semibold text-white mb-2">
-                          {profile.name}
-                        </h3>
-                        {profile.stats && (
-                            <div className="text-gray-400 space-y-1">
-                              {profile.name === 'LeetCode' ? (
-                                  <>
-                                    <p>Total
-                                      Solved: {profile.stats.totalSolved}</p>
-                                    <p>Contest
-                                      Rating: {profile.stats.rating}</p>
-                                    <p>Top {profile.stats.topPercentage}%</p>
-                                  </>
-                              ) : (
-                                  <>
-                                    <p>Rating: {profile.stats.rating}</p>
-                                    <p>Stars: {profile.stats.stars}</p>
-                                    <p>Global Rank:
-                                      #{profile.stats.globalRank}</p>
-                                  </>
-                              )}
-                            </div>
-                        )}
+                      <div className="text-gray-400 mb-3">
+
+                        <ul className={'list-disc list-inside text-gray-300 text-sm mt-2'}>
+                          {contribution.description.map((desc, i) => (
+                              <li key={i}>
+                                {desc}
+                              </li>
+                          ))}
+                        </ul>
+
                       </div>
-                      <div
-                          className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                        <IconExternalLink className="text-gray-400" size={20}/>
+                      <div className="flex items-center">
+                        <LinkPreview url={contribution.url}>
+                          <div className="text-blue-400 hover:text-blue-300 transition-colors flex items-center">
+                            <span>View Repository</span>
+                            <IconExternalLink size={16} className="ml-1"/>
+                          </div>
+                        </LinkPreview>
                       </div>
                     </div>
-                  </motion.div>
-              ))}
+                  </div>
+                </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* DSA Profiles Section */}
+        <div className="max-w-5xl mx-auto mb-16">
+          <h3 className="text-lg md:text-2xl mb-4 text-black dark:text-white max-w-4xl">
+            Coding Profiles
+          </h3>
+          <div className="w-full flex justify-center items-center">
+            <div
+                className="bg-neutral-900 p-8 md:p-12 rounded-lg shadow-2xl flex items-center justify-center relative w-full">
+              <p className="absolute top-3 left-5 text-gray-400 text-sm">click
+                to show details</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+                {profiles.map((profile, index) => (
+                    <motion.div
+                        key={profile.name}
+                        onClick={() => handleProfileClick(profile.name)}
+                        className="cursor-pointer"
+                        initial={{opacity: 0, translateY: 20}}
+                        animate={{opacity: 1, translateY: 0}}
+                        transition={{delay: index * 0.2, duration: 0.5}}
+                        whileHover={{scale: 1.05, transition: {duration: 0.2}}}
+                        whileTap={{scale: 0.95}}
+                    >
+                      <div
+                          className="relative bg-gray-900 rounded-xl p-6 flex flex-col md:flex-row gap-5 w-full items-center space-x-6 hover:bg-gray-800 transition-colors group">
+                        <div className="bg-gray-700 p-4 rounded-full">
+                          <profile.icon
+                              className={`${profile.color} stroke-current`}
+                              size={40}
+                          />
+                        </div>
+                        <div className="flex-grow">
+                          <h3 className="text-xl font-semibold text-white mb-2">
+                            {profile.name}
+                          </h3>
+                          {profile.stats && (
+                              <div className="text-gray-400 space-y-1">
+                                {profile.name === 'LeetCode' ? (
+                                    <>
+                                      <p>Total
+                                        Solved: {profile.stats.totalSolved}</p>
+                                      <p>Contest
+                                        Rating: {profile.stats.rating}</p>
+                                      <p>Top {profile.stats.topPercentage}%</p>
+                                    </>
+                                ) : (
+                                    <>
+                                      <p>Rating: {profile.stats.rating}</p>
+                                      <p>Stars: {profile.stats.stars}</p>
+                                      <p>Global Rank:
+                                        #{profile.stats.globalRank}</p>
+                                    </>
+                                )}
+                              </div>
+                          )}
+                        </div>
+                        <div
+                            className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                          <IconExternalLink className="text-gray-400"
+                                            size={20}/>
+                        </div>
+                      </div>
+                    </motion.div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -406,4 +497,4 @@ const DSAProfiles = () => {
   );
 };
 
-export default DSAProfiles;
+export default Profiles;

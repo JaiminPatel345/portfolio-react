@@ -5,7 +5,7 @@ import PreLoader from "./components/loader";
 // Each component should be lazily loaded separately
 const Home = React.lazy(() => import("./pages/Home"));
 const Projects = React.lazy(() => import("./pages/projects"));
-const DSAProfiles = React.lazy(() => import("./pages/dsaProfiles"));
+const DSAProfiles = React.lazy(() => import("./pages/profiles.jsx"));
 const Experience = React.lazy(() => import("./pages/experience"));
 const SkillSet = React.lazy(() => import("./pages/skills"));
 const Achievements = React.lazy(() => import("./pages/achievements"));

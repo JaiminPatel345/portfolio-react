@@ -1,5 +1,6 @@
 // import React from "react"
 import { Timeline } from "../components"
+import { LinkPreview } from "../components/ui/LinkPreview.jsx"
 
 function Experience() {
     const experiences = [
