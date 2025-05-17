@@ -1,18 +1,11 @@
-import Home from "./Home";
-import Projects from "./projects";
-import Profiles from './profiles.jsx';
-import Experience from './experience';
-import SkillSet from "./skills"
-import Achievements from './achievements';
+import Home from './Home';
 import Connect from './connect';
-
+import {About} from './about';
+import {Work} from './work';
 
 export {
-    Home,
-    Profiles,
-    Experience,
-    Projects,
-    SkillSet,
-    Achievements,
-    Connect,
-}
+  Home,
+  About,
+  Work,
+  Connect,
+};

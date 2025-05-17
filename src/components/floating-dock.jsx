@@ -5,6 +5,7 @@ import {
     AnimatePresence, motion, useMotionValue, useSpring, useTransform,
 }                                   from "framer-motion";
 import { useRef, useState }         from "react";
+import {Link} from 'react-router';
 
 export const FloatingDock = ( {items, desktopClassName, mobileClassName} ) => {
     return (
@@ -43,15 +44,15 @@ const FloatingDockMobile = ( {items, className} ) => {
                                     ) * 0.05,
                                 }}
                             >
-                                <a
-                                    href={item.href}
+                                <Link
+                                    to={item.href}
                                     key={item.title}
                                     target={item.target ? "_blank" : "_self"}
 
                                     className="h-10 w-10 rounded-full bg-gray-50 dark:bg-neutral-900 flex items-center justify-center"
                                 >
                                     <div className="h-4 w-4">{item.icon}</div>
-                                </a>
+                                </Link>
                             </motion.div>
                         ) )}
                     </motion.div>
@@ -114,8 +115,8 @@ function IconContainer( {mouseX, title, icon, href, target = "_self"} ) {
     const [hovered, setHovered] = useState( false );
 
     return (
-        <a
-            href={href}
+        <Link
+            to={href}
             target={target}
         >
             <motion.div
@@ -145,6 +146,6 @@ function IconContainer( {mouseX, title, icon, href, target = "_self"} ) {
                     {icon}
                 </motion.div>
             </motion.div>
-        </a>
+        </Link>
     );
 }

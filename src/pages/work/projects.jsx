@@ -1,6 +1,6 @@
 import {IconBrandGithub, IconExternalLink} from '@tabler/icons-react';
-import {MarkdownRenderer, markdownStyles} from '../components/ui/Markdown.jsx';
-import {LinkPreview} from '../components/ui/LinkPreview.jsx';
+import {MarkdownRenderer, markdownStyles} from '../../components/ui/Markdown.jsx';
+import {LinkPreview} from '../../components/ui/LinkPreview.jsx';
 
 
 const Projects = () => {
@@ -163,7 +163,7 @@ const Projects = () => {
         <style>{markdownStyles}</style>
         <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
           <h2 className="text-xl md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
-            My Projects
+            My Personal Projects
           </h2>
           <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm">
             Projects showcasing my skills and creativity.
@@ -171,7 +171,7 @@ const Projects = () => {
         </div>
 
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {projects.map((project, index) => (
                 <div key={index}
                      className="bg-[#2e2e2e] rounded-xl shadow-xl transition-all duration-300 hover:shadow-2xl">

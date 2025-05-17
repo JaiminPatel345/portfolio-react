@@ -2,10 +2,7 @@ import {FloatingDock} from "./floating-dock"
 import {
     IconHome,
     IconUser,
-    IconBriefcase,
     IconDeviceLaptop,
-    IconTool,
-    IconAward,
     IconLink,
     IconFileDescription,
 } from "@tabler/icons-react"
@@ -17,49 +14,28 @@ export function Navbar() {
             icon: (
                 <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300"/>
             ),
-            href: "#home",
+            href: "/",
         },
         {
-            title: "Profiles",
+            title: "About Me",
             icon: (
                 <IconUser className="h-full w-full text-neutral-500 dark:text-neutral-300"/>
             ),
-            href: "#profiles",
+            href: "/about",
         },
         {
-            title: "Experience",
-            icon: (
-                <IconBriefcase className="h-full w-full text-neutral-500 dark:text-neutral-300"/>
-            ),
-            href: "#experience",
-        },
-        {
-            title: "Projects",
+            title: "Work",
             icon: (
                 <IconDeviceLaptop className="h-full w-full text-neutral-500 dark:text-neutral-300"/>
             ),
-            href: "#projects",
-        },
-        {
-            title: "Skill Set",
-            icon: (
-                <IconTool className="h-full w-full text-neutral-500 dark:text-neutral-300"/>
-            ),
-            href: "#skills",
-        },
-        {
-            title: "Achievements",
-            icon: (
-                <IconAward className="h-full w-full text-neutral-500 dark:text-neutral-300"/>
-            ),
-            href: "#achievements",
+            href: "/work",
         },
         {
             title: "Connect",
             icon: (
                 <IconLink className="h-full w-full text-neutral-500 dark:text-neutral-300"/>
             ),
-            href: "#connect",
+            href: "/connect",
         },
         {
             title: "Resume",

@@ -1,5 +1,5 @@
-import {CardBody, CardContainer, CardItem} from '../components/ui/3d-card';
-import getSkillIcon from '../utils/getSkillIcon';
+import {CardBody, CardContainer, CardItem} from '../../components/ui/3d-card.jsx';
+import getSkillIcon from '../../utils/getSkillIcon.jsx';
 
 const skills = {
   advanced: [

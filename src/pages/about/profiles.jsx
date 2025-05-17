@@ -9,9 +9,9 @@ import {
   IconStar,
   IconX,
 } from '@tabler/icons-react';
-import {getCodechefData} from '../hooks/codechefData.js';
-import {getContestData, getProblemData} from '../hooks/leetcodeData.js';
-import {LinkPreview} from '../components/ui/LinkPreview.jsx';
+import {getCodechefData} from '../../hooks/codechefData.js';
+import {getContestData, getProblemData} from '../../hooks/leetcodeData.js';
+import {LinkPreview} from '../../components/ui/LinkPreview.jsx';
 
 const LeetCodeDetailModal = ({isOpen, onClose, problemData, contestData}) => {
   if (!isOpen || !problemData || !contestData) return null;

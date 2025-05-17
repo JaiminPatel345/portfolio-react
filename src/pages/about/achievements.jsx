@@ -1,4 +1,4 @@
-import AchievementCard from '../components/achievementCard.jsx';
+import AchievementCard from '../../components/achievementCard.jsx';
 
 const Achievements = () => {
   const achievements = [

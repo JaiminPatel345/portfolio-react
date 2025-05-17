@@ -1,6 +1,11 @@
 import {FlipWords} from '../components/';
 import {ReactTerminal} from 'react-terminal';
 import {commands, themes, welcomeMessage} from '../utils/commands.jsx';
+import {
+  IconBrandGithub,
+  IconBrandLinkedin,
+  IconMail,
+} from '@tabler/icons-react';
 
 const Home = () => {
   const words = [
@@ -36,6 +41,18 @@ const Home = () => {
               <FlipWords words={words}/>
             </div>
 
+            <div className={'flex gap-5 text-gray-300 z-30 ml-2'}>
+              <a target={'_blank'}
+                 href={`mailto:officialjaimin345@gmail.com`}><IconMail
+                  stroke={2}/></a>
+              <a target={'_blank'}
+                 href={`https://github.com/jaiminpatel345`}><IconBrandGithub
+                  stroke={2}/></a>
+              <a target={'_blank'}
+                 href={`https://www.linkedin.com/in/jaimindetroja345`}><IconBrandLinkedin
+                  stroke={2}/></a>
+            </div>
+
           </div>
 
           {/* Right Section: Image */}
@@ -46,11 +63,10 @@ const Home = () => {
                 className="rounded-full h-40 w-40 md:w-80 md:h-80 "
             />
           </div>
-          
+
           {/*Terminal*/}
         </div>
-        
-        <div className="z-40 max-w-[100%] min-w-[80vw]  min-h-[50vh]">
+        <div className="z-40 w-[70vw]  h-[50vh]">
           <ReactTerminal
               themes={themes}
               theme="my-custom-theme"
@@ -59,8 +75,8 @@ const Home = () => {
               welcomeMessage={welcomeMessage}
           />
         </div>
-        
-        
+
+
       </div>
   );
 };
