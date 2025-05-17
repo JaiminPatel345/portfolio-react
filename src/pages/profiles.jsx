@@ -347,7 +347,7 @@ const Profiles = () => {
         </div>
 
         {/* Contributions Section */}
-        <div className="max-w-5xl mx-auto mb-12">
+        <div className="max-w-5xl mx-auto mb-24"> 
           <h3 className="text-lg md:text-2xl mb-4 text-black dark:text-white max-w-4xl">
             Open Source Contributions
             {"   "}
@@ -409,7 +409,7 @@ const Profiles = () => {
         </div>
 
         {/* DSA Profiles Section */}
-        <div className="max-w-5xl mx-auto mb-16">
+        <div className="max-w-5xl mx-auto mb-24">
           <h3 className="text-lg md:text-2xl mb-4 text-black dark:text-white max-w-4xl">
             Coding Profiles
           </h3>

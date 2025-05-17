@@ -152,8 +152,8 @@ const Projects = () => {
         'Git',
       ],
       time: 'Nov 2024',
-      github: 'https://github.com/Naren7874/GDGC',
-      live: 'https://gdgc-bvm.vercel.app/',
+      github: 'https://github.com/GDG-On-Campus-BVM/GDG-On-Campus-BVM-Website',
+      live: 'https://gdg-on-campus-bvm.vercel.app',
     },
   ];
 
