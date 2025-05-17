@@ -48,13 +48,12 @@ export function Navbar() {
     ]
 
     return (
-        <div className="fixed bottom-8 flex items-center justify-center w-screen z-50">
+        <div className="fixed top-5 right-12 z-50">
             <div className="flex items-center justify-center">
                 <FloatingDock
-                    // only for demo, remove for production
-                    mobileClassName="left-7  w-screen "
+                    desktopClassName="scale-110"
+                    mobileClassName="right-0"
                     items={links}
-
                 />
             </div>
         </div>

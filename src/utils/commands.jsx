@@ -46,10 +46,12 @@ export const commands = {
   about: (
       <span>
       <p>• I&#39;m a <strong style={{color: '#64ffda'}}>Backend-first Full Stack Developer</strong> with a passion for building efficient, scalable applications.</p>
+      <p>• Machine Learning Enthusiast </p>
       <p>• Currently pursuing B.Tech in <strong>Computer Science at BVM Anand, India</strong> (2022-2026).</p>
       <p>• I enjoy tackling complex problems through clean code and innovative solutions.</p>
       <p>• When I&#39;m not coding, you can find me on <i>Chess.com</i> .</p>
-      <p>• Type <strong style={{color: '#ffff80'}}>stack</strong> to see my technical toolkit or <strong
+        <br />
+      <p> Type <strong style={{color: '#ffff80'}}>stack</strong> to see my technical toolkit or <strong
           style={{color: '#ffff80'}}>projects</strong> to view my work!</p>
         
     </span>

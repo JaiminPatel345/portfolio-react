@@ -56,13 +56,13 @@ const Home = () => {
           </div>
 
           {/* Right Section: Image */}
-          <div className="mask z-50 ">
-            <img
-                src="https://res.cloudinary.com/dm4xqk12g/image/upload/v1746390124/2023-04-05_001_209_t64pgt.jpg"
-                alt="My  photo"
-                className="rounded-full h-40 w-40 md:w-80 md:h-80 "
-            />
-          </div>
+          {/*<div className="mask z-40 ">*/}
+          {/*  <img*/}
+          {/*      src="https://res.cloudinary.com/dm4xqk12g/image/upload/v1746390124/2023-04-05_001_209_t64pgt.jpg"*/}
+          {/*      alt="My  photo"*/}
+          {/*      className="rounded-full h-40 w-40 md:w-72 md:h-72 "*/}
+          {/*  />*/}
+          {/*</div>*/}
 
           {/*Terminal*/}
         </div>

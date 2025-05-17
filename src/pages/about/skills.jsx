@@ -15,7 +15,6 @@ const skills = {
     {name: 'MongoDB'},
     {name: 'Redis'},
 
-    {name: 'Docker'},
     {name: 'Git'},
       
     {name: 'Redux'},
@@ -29,16 +28,18 @@ const skills = {
       
     {name: 'PostgreSQL'},
 
+    {name: 'Docker'},
     {name: 'Azure'},
     {name: 'Linux'},
       
     {name: 'Socket.io'},
-    {name: 'Peer js'},
   ],
   familiar: [
     {name: 'Firebase'},
     {name: 'GCP'},
     {name: 'ONDC'},
+      
+    {name: 'Peer js'},
       
     {name: 'C++'},
     {name: 'C'},
@@ -89,7 +90,7 @@ const SkillSet = () => {
           <h2 className="text-2xl md:text-3xl font-bold mb-3 text-white">
             Skill Set
           </h2>
-          <p className="text-neutral-300 text-sm mb-12">
+          <p className="text-neutral-300 text-md mb-12">
             Technologies I work with, categorized by proficiency level
           </p>
           <div className="space-y-4">

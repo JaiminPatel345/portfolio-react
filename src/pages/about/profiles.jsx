@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 import {AnimatePresence, motion} from 'framer-motion';
 import {
   IconBrandCodepen,
@@ -49,7 +49,8 @@ const LeetCodeDetailModal = ({isOpen, onClose, problemData, contestData}) => {
                 <h2 className="text-2xl sm:text-3xl font-bold text-white">LeetCode
                   Profile</h2>
                 <LinkPreview url="https://leetcode.com/u/soldier_of_god">
-                  <div className="flex gap-3 hover:underline items-center text-xl">
+                  <div
+                      className="flex gap-3 hover:underline items-center text-xl">
                     Show more on LeetCode
                     <IconExternalLink stroke={2}/>
                   </div>
@@ -170,7 +171,8 @@ const CodeChefDetailModal = ({isOpen, onClose, data}) => {
                 <span className="text-gray-400">{data.countryName}</span>
               </div>
               <LinkPreview url={`https://www.codechef.com/users/${data.name}`}>
-                <div className="flex gap-3 hover:underline items-center text-xl">
+                <div
+                    className="flex gap-3 hover:underline items-center text-xl">
                   Show more on CodeChef
                   <IconExternalLink stroke={2}/>
                 </div>
@@ -340,21 +342,24 @@ const Profiles = () => {
           <h2 className="text-lg md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
             Contributions & Profiles
           </h2>
-          <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base">
+          <p className="text-neutral-700 dark:text-neutral-300 text-md md:text-base">
             My open source contributions and coding achievements across
             different platforms.
           </p>
         </div>
 
         {/* Contributions Section */}
-        <div className="max-w-5xl mx-auto mb-24"> 
+        <div className="max-w-5xl mx-auto mb-24">
           <h3 className="text-lg md:text-2xl mb-4 text-black dark:text-white max-w-4xl">
             Open Source Contributions
-            {"   "}
-            <LinkPreview url="https://github.com/JaiminPatel345">
-              <span className="italic text-sm text-blue-400">My GitHub</span>
-            </LinkPreview>
-            
+            {'   '}
+            <span className="italic text-sm text-blue-400 flex gap-4">
+              <LinkPreview url="https://github.com/JaiminPatel345">
+                My GitHub
+              </LinkPreview>
+                <p className={'text-gray-200'}> ( List will be gone big )</p>
+            </span>
+
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {contributions.map((contribution, index) => (
@@ -395,7 +400,8 @@ const Profiles = () => {
                       </div>
                       <div className="flex items-center">
                         <LinkPreview url={contribution.url}>
-                          <div className="text-blue-400 hover:text-blue-300 transition-colors flex items-center">
+                          <div
+                              className="text-blue-400 hover:text-blue-300 transition-colors flex items-center">
                             <span>View Repository</span>
                             <IconExternalLink size={16} className="ml-1"/>
                           </div>

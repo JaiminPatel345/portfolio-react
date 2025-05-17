@@ -5,22 +5,28 @@ export const Intro = () => {
           <h2 className="text-2xl md:text-3xl font-bold mb-3 text-white">
             About Me
           </h2>
-          <p className="text-neutral-300 text-sm mb-12">
+          <p className="text-neutral-300 text-md mb-12">
             A short Intro of my self  
           </p>
           <div className="space-y-4 pl-10">
-            <ul className="list-disc">
+            <ul className="list-disc text-gray-200 text-xl">
               <li>
-                Backend-first Full Stack JavaScript Developer
+                Backend-first Full Stack <strong>JavaScript Developer</strong>
               </li>
               <li>
-                Machine Learning Enthusiast
+                <strong>Machine Learning</strong> Enthusiast
               </li>
               <li>
-                Open Source Contributor
+                Open Source Contributor (beginner)
               </li>
               <li>
-                Strong in DSA with Java
+                Strong in <strong>DSA</strong> with <strong>Java</strong>
+              </li>
+              <li>
+                2026 Passout of <strong>Computer Science Student</strong> from BVM, Anand, Gujarat
+              </li>
+              <li>
+                Wanna Chess Match ? <i><u><a href={'https://www.chess.com/member/jaimindetroja'} target={'_blank'}>Chess.com</a></u></i>
               </li>
             </ul>
 
