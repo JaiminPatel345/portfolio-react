@@ -237,10 +237,13 @@ const Projects = () => {
                         
                         <div className="mt-4">
                           <h4 className="text-sm uppercase font-semibold tracking-wider text-neutral-500 dark:text-neutral-400 mb-2">Key Features</h4>
-                          <ul className="space-y-2">
+                          <ul className="space-y-3">
                             {project.points.map((point, i) => (
-                              <li key={i} className="text-neutral-700 dark:text-neutral-300">
-                                <MarkdownRenderer markdown={point} />
+                              <li key={i} className="text-neutral-800 dark:text-neutral-200 flex items-start">
+                                <span className="text-blue-500 dark:text-blue-400 mr-2 mt-1 flex-shrink-0">•</span>
+                                <div className="flex-grow">
+                                  <MarkdownRenderer markdown={point} />
+                                </div>
                               </li>
                             ))}
                           </ul>
@@ -296,7 +299,7 @@ const Projects = () => {
                               onClick={(e) => e.stopPropagation()}
                             >
                               <IconExternalLink className="w-5 h-5" />
-                              <span>Download APK</span>
+                              <span>APK</span>
                             </a>
                           )}
                         </div>

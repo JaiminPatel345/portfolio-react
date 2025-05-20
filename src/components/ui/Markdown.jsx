@@ -11,42 +11,55 @@ export const markdownStyles = `
   }
   
   .markdown-content a {
-    color: #8ab4f8;
+    color: var(--primary-500);
     text-decoration: none;
     transition: color 0.2s ease;
     position: relative;
   }
   
   .markdown-content a:hover {
-    color: #afc9ff;
+    color: var(--primary-400);
     text-decoration: underline;
   }
   
   .markdown-content strong {
     font-weight: 600;
-    color: #f0f0f0;
+    color: var(--primary-500);
+  }
+  
+  .dark .markdown-content strong {
+    color: var(--primary-400);
   }
   
   .markdown-content em {
     font-style: italic;
-    color: #d0d0d0;
+  }
+  
+  /* Ensure the text is visible in both light and dark modes */
+  .dark .markdown-content {
+    color: #e0e0e0;
   }
 `;
 
 // Custom renderer for markdown links using regular anchor tags
-export const MarkdownRenderer = ({children}) => {
+export const MarkdownRenderer = ({markdown}) => {
   const components = {
     a: ({node, ...props}) => (
-        <a href={props.href} target="_blank" rel="noopener noreferrer" className="text-[#8ab4f8] hover:text-[#afc9ff] hover:underline">
+        <a href={props.href} target="_blank" rel="noopener noreferrer" className="text-blue-500 dark:text-blue-400 hover:text-blue-600 dark:hover:text-blue-300 hover:underline">
           {props.children}
         </a>
+    ),
+    strong: ({node, ...props}) => (
+        <strong className="font-semibold text-primary-500 dark:text-primary-400">
+          {props.children}
+        </strong>
     ),
   };
 
   return (
       <span className="markdown-content">
       <ReactMarkdown components={components}>
-        {children}
+        {markdown}
       </ReactMarkdown>
     </span>
   );

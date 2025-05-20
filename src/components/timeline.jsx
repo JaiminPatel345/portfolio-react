@@ -39,7 +39,7 @@ const Timeline = ({ experiences }) => {
                         className="flex flex-col md:flex-row md:justify-start pt-10 md:pt-40 md:gap-16 relative mb-16 md:mb-6"
                     >
                         {/* Left side - Date and Duration (Positioned differently on mobile) */}
-                        <div className="md:sticky flex flex-col z-40 md:top-40 self-start md:w-48 mb-5 md:mb-0">
+                        <div className="md:sticky flex flex-col z-20 md:top-40 self-start md:w-48 mb-5 md:mb-0">
                             <div className="pl-16 md:pl-12">
                                 <div className="text-base font-medium bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 px-4 py-1 rounded-full inline-block md:block">
                                     {experience.startDate} -{" "}
