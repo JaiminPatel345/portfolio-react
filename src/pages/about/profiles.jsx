@@ -11,7 +11,6 @@ import {
 } from '@tabler/icons-react';
 import {getCodechefData} from '../../hooks/codechefData.js';
 import {getContestData, getProblemData} from '../../hooks/leetcodeData.js';
-import {LinkPreview} from '../../components/ui/LinkPreview.jsx';
 
 const LeetCodeDetailModal = ({isOpen, onClose, problemData, contestData}) => {
   if (!isOpen || !problemData || !contestData) return null;
@@ -48,13 +47,13 @@ const LeetCodeDetailModal = ({isOpen, onClose, problemData, contestData}) => {
               <div className="flex flex-col gap-2">
                 <h2 className="text-2xl sm:text-3xl font-bold text-white">LeetCode
                   Profile</h2>
-                <LinkPreview url="https://leetcode.com/u/soldier_of_god">
+                <a href="https://leetcode.com/u/soldier_of_god" target="_blank" rel="noopener noreferrer">
                   <div
-                      className="flex gap-3 hover:underline items-center text-xl">
+                      className="flex gap-3 hover:underline items-center text-xl text-blue-400">
                     Show more on LeetCode
                     <IconExternalLink stroke={2}/>
                   </div>
-                </LinkPreview>
+                </a>
               </div>
               <p className="text-gray-400">Total Problems
                 Solved: {totalSolved}</p>
@@ -170,13 +169,13 @@ const CodeChefDetailModal = ({isOpen, onClose, data}) => {
                      className="w-6 h-4"/>
                 <span className="text-gray-400">{data.countryName}</span>
               </div>
-              <LinkPreview url={`https://www.codechef.com/users/${data.name}`}>
+              <a href={`https://www.codechef.com/users/${data.name}`} target="_blank" rel="noopener noreferrer">
                 <div
-                    className="flex gap-3 hover:underline items-center text-xl">
+                    className="flex gap-3 hover:underline items-center text-xl text-blue-400">
                   Show more on CodeChef
                   <IconExternalLink stroke={2}/>
                 </div>
-              </LinkPreview>
+              </a>
             </div>
           </div>
 
@@ -241,17 +240,35 @@ const Profiles = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [problemData, contestData, ccData] = await Promise.all([
-          getProblemData(),
-          getContestData(),
-          getCodechefData(),
-        ]);
+        // Fetch each data source independently to handle individual failures
+        let problemData, contestData, ccData;
+        
+        try {
+          problemData = await getProblemData();
+        } catch (error) {
+          console.error('Error fetching LeetCode problem data:', error);
+          // The getProblemData function will return default data on error
+        }
+        
+        try {
+          contestData = await getContestData();
+        } catch (error) {
+          console.error('Error fetching LeetCode contest data:', error);
+          // The getContestData function will return default data on error
+        }
+        
+        try {
+          ccData = await getCodechefData();
+        } catch (error) {
+          console.error('Error fetching CodeChef data:', error);
+          // The getCodechefData function will return default data on error
+        }
 
         setLeetcodeProblemData(problemData);
         setLeetcodeContestData(contestData);
         setCodechefData(ccData);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error('Error in overall data fetching:', error);
       } finally {
         setLoading(false);
       }
@@ -354,12 +371,11 @@ const Profiles = () => {
             Open Source Contributions
             {'   '}
             <span className="italic text-sm text-blue-400 flex gap-4">
-              <LinkPreview url="https://github.com/JaiminPatel345">
+              <a href="https://github.com/JaiminPatel345" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 hover:underline">
                 My GitHub
-              </LinkPreview>
-                <p className={'text-gray-200'}> ( List will be gone big )</p>
+              </a>
+              <p className={'text-gray-200'}> ( List will be gone big )</p>
             </span>
-
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {contributions.map((contribution, index) => (
@@ -399,13 +415,13 @@ const Profiles = () => {
 
                       </div>
                       <div className="flex items-center">
-                        <LinkPreview url={contribution.url}>
+                        <a href={contribution.url} target="_blank" rel="noopener noreferrer">
                           <div
                               className="text-blue-400 hover:text-blue-300 transition-colors flex items-center">
                             <span>View Repository</span>
                             <IconExternalLink size={16} className="ml-1"/>
                           </div>
-                        </LinkPreview>
+                        </a>
                       </div>
                     </div>
                   </div>

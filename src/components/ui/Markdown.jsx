@@ -1,5 +1,4 @@
 import ReactMarkdown from 'react-markdown';
-import {LinkPreview} from './LinkPreview.jsx';
 
 export const markdownStyles = `
   .markdown-content {
@@ -32,19 +31,15 @@ export const markdownStyles = `
     font-style: italic;
     color: #d0d0d0;
   }
-  
-  .link-preview-card {
-    display: inline-block;
-  }
 `;
 
-// Custom renderer for markdown links to use LinkPreview
+// Custom renderer for markdown links using regular anchor tags
 export const MarkdownRenderer = ({children}) => {
   const components = {
     a: ({node, ...props}) => (
-        <LinkPreview url={props.href}>
+        <a href={props.href} target="_blank" rel="noopener noreferrer" className="text-[#8ab4f8] hover:text-[#afc9ff] hover:underline">
           {props.children}
-        </LinkPreview>
+        </a>
     ),
   };
 

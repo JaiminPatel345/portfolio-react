@@ -40,9 +40,9 @@ const getSkillIcon = (skillName) => {
     ,
 
     'Peer js': <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    xlinkHref="http://www.w3.org/1999/xlink" x="0px" y="0px"
                     viewBox="0 0 256 256" enableBackground="new 0 0 256 256"
-                    xml:space="preserve">
+                    xmlSpace="preserve">
 <metadata> Svg Vector Icons : http://www.onlinewebfonts.com/icon </metadata>
       <g><g><path fill="#000000" d="M246,211.5H185c0-70.3-33.2-36.9-33.2-98.5c0-22.2,13.7-34.3,31.4-34.3c26.1,0,44.2,26.4,19.5,75.7c-8.1,16.2,8.6,20,26.6,24.4C247.3,183.3,246,193.3,246,211.5z M147,170.4c-22.6-5.5-43.7-10.4-33.5-30.8c31-62,8.2-95.2-24.6-95.2c-33.4,0-55.7,34.4-24.6,95.2C74.9,160.2,53,165,30.9,170.4C8.3,175.9,10,188.6,10,211.5h157.8C167.9,188.6,169.6,176,147,170.4z"/></g></g>
 </svg>

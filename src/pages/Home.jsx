@@ -4,6 +4,7 @@ import {commands, themes, welcomeMessage} from '../utils/commands.jsx';
 import {
   IconBrandGithub,
   IconBrandLinkedin,
+  IconFileCv,
   IconMail,
 } from '@tabler/icons-react';
 
@@ -31,13 +32,13 @@ const Home = () => {
               className="flex flex-col items-center md:items-start space-y-4 mb-6">
             <h1
                 className={
-                  'text-white text-3xl md:text-5xl text-center md:text-left z-50'
+                  'text-white text-3xl md:text-5xl text-center md:text-left z-30'
                 }
             >
               Jaimin Detroja
             </h1>
             <div
-                className="text-blue-400 text-lg md:text-2xl text-center z-50 md:text-left">
+                className="text-blue-400 text-lg md:text-2xl text-center z-30 md:text-left">
               <FlipWords words={words}/>
             </div>
 
@@ -50,6 +51,9 @@ const Home = () => {
                   stroke={2}/></a>
               <a target={'_blank'}
                  href={`https://www.linkedin.com/in/jaimindetroja345`}><IconBrandLinkedin
+                  stroke={2}/></a>
+              <a target={'_blank'}
+                 href={`https://drive.google.com/drive/folders/1nZtEwQeZXatneEilDkSel_jTYtBRgjhv`}><IconFileCv
                   stroke={2}/></a>
             </div>
 

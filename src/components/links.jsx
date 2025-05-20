@@ -12,35 +12,35 @@ export function Navbar() {
         {
             title: "Home",
             icon: (
-                <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300"/>
+                <IconHome className="h-full w-full text-neutral-600 dark:text-neutral-300"/>
             ),
             href: "/",
         },
         {
-            title: "About Me",
+            title: "About",
             icon: (
-                <IconUser className="h-full w-full text-neutral-500 dark:text-neutral-300"/>
+                <IconUser className="h-full w-full text-neutral-600 dark:text-neutral-300"/>
             ),
             href: "/about",
         },
         {
             title: "Work",
             icon: (
-                <IconDeviceLaptop className="h-full w-full text-neutral-500 dark:text-neutral-300"/>
+                <IconDeviceLaptop className="h-full w-full text-neutral-600 dark:text-neutral-300"/>
             ),
             href: "/work",
         },
         {
             title: "Connect",
             icon: (
-                <IconLink className="h-full w-full text-neutral-500 dark:text-neutral-300"/>
+                <IconLink className="h-full w-full text-neutral-600 dark:text-neutral-300"/>
             ),
             href: "/connect",
         },
         {
             title: "Resume",
             icon: (
-                <IconFileDescription className="h-full w-full text-neutral-500 dark:text-neutral-300"/>
+                <IconFileDescription className="h-full w-full text-neutral-600 dark:text-neutral-300"/>
             ),
             target: "_blank",
             href: "https://drive.google.com/drive/folders/1nZtEwQeZXatneEilDkSel_jTYtBRgjhv?usp=sharing",
@@ -48,11 +48,11 @@ export function Navbar() {
     ]
 
     return (
-        <div className="fixed top-5 right-12 z-50">
-            <div className="flex items-center justify-center">
+        <div className="fixed top-0 left-0 right-0 z-50 px-4 py-2">
+            <div className="flex items-center justify-end">
                 <FloatingDock
-                    desktopClassName="scale-110"
-                    mobileClassName="right-0"
+                    desktopClassName="bg-white dark:bg-neutral-800 shadow-md"
+                    mobileClassName="right-4"
                     items={links}
                 />
             </div>

@@ -1,7 +1,6 @@
 import {IconBrandGithub, IconExternalLink} from '@tabler/icons-react';
 import {MarkdownRenderer, markdownStyles} from '../../components/ui/Markdown.jsx';
-import {LinkPreview} from '../../components/ui/LinkPreview.jsx';
-
+import { useRef } from "react";
 
 const Projects = () => {
   const projects = [
@@ -157,106 +156,123 @@ const Projects = () => {
     },
   ];
 
-  return (
-      <div className="min-h-screen text-[#f5f5f5] py-16 relative p-3 md:p-10"
-           id="projects">
-        <style>{markdownStyles}</style>
-        <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
-          <h2 className="text-xl md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
-            My Personal Projects
-          </h2>
-          <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm">
-            Projects showcasing my skills and creativity.
-          </p>
-        </div>
+  const containerRef = useRef(null);
 
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {projects.map((project, index) => (
-                <div key={index}
-                     className="bg-[#2e2e2e] rounded-xl shadow-xl transition-all duration-300 hover:shadow-2xl">
-                  <div className="w-full h-48 overflow-hidden rounded-t-xl">
-                    <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover"
+  return (
+    <div 
+      className="min-h-screen text-[#f5f5f5] py-8 md:py-16 relative p-3 md:p-10"
+      id="projects"
+      ref={containerRef}
+    >
+      <style>{markdownStyles}</style>
+      <div className="max-w-7xl mx-auto py-10 md:py-20 px-4 md:px-8 lg:px-10">
+        <h2 className="text-xl md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
+          My Personal Projects
+        </h2>
+        <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm">
+          Projects showcasing my skills and creativity.
+        </p>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 relative">
+        {/* Projects with staggered layout */}
+        <div className="flex flex-col gap-16 md:gap-24">
+          {projects.map((project, index) => (
+            <div key={index} className="relative">
+              {/* Project date tag */}
+              <div className="absolute -top-4 right-4 md:right-8 bg-neutral-100 dark:bg-neutral-800/50 px-4 py-1 rounded-full z-10">
+                <span className="text-neutral-700 dark:text-neutral-300 font-medium text-sm">
+                  {project.time}
+                </span>
+              </div>
+              
+              {/* Project card with offset image and content */}
+              <div className="relative bg-white dark:bg-neutral-900 rounded-2xl shadow-lg overflow-hidden p-5 md:p-8 border border-neutral-200 dark:border-neutral-800">
+                
+                {/* Project title */}
+                <h3 className="text-xl md:text-2xl font-bold text-neutral-900 dark:text-white mb-4">
+                  {project.title}
+                </h3>
+                
+                <div className="flex flex-col lg:flex-row gap-6 md:gap-8">
+                  {/* Project image */}
+                  <div className="w-full lg:w-2/5 h-[250px] md:h-[280px] rounded-xl shadow-md overflow-hidden">
+                    <img 
+                      src={project.image} 
+                      alt={project.title} 
+                      className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-110"
                     />
                   </div>
-                  <div className="p-6 md:p-8 relative">
-                    <div
-                        className="absolute right-4 top-4 text-sm text-gray-400 font-medium">
-                      {project.time}
-                    </div>
-
-                    <div className="mb-5 pt-4">
-                      <h2 className="text-2xl font-bold text-primary mb-3">{project.title}</h2>
-                      <p className="text-base text-[#b5b5b5] font-medium">{project.description}</p>
-
-                      <ul className="mt-3 space-y-2">
+                  
+                  {/* Project content */}
+                  <div className="w-full lg:w-3/5">
+                    <div className="bg-neutral-50 dark:bg-neutral-800 rounded-xl p-4 md:p-6 shadow-sm">
+                      <p className="text-neutral-800 dark:text-neutral-200 mb-4">
+                        {project.description}
+                      </p>
+                      
+                      <ul className="space-y-2 mb-5">
                         {project.points.map((point, idx) => (
-                            <li key={idx}
-                                className="text-sm text-[#b5b5b5] flex">
-                              <span className="mr-2">•</span>
-                              <MarkdownRenderer>
-                                {point}
-                              </MarkdownRenderer>
-                            </li>
+                          <li key={idx} className="text-sm md:text-base text-neutral-700 dark:text-neutral-300 flex">
+                            <span className="mr-2 text-primary">•</span>
+                            <MarkdownRenderer>{point}</MarkdownRenderer>
+                          </li>
                         ))}
                       </ul>
-                    </div>
-
-                    <div
-                        className="divider before:bg-[#444444] after:bg-[#444444] my-4"></div>
-
-                    {/* Technologies */}
-                    <div className="mb-5">
-                      <p className="text-sm font-semibold text-gray-300 mb-2">Technologies:</p>
-                      <div className="flex flex-wrap gap-2">
-                        {project.technology.map((tech, idx) => (
-                            <span key={idx}
-                                  className="px-3 py-1 text-sm rounded-full bg-[#363535] text-[#f5f5f5]">
-                        {tech}
-                      </span>
-                        ))}
+                      
+                      {/* Technologies */}
+                      <div className="mb-5">
+                        <p className="text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-3">
+                          Technologies:
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {project.technology.map((tech, idx) => (
+                            <span 
+                              key={idx}
+                              className="px-3 py-1 text-xs md:text-sm rounded-full bg-neutral-200 dark:bg-neutral-700 text-neutral-800 dark:text-neutral-200"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
                       </div>
-                    </div>
+                      
+                      {/* Links */}
+                      <div className="flex flex-wrap gap-4 justify-center">
+                        <a href={project.github} target="_blank" rel="noopener noreferrer">
+                          <button className="btn btn-outline btn-primary btn-sm md:btn-md gap-2 hover:scale-105">
+                            <IconBrandGithub size={16} stroke={1.5}/>
+                            Source
+                          </button>
+                        </a>
 
-                    {/* Links with LinkPreview */}
-                    <div className="flex flex-wrap gap-3 mt-5 justify-center">
-                      <LinkPreview url={project.github}>
-                        <button
-                            className="btn btn-outline btn-primary gap-2 hover:scale-105">
-                          <IconBrandGithub size={18} stroke={1.5}/>
-                          View Source
-                        </button>
-                      </LinkPreview>
-
-                      {project.live && (
-                          <LinkPreview url={project.live}>
-                            <button
-                                className="btn btn-primary gap-2 hover:scale-105">
-                              <IconExternalLink size={18} stroke={1.5}/>
-                              Live Demo
+                        {project.live && (
+                          <a href={project.live} target="_blank" rel="noopener noreferrer">
+                            <button className="btn btn-primary btn-sm md:btn-md gap-2 hover:scale-105">
+                              <IconExternalLink size={16} stroke={1.5}/>
+                              Demo
                             </button>
-                          </LinkPreview>
-                      )}
+                          </a>
+                        )}
 
-                      {project.apk && (
-                          <LinkPreview url={project.apk}>
-                            <button
-                                className="btn btn-primary gap-2 hover:scale-105">
-                              <IconExternalLink size={18} stroke={1.5}/>
-                              APK Link
+                        {project.apk && (
+                          <a href={project.apk} target="_blank" rel="noopener noreferrer">
+                            <button className="btn btn-primary btn-sm md:btn-md gap-2 hover:scale-105">
+                              <IconExternalLink size={16} stroke={1.5}/>
+                              APK
                             </button>
-                          </LinkPreview>
-                      )}
+                          </a>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
-            ))}
-          </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
+    </div>
   );
 };
 
