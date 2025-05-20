@@ -1,5 +1,6 @@
 import {Mail, Phone} from 'lucide-react';
-import {IconBrandGithub, IconBrandLinkedin , IconFileDescription} from '@tabler/icons-react';
+import {IconBrandGithub, IconBrandLinkedin, IconFileDescription} from '@tabler/icons-react';
+import { motion } from 'framer-motion';
 
 const Connect = () => {
     const socialLinks = [{
@@ -33,71 +34,96 @@ const Connect = () => {
 
     return (
         <section
-            className="min-h-screen px-3 md:px-10"
+            className="min-h-screen px-3 md:px-10 py-20"
             id="connect"
         >
-            <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10 flex flex-col gap-10">
-                <div className="mb-3 md:mb-12">
-                    <h2 className="text-xl md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
-                        {"Connect"}
+            <div className="max-w-4xl mx-auto py-10 px-4 md:px-8 lg:px-10 flex flex-col gap-10">
+                <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="mb-3 md:mb-12"
+                >
+                    <h2 className="text-3xl md:text-5xl font-bold mb-4 text-black dark:text-white max-w-4xl">
+                        {"Let's Connect"}
                     </h2>
-                    <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm">
-                        {`Let’s connect and collaborate!`}
+                    <p className="text-neutral-700 dark:text-neutral-300 text-base md:text-lg max-w-lg">
+                        {`I'm always open to new opportunities, collaborations, and conversations.`}
                     </p>
-
-                </div>
+                </motion.div>
 
                 {/* Social Links */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
-                    {socialLinks.map((link) => (
-                        <a
+                <motion.div 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    className="grid grid-cols-1 md:grid-cols-2 gap-6"
+                >
+                    {socialLinks.map((link, index) => (
+                        <motion.a
                             key={link.name}
                             href={link.url}
                             target="_blank"
                             rel="noopener noreferrer"
                             className={`
-                block p-6 rounded-xl
-                bg-gray-800 backdrop-blur-sm
-                transform transition-all duration-300
-                hover:scale-105 
-                border border-gray-700
-                hover:border-gray-500
-                group
-              `}
+                                block p-6 rounded-xl
+                                bg-white dark:bg-neutral-800 
+                                transform transition-all duration-300
+                                hover:scale-105 
+                                border border-neutral-200 dark:border-neutral-700
+                                hover:border-neutral-300 dark:hover:border-neutral-600
+                                shadow-sm hover:shadow-md
+                                group
+                            `}
+                            whileHover={{ scale: 1.02 }}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.3, delay: 0.1 * index }}
                         >
                             <div className="flex items-center space-x-4">
-                                <div className={`transition-transform duration-300 text-white`}>
+                                <div className={`transition-transform duration-300 text-blue-500 dark:text-blue-400 group-hover:text-blue-600 dark:group-hover:text-blue-300`}>
                                     {link.icon}
                                 </div>
-                                <span className="text-xl font-semibold">{link.name}</span>
+                                <span className="text-xl font-semibold text-neutral-900 dark:text-white">{link.name}</span>
                             </div>
-                        </a>
+                        </motion.a>
                     ))}
-                </div>
+                </motion.div>
 
                 {/* Contact Information */}
-                <div className="space-y-6">
-                    {contactInfo.map((info) => (
-                        <a
+                <motion.div 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                    className="space-y-4"
+                >
+                    {contactInfo.map((info, index) => (
+                        <motion.a
                             key={info.name}
                             className="flex items-center space-x-4 p-4 rounded-lg
-                         bg-gray-800/50 backdrop-blur-sm
-                         transform transition-all duration-300
-                         hover:translate-x-2"
+                                bg-white dark:bg-neutral-800 
+                                transform transition-all duration-300
+                                hover:translate-x-2
+                                border border-neutral-200 dark:border-neutral-700
+                                hover:border-neutral-300 dark:hover:border-neutral-600
+                                shadow-sm hover:shadow-md"
                             href={info.link}
                             target="_blank"
+                            whileHover={{ x: 8 }}
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.3, delay: 0.1 * index }}
                         >
-                            <div className="text-blue-400">
+                            <div className="text-blue-500 dark:text-blue-400">
                                 {info.icon}
                             </div>
                             <div>
-                                <p className="text-sm text-gray-400">{info.name}</p>
-                                <p className="text-lg font-medium">{info.value}</p>
+                                <p className="text-sm text-neutral-500 dark:text-neutral-400">{info.name}</p>
+                                <p className="text-lg font-medium text-neutral-900 dark:text-white">{info.value}</p>
                             </div>
-                        </a>
+                        </motion.a>
                     ))}
-                </div>
-
+                </motion.div>
             </div>
         </section>
     );

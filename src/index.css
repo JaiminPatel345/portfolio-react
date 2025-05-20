@@ -5,3 +5,22 @@
 html{
     scroll-behavior: smooth;
 }
+
+.dark-mode-whoami {
+    color: #64ffda; /* Teal in dark mode */
+}
+
+.light,
+html:not(.dark)  {
+    color: #3b82f6; /* Blue-500 in light mode */
+}
+
+.light-mode-whoami,
+html:not(.dark) .light-mode-whoami {
+    color: blue;
+}
+
+.dark .dark-mode-whoami,
+html.dark .dark-mode-whoami {
+    color: #64ffda; /* Keep the original teal in dark mode */
+}

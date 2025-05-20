@@ -18,7 +18,7 @@ function Experience() {
                 "Built a strong network of tech enthusiasts and professionals",
                 "Collaborated with other GDG chapters across India",
             ],
-            startDate: "Sep 2024",
+            startDate: "Sep '24",
             endDate: "Present",
             duration: null,
         },
@@ -39,9 +39,9 @@ function Experience() {
                 "Collaborated with the team to troubleshoot technical issues and enhance the platform",
                 "Familiarized with professional platforms such as Slack and Jira",
             ],
-            startDate: "Jun 2022",
-            endDate: "Dec 2022",
-            duration: "6 months",
+            startDate: "Jun",
+            endDate: "July '24",
+            duration: "2 months",
         },
     ]
 

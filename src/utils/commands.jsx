@@ -16,7 +16,7 @@ export const commands = {
     </span>
   ),
 
-  whoami: <span style={{color: '#64ffda'}}>
+  whoami: <span className="light-mode-whoami dark-mode-whoami">
     <pre>
 {`
      ,--.        ,--.          ,--.         
@@ -314,10 +314,16 @@ export const welcomeMessage = (
 );
 
 export const themes = {
+  'light': {
+    themeBGColor: '#ffffff',
+    themeToolbarColor: '#f5f5f5',
+    themeColor: '#333333',
+    themePromptColor: '#3b82f6', // blue-500
+  },
   'my-custom-theme': {
-    themeBGColor: '#272B36',
-    themeToolbarColor: '#0D1424',
-    themeColor: '#FFFEFC',
-    themePromptColor: '#a917a8',
+    themeBGColor: '#1f2937', // dark:neutral-800
+    themeToolbarColor: '#111827', // dark:neutral-900
+    themeColor: '#f9fafb', // dark:neutral-50
+    themePromptColor: '#60a5fa', // dark:blue-400
   },
 };

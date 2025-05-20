@@ -8,7 +8,7 @@ const EducationCard = ({
   degree, 
   duration, 
   achievements,
-  color = '#FFFFFF'
+  color = '#3b82f6'
 }) => {
   return (
     <motion.div
@@ -18,39 +18,34 @@ const EducationCard = ({
       className="relative w-full mb-6"
     >
       <motion.div 
-        className="rounded-lg bg-neutral-900 p-6 border-l-4 shadow-lg hover:shadow-xl transition-all duration-300"
+        className="rounded-lg bg-white dark:bg-neutral-800 p-6 border-l-4 shadow-md hover:shadow-lg transition-all duration-300 border border-neutral-200 dark:border-neutral-700 hover:border-y-blue-300 hover:border-r-blue-300 dark:hover:border-y-blue-500 dark:hover:border-r-blue-500"
         style={{ borderLeftColor: color }}
-        whileHover={{ 
-          x: 5,
-          boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-          transition: { duration: 0.3 }
-        }}
       >
         <div className="flex flex-col md:flex-row md:items-start gap-4">
           <div className="flex-shrink-0">
-            <div className="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center">
+            <div className="w-12 h-12 rounded-full bg-neutral-100 dark:bg-neutral-700 flex items-center justify-center">
               <GraduationCap size={24} style={{ color }} />
             </div>
           </div>
           
           <div className="space-y-3 flex-grow">
             <div>
-              <h3 className="text-xl font-bold" style={{ color }}>
+              <h3 className="text-xl font-bold text-neutral-900 dark:text-white">
                 {institution}
               </h3>
-              <p className="text-neutral-400">{location}</p>
+              <p className="text-neutral-600 dark:text-neutral-400">{location}</p>
             </div>
             
             <div className="flex items-center gap-2">
-              <CalendarDays size={16} className="text-neutral-500" />
-              <span className="text-neutral-300">{degree} | {duration}</span>
+              <CalendarDays size={16} className="text-neutral-500 dark:text-neutral-500" />
+              <span className="text-neutral-700 dark:text-neutral-300">{degree} | {duration}</span>
             </div>
             
-            <div className="space-y-1">
+            <div className="space-y-2">
               {achievements && achievements.map((achievement, index) => (
                 <div key={index} className="flex items-start gap-2">
-                  <Award size={16} className="text-neutral-500 mt-1" />
-                  <p className="text-neutral-300">{achievement}</p>
+                  <Award size={16} className="text-neutral-500 dark:text-neutral-500 mt-1" />
+                  <p className="text-neutral-700 dark:text-neutral-300">{achievement}</p>
                 </div>
               ))}
             </div>

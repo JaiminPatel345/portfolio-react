@@ -4,11 +4,13 @@ import {commands, themes, welcomeMessage} from '../utils/commands.jsx';
 import {
   IconBrandGithub,
   IconBrandLinkedin,
-  IconFileCv,
   IconMail,
 } from '@tabler/icons-react';
+import { motion } from 'framer-motion';
+import { useTheme } from '../lib/ThemeProvider';
 
 const Home = () => {
+  const { theme } = useTheme();
   const words = [
     'DSA Enthusiast',
     'Problem Solver',
@@ -16,72 +18,84 @@ const Home = () => {
     'Open-Source Contributor',
     'Continuous Learner',
   ];
+  
   return (
+    <div
+      className="min-h-screen relative w-full overflow-hidden flex items-center justify-center flex-col gap-10 py-16"
+      id="home" 
+    >
       <div
-          className="h-screen relative w-full overflow-hidden bg-slate-900 flex items-center justify-center flex-col gap-10"
-          id="home"
+        className="absolute inset-0 w-full h-full bg-gradient-to-b from-transparent z-10 pointer-events-none"
+      />
+
+      {/* Main Content */}
+      <div
+        className="flex flex-col md:flex-row items-center md:items-center justify-center md:justify-between w-full max-w-6xl px-4 md:px-8 z-20"
       >
-        <div
-            className="absolute inset-0 w-full h-full bg-black z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none flex flex-row"/>
-
-        {/* Main Content */}
-        <div
-            className=" flex flex-col md:flex-row items-center md:items-center justify-center md:justify-between w-full max-w-6xl  px-4 md:px-8">
-          {/* Left Section: Text and Animation */}
-          <div
-              className="flex flex-col items-center md:items-start space-y-4 mb-6">
-            <h1
-                className={
-                  'text-white text-3xl md:text-5xl text-center md:text-left z-30'
-                }
-            >
-              Jaimin Detroja
-            </h1>
-            <div
-                className="text-blue-400 text-lg md:text-2xl text-center z-30 md:text-left">
-              <FlipWords words={words}/>
-            </div>
-
-            <div className={'flex gap-5 text-gray-300 z-30 ml-2'}>
-              <a target={'_blank'}
-                 href={`mailto:officialjaimin345@gmail.com`}><IconMail
-                  stroke={2}/></a>
-              <a target={'_blank'}
-                 href={`https://github.com/jaiminpatel345`}><IconBrandGithub
-                  stroke={2}/></a>
-              <a target={'_blank'}
-                 href={`https://www.linkedin.com/in/jaimindetroja345`}><IconBrandLinkedin
-                  stroke={2}/></a>
-              <a target={'_blank'}
-                 href={`https://drive.google.com/drive/folders/1nZtEwQeZXatneEilDkSel_jTYtBRgjhv`}><IconFileCv
-                  stroke={2}/></a>
-            </div>
-
+        {/* Left Column - Text Introduction */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="flex flex-col items-center md:items-start gap-4 mb-10 md:mb-0 text-center md:text-left w-full md:w-1/2"
+        >
+          <h1 className="text-4xl md:text-6xl font-bold text-neutral-900 dark:text-white">
+            Jaimin <span className="text-blue-500 dark:text-blue-400">Detroja</span>
+          </h1>
+          <h2 className="text-xl md:text-2xl font-medium text-neutral-700 dark:text-neutral-300">
+            Full Stack Developer
+          </h2>
+          <div className="mt-2">
+            <FlipWords words={words} />
           </div>
-
-          {/* Right Section: Image */}
-          {/*<div className="mask z-40 ">*/}
-          {/*  <img*/}
-          {/*      src="https://res.cloudinary.com/dm4xqk12g/image/upload/v1746390124/2023-04-05_001_209_t64pgt.jpg"*/}
-          {/*      alt="My  photo"*/}
-          {/*      className="rounded-full h-40 w-40 md:w-72 md:h-72 "*/}
-          {/*  />*/}
-          {/*</div>*/}
-
-          {/*Terminal*/}
-        </div>
-        <div className="z-40 w-[70vw]  h-[50vh]">
-          <ReactTerminal
-              themes={themes}
-              theme="my-custom-theme"
-              commands={commands}
-              prompt="Jaimin ~ $"
+          
+          {/* Social Links */}
+          <div className="flex gap-4 mt-4">
+            <a 
+              href="https://github.com/jaiminpatel345" 
+              target="_blank"
+              className="bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white hover:text-blue-500 dark:hover:text-blue-400 p-3 rounded-full border border-neutral-200 dark:border-neutral-700 hover:border-blue-300 dark:hover:border-blue-500 shadow-sm hover:shadow-md transition-all"
+            >
+              <IconBrandGithub size={20} />
+            </a>
+            <a 
+              href="https://www.linkedin.com/in/jaimindetroja345" 
+              target="_blank"
+              className="bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white hover:text-blue-500 dark:hover:text-blue-400 p-3 rounded-full border border-neutral-200 dark:border-neutral-700 hover:border-blue-300 dark:hover:border-blue-500 shadow-sm hover:shadow-md transition-all"
+            >
+              <IconBrandLinkedin size={20} />
+            </a>
+            <a 
+              href="mailto:officialjaimin345@gmail.com" 
+              target="_blank"
+              className="bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white hover:text-blue-500 dark:hover:text-blue-400 p-3 rounded-full border border-neutral-200 dark:border-neutral-700 hover:border-blue-300 dark:hover:border-blue-500 shadow-sm hover:shadow-md transition-all"
+            >
+              <IconMail size={20} />
+            </a>
+          </div>
+        </motion.div>
+        
+        {/* Right Column - Terminal */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="w-full md:w-3/5"
+        >
+          <div className="w-full h-[400px] md:h-[500px] overflow-hidden rounded-lg shadow-xl border-2 border-neutral-200 dark:border-neutral-700">
+            <ReactTerminal
               welcomeMessage={welcomeMessage}
-          />
-        </div>
-
-
+              themes={themes}
+              theme={theme === 'dark' ? 'my-custom-theme' : 'light'}
+              commands={commands}
+              showControlBar={true}
+              showControlButtons={true}
+              errorMessage={"Command not found. Type 'help' for available commands."}
+            />
+          </div>
+        </motion.div>
       </div>
+    </div>
   );
 };
 

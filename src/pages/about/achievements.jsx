@@ -1,4 +1,5 @@
 import AchievementCard from '../../components/achievementCard.jsx';
+import { motion } from 'framer-motion';
 
 const Achievements = () => {
   const achievements = [
@@ -51,7 +52,6 @@ const Achievements = () => {
         'Recognized for optimal solution approaches',
       ],
     },
-      
     {
       title: 'GeeksForGeeks',
       date: '2023',
@@ -90,25 +90,33 @@ const Achievements = () => {
   ];
 
   return (
-      <section
-          className="w-full font-sans px-3 md:px-10"
-          id="achievements"
-      >
-        <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
-          <h2 className="text-xl md:text-4xl mb-4 text-black dark:text-white ">
-            Achievements </h2>
-          <p className="text-neutral-700 dark:text-neutral-300 text-md md:text-base">
-            Milestones that define my growth.
+    <section
+      className="w-full font-sans px-3 md:px-10 bg-white dark:bg-neutral-900 transition-colors duration-300"
+      id="achievements"
+    >
+      <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-neutral-900 dark:text-white">
+            Achievements 
+          </h2>
+          <p className="text-neutral-700 dark:text-neutral-300 text-base md:text-lg max-w-2xl">
+            Notable milestones that highlight my growth and dedication in the tech world.
           </p>
+        </motion.div>
+      </div>
+      <div className="max-w-7xl mx-auto pb-20">
+        <div className="flex flex-wrap gap-6">
+          {achievements.map((achievement, index) => (
+            <AchievementCard key={index} {...achievement} index={index} />
+          ))}
         </div>
-        <div className="max-w-7xl mx-auto pb-20">
-          <div className="flex flex-wrap gap-6">
-            {achievements.map((achievement, index) => (
-                <AchievementCard key={index} {...achievement} />
-            ))}
-          </div>
-        </div>
-      </section>
+      </div>
+    </section>
   );
 };
 

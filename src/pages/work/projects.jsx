@@ -1,6 +1,7 @@
 import {IconBrandGithub, IconExternalLink} from '@tabler/icons-react';
 import {MarkdownRenderer, markdownStyles} from '../../components/ui/Markdown.jsx';
 import { useRef } from "react";
+import { motion } from "framer-motion";
 
 const Projects = () => {
   const projects = [
@@ -158,118 +159,154 @@ const Projects = () => {
 
   const containerRef = useRef(null);
 
+  // Helper function to get the primary link for a project
+  const getProjectPrimaryLink = (project) => {
+    return project.live || project.github || project.apk || null;
+  };
+
   return (
     <div 
-      className="min-h-screen text-[#f5f5f5] py-8 md:py-16 relative p-3 md:p-10"
+      className="min-h-screen bg-white dark:bg-neutral-900 py-8 md:py-16 relative p-3 md:p-10 transition-colors duration-300"
       id="projects"
       ref={containerRef}
     >
       <style>{markdownStyles}</style>
-      <div className="max-w-7xl mx-auto py-10 md:py-20 px-4 md:px-8 lg:px-10">
-        <h2 className="text-xl md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="max-w-7xl mx-auto py-10 md:py-20 px-4 md:px-8 lg:px-10"
+      >
+        <h2 className="text-3xl md:text-5xl font-bold mb-4 text-neutral-900 dark:text-white max-w-4xl">
           My Personal Projects
         </h2>
-        <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm">
-          Projects showcasing my skills and creativity.
+        <p className="text-neutral-700 dark:text-neutral-300 text-base md:text-lg max-w-2xl">
+          A showcase of my technical expertise and creative problem-solving abilities through various personal projects.
         </p>
-      </div>
+      </motion.div>
 
       <div className="max-w-7xl mx-auto px-4 relative">
         {/* Projects with staggered layout */}
         <div className="flex flex-col gap-16 md:gap-24">
-          {projects.map((project, index) => (
-            <div key={index} className="relative">
-              {/* Project date tag */}
-              <div className="absolute -top-4 right-4 md:right-8 bg-neutral-100 dark:bg-neutral-800/50 px-4 py-1 rounded-full z-10">
-                <span className="text-neutral-700 dark:text-neutral-300 font-medium text-sm">
-                  {project.time}
-                </span>
-              </div>
-              
-              {/* Project card with offset image and content */}
-              <div className="relative bg-white dark:bg-neutral-900 rounded-2xl shadow-lg overflow-hidden p-5 md:p-8 border border-neutral-200 dark:border-neutral-800">
+          {projects.map((project, index) => {
+            const primaryLink = getProjectPrimaryLink(project);
+            
+            return (
+              <motion.div 
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                className="relative"
+              >
+                {/* Project date tag */}
+                <div className="absolute -top-4 right-4 md:right-8 bg-neutral-100 dark:bg-neutral-800/50 px-4 py-1 rounded-full z-10 border border-neutral-200 dark:border-neutral-700 shadow-sm">
+                  <span className="text-neutral-700 dark:text-neutral-300 font-medium text-sm">
+                    {project.time}
+                  </span>
+                </div>
                 
-                {/* Project title */}
-                <h3 className="text-xl md:text-2xl font-bold text-neutral-900 dark:text-white mb-4">
-                  {project.title}
-                </h3>
-                
-                <div className="flex flex-col lg:flex-row gap-6 md:gap-8">
-                  {/* Project image */}
-                  <div className="w-full lg:w-2/5 h-[250px] md:h-[280px] rounded-xl shadow-md overflow-hidden">
-                    <img 
-                      src={project.image} 
-                      alt={project.title} 
-                      className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-110"
-                    />
-                  </div>
+                {/* Project card with offset image and content */}
+                <div 
+                  className="relative bg-white dark:bg-neutral-800 rounded-2xl shadow-md overflow-hidden p-5 md:p-8 border border-neutral-200 dark:border-neutral-700 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-lg transition-all duration-300 cursor-pointer"
+                  onClick={() => primaryLink && window.open(primaryLink, '_blank')}
+                >
                   
-                  {/* Project content */}
-                  <div className="w-full lg:w-3/5">
-                    <div className="bg-neutral-50 dark:bg-neutral-800 rounded-xl p-4 md:p-6 shadow-sm">
-                      <p className="text-neutral-800 dark:text-neutral-200 mb-4">
-                        {project.description}
-                      </p>
-                      
-                      <ul className="space-y-2 mb-5">
-                        {project.points.map((point, idx) => (
-                          <li key={idx} className="text-sm md:text-base text-neutral-700 dark:text-neutral-300 flex">
-                            <span className="mr-2 text-primary">•</span>
-                            <MarkdownRenderer>{point}</MarkdownRenderer>
-                          </li>
-                        ))}
-                      </ul>
-                      
-                      {/* Technologies */}
-                      <div className="mb-5">
-                        <p className="text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-3">
-                          Technologies:
+                  {/* Project title */}
+                  <h3 className="text-xl md:text-2xl font-bold text-neutral-900 dark:text-white mb-4">
+                    {project.title}
+                  </h3>
+                  
+                  <div className="flex flex-col lg:flex-row gap-6 md:gap-8">
+                    {/* Project image */}
+                    <div className="w-full lg:w-2/5 h-[250px] md:h-[280px] rounded-xl shadow-md overflow-hidden border border-neutral-200 dark:border-neutral-700">
+                      <img 
+                        src={project.image} 
+                        alt={project.title} 
+                        className="w-full h-full object-cover transition-transform duration-300"
+                      />
+                    </div>
+                    
+                    {/* Project details */}
+                    <div className="w-full lg:w-3/5 flex flex-col justify-between">
+                      <div>
+                        <p className="text-base text-neutral-700 dark:text-neutral-300 mb-3">
+                          {project.description}
                         </p>
-                        <div className="flex flex-wrap gap-2">
-                          {project.technology.map((tech, idx) => (
+                        
+                        <div className="mt-4">
+                          <h4 className="text-sm uppercase font-semibold tracking-wider text-neutral-500 dark:text-neutral-400 mb-2">Key Features</h4>
+                          <ul className="space-y-2">
+                            {project.points.map((point, i) => (
+                              <li key={i} className="text-neutral-700 dark:text-neutral-300">
+                                <MarkdownRenderer markdown={point} />
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                      
+                      <div className="mt-6">
+                        <h4 className="text-sm uppercase font-semibold tracking-wider text-neutral-500 dark:text-neutral-400 mb-2">Technologies</h4>
+                        <div className="flex flex-wrap gap-2 mb-5">
+                          {project.technology.map((tech, i) => (
                             <span 
-                              key={idx}
-                              className="px-3 py-1 text-xs md:text-sm rounded-full bg-neutral-200 dark:bg-neutral-700 text-neutral-800 dark:text-neutral-200"
+                              key={i} 
+                              className="inline-flex text-xs px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 border border-blue-100 dark:border-blue-800"
                             >
                               {tech}
                             </span>
                           ))}
                         </div>
-                      </div>
-                      
-                      {/* Links */}
-                      <div className="flex flex-wrap gap-4 justify-center">
-                        <a href={project.github} target="_blank" rel="noopener noreferrer">
-                          <button className="btn btn-outline btn-primary btn-sm md:btn-md gap-2 hover:scale-105">
-                            <IconBrandGithub size={16} stroke={1.5}/>
-                            Source
-                          </button>
-                        </a>
-
-                        {project.live && (
-                          <a href={project.live} target="_blank" rel="noopener noreferrer">
-                            <button className="btn btn-primary btn-sm md:btn-md gap-2 hover:scale-105">
-                              <IconExternalLink size={16} stroke={1.5}/>
-                              Demo
-                            </button>
-                          </a>
-                        )}
-
-                        {project.apk && (
-                          <a href={project.apk} target="_blank" rel="noopener noreferrer">
-                            <button className="btn btn-primary btn-sm md:btn-md gap-2 hover:scale-105">
-                              <IconExternalLink size={16} stroke={1.5}/>
-                              APK
-                            </button>
-                          </a>
-                        )}
+                        
+                        <div className="flex gap-3 mt-2">
+                          {project.github && (
+                            <a 
+                              href={project.github} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="flex items-center gap-2 px-4 py-2 rounded-full text-neutral-700 dark:text-neutral-300 hover:text-blue-500 dark:hover:text-blue-400 bg-neutral-100 dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 hover:border-blue-300 dark:hover:border-blue-500 transition-all text-base font-medium"
+                              onClick={(e) => e.stopPropagation()}
+                            >
+                              <IconBrandGithub className="w-5 h-5" />
+                              <span>GitHub</span>
+                            </a>
+                          )}
+                          
+                          {project.live && (
+                            <a 
+                              href={project.live} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="flex items-center gap-2 px-4 py-2 rounded-full text-neutral-700 dark:text-neutral-300 hover:text-blue-500 dark:hover:text-blue-400 bg-neutral-100 dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 hover:border-blue-300 dark:hover:border-blue-500 transition-all text-base font-medium"
+                              onClick={(e) => e.stopPropagation()}
+                            >
+                              <IconExternalLink className="w-5 h-5" />
+                              <span>Live Demo</span>
+                            </a>
+                          )}
+                          
+                          {project.apk && (
+                            <a 
+                              href={project.apk} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="flex items-center gap-2 px-4 py-2 rounded-full text-neutral-700 dark:text-neutral-300 hover:text-blue-500 dark:hover:text-blue-400 bg-neutral-100 dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 hover:border-blue-300 dark:hover:border-blue-500 transition-all text-base font-medium"
+                              onClick={(e) => e.stopPropagation()}
+                            >
+                              <IconExternalLink className="w-5 h-5" />
+                              <span>Download APK</span>
+                            </a>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </div>

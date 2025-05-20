@@ -30,11 +30,11 @@ const LeetCodeDetailModal = ({isOpen, onClose, problemData, contestData}) => {
             initial={{scale: 0.8, opacity: 0}}
             animate={{scale: 1, opacity: 1}}
             exit={{scale: 0.8, opacity: 0}}
-            className="bg-gray-800 w-full max-w-4xl rounded-2xl p-4 sm:p-6 md:p-8 overflow-y-auto max-h-[90vh] relative"
+            className="bg-white dark:bg-neutral-800 w-full max-w-4xl rounded-2xl p-4 sm:p-6 md:p-8 overflow-y-auto max-h-[90vh] relative shadow-xl"
         >
           <button
               onClick={onClose}
-              className="absolute top-4 right-4 text-white hover:bg-gray-700 rounded-full p-2"
+              className="absolute top-4 right-4 text-neutral-800 dark:text-white hover:bg-neutral-100 dark:hover:bg-neutral-700 rounded-full p-2"
           >
             <IconX size={24}/>
           </button>
@@ -45,17 +45,17 @@ const LeetCodeDetailModal = ({isOpen, onClose, problemData, contestData}) => {
                                className="text-orange-500 mb-4 sm:mb-0"/>
             <div className="text-center sm:text-left">
               <div className="flex flex-col gap-2">
-                <h2 className="text-2xl sm:text-3xl font-bold text-white">LeetCode
+                <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900 dark:text-white">LeetCode
                   Profile</h2>
                 <a href="https://leetcode.com/u/soldier_of_god" target="_blank" rel="noopener noreferrer">
                   <div
-                      className="flex gap-3 hover:underline items-center text-xl text-blue-400">
+                      className="flex gap-3 hover:underline items-center text-xl text-blue-500 dark:text-blue-400">
                     Show more on LeetCode
                     <IconExternalLink stroke={2}/>
                   </div>
                 </a>
               </div>
-              <p className="text-gray-400">Total Problems
+              <p className="text-neutral-600 dark:text-neutral-400">Total Problems
                 Solved: {totalSolved}</p>
             </div>
           </div>
@@ -78,12 +78,12 @@ const LeetCodeDetailModal = ({isOpen, onClose, problemData, contestData}) => {
                 total: problemData.totalSubmissionNum[3].count,
               },
             ].map(({level, solved, total}) => (
-                <div key={level} className="bg-gray-900 rounded-xl p-4 sm:p-6">
+                <div key={level} className="bg-neutral-100 dark:bg-neutral-700 rounded-xl p-4 sm:p-6">
                   <div className="flex flex-col items-center">
                     <div className="relative w-24 h-24 sm:w-32 sm:h-32 mb-4">
                       <svg viewBox="0 0 36 36" className="w-full h-full">
                         <circle cx="18" cy="18" r="16" fill="none"
-                                stroke="#232323" strokeWidth="3"/>
+                                stroke="#e5e5e5" className="dark:stroke-neutral-600" strokeWidth="3"/>
                         <circle
                             cx="18"
                             cy="18"
@@ -99,13 +99,13 @@ const LeetCodeDetailModal = ({isOpen, onClose, problemData, contestData}) => {
                       <div
                           className="absolute inset-0 flex flex-col justify-center items-center">
                         <span
-                            className="text-xl sm:text-2xl font-bold text-white">{solved}</span>
+                            className="text-xl sm:text-2xl font-bold text-neutral-900 dark:text-white">{solved}</span>
                         <span
-                            className="text-sm text-gray-400 capitalize">{level}</span>
+                            className="text-sm text-neutral-600 dark:text-neutral-400 capitalize">{level}</span>
                       </div>
                     </div>
-                    <p className="text-white text-sm sm:text-base">{solved} / {total}</p>
-                    <p className="text-gray-400 text-sm">{((solved / total) *
+                    <p className="text-neutral-900 dark:text-white text-sm sm:text-base">{solved} / {total}</p>
+                    <p className="text-neutral-600 dark:text-neutral-400 text-sm">{((solved / total) *
                         100).toFixed(1)}%</p>
                   </div>
                 </div>
@@ -113,19 +113,19 @@ const LeetCodeDetailModal = ({isOpen, onClose, problemData, contestData}) => {
           </div>
 
           <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
-            <div className="bg-gray-900 rounded-xl p-4">
-              <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Acceptance
+            <div className="bg-neutral-100 dark:bg-neutral-700 rounded-xl p-4">
+              <h3 className="text-lg sm:text-xl font-semibold text-neutral-900 dark:text-white mb-2">Acceptance
                 Rate</h3>
               <p className="text-xl sm:text-2xl font-bold text-green-500">{acceptanceRate}%</p>
             </div>
-            <div className="bg-gray-900 rounded-xl p-4">
-              <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Contest
+            <div className="bg-neutral-100 dark:bg-neutral-700 rounded-xl p-4">
+              <h3 className="text-lg sm:text-xl font-semibold text-neutral-900 dark:text-white mb-2">Contest
                 Rating</h3>
               <p className="text-xl sm:text-2xl font-bold text-blue-500">{Math.round(
                   contestData.contestRating)}</p>
             </div>
-            <div className="bg-gray-900 rounded-xl p-4">
-              <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Top
+            <div className="bg-neutral-100 dark:bg-neutral-700 rounded-xl p-4">
+              <h3 className="text-lg sm:text-xl font-semibold text-neutral-900 dark:text-white mb-2">Top
                 Percentage</h3>
               <p className="text-xl sm:text-2xl font-bold text-orange-500">{contestData.contestTopPercentage}%</p>
             </div>
@@ -149,11 +149,11 @@ const CodeChefDetailModal = ({isOpen, onClose, data}) => {
             initial={{scale: 0.8, opacity: 0}}
             animate={{scale: 1, opacity: 1}}
             exit={{scale: 0.8, opacity: 0}}
-            className="bg-gray-800 w-full max-w-4xl rounded-2xl p-4 sm:p-6 md:p-8 relative overflow-y-auto max-h-[90vh]"
+            className="bg-white dark:bg-neutral-800 w-full max-w-4xl rounded-2xl p-4 sm:p-6 md:p-8 relative overflow-y-auto max-h-[90vh] shadow-xl"
         >
           <button
               onClick={onClose}
-              className="absolute top-4 right-4 text-white hover:bg-gray-700 rounded-full p-2"
+              className="absolute top-4 right-4 text-neutral-800 dark:text-white hover:bg-neutral-100 dark:hover:bg-neutral-700 rounded-full p-2"
           >
             <IconX size={24}/>
           </button>
@@ -162,16 +162,16 @@ const CodeChefDetailModal = ({isOpen, onClose, data}) => {
               className="flex flex-col sm:flex-row items-center sm:space-x-6 mb-6 sm:mb-8">
             <IconBrandCodepen size={48} className="text-blue-500 mb-4 sm:mb-0"/>
             <div className="flex flex-col gap-2">
-              <h2 className="text-2xl sm:text-3xl font-bold text-white">CodeChef
+              <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900 dark:text-white">CodeChef
                 Profile</h2>
               <div className="flex items-center gap-2">
                 <img src={data.countryFlag} alt={data.countryName}
                      className="w-6 h-4"/>
-                <span className="text-gray-400">{data.countryName}</span>
+                <span className="text-neutral-600 dark:text-neutral-400">{data.countryName}</span>
               </div>
               <a href={`https://www.codechef.com/users/${data.name}`} target="_blank" rel="noopener noreferrer">
                 <div
-                    className="flex gap-3 hover:underline items-center text-xl text-blue-400">
+                    className="flex gap-3 hover:underline items-center text-xl text-blue-500 dark:text-blue-400">
                   Show more on CodeChef
                   <IconExternalLink stroke={2}/>
                 </div>
@@ -194,26 +194,26 @@ const CodeChefDetailModal = ({isOpen, onClose, data}) => {
 
           <div
               className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            <div className="bg-gray-900 rounded-xl p-4 text-center">
-              <h3 className="text-lg font-semibold text-white mb-2">Current
+            <div className="bg-neutral-100 dark:bg-neutral-700 rounded-xl p-4 text-center">
+              <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-2">Current
                 Rating</h3>
               <p className="text-2xl font-bold text-blue-500">{data.currentRating}</p>
             </div>
-            <div className="bg-gray-900 rounded-xl p-4 text-center">
-              <h3 className="text-lg font-semibold text-white mb-2">Highest
+            <div className="bg-neutral-100 dark:bg-neutral-700 rounded-xl p-4 text-center">
+              <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-2">Highest
                 Rating</h3>
               <p className="text-2xl font-bold text-green-500">{data.highestRating}</p>
             </div>
-            <div className="bg-gray-900 rounded-xl p-4 text-center">
-              <h3 className="text-lg font-semibold text-white mb-2">Global
+            <div className="bg-neutral-100 dark:bg-neutral-700 rounded-xl p-4 text-center">
+              <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-2">Global
                 Ranking</h3>
               <p className="text-2xl font-bold text-purple-500">#{data.globalRank}</p>
             </div>
           </div>
 
           <div className="mt-6">
-            <div className="bg-gray-900 rounded-xl p-4">
-              <h3 className="text-lg font-semibold text-white mb-4">Rating
+            <div className="bg-neutral-100 dark:bg-neutral-700 rounded-xl p-4">
+              <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-4">Rating
                 Graph</h3>
               <div className="w-full h-64">
                 <iframe
@@ -348,15 +348,15 @@ const Profiles = () => {
     return (
         <div className="min-h-screen flex items-center justify-center">
           <div
-              className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-gray-900"></div>
+              className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-neutral-900 dark:border-white"></div>
         </div>
     );
   }
 
   return (
-      <div className="min-h-screen px-3 md:px-10 w-screen" id="profiles">
+      <div className="min-h-screen px-3 md:px-10 w-screen bg-white dark:bg-neutral-900 transition-colors duration-300" id="profiles">
         <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
-          <h2 className="text-lg md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
+          <h2 className="text-lg md:text-4xl mb-4 text-neutral-900 dark:text-white max-w-4xl">
             Contributions & Profiles
           </h2>
           <p className="text-neutral-700 dark:text-neutral-300 text-md md:text-base">
@@ -367,14 +367,14 @@ const Profiles = () => {
 
         {/* Contributions Section */}
         <div className="max-w-5xl mx-auto mb-24">
-          <h3 className="text-lg md:text-2xl mb-4 text-black dark:text-white max-w-4xl">
+          <h3 className="text-lg md:text-2xl mb-4 text-neutral-900 dark:text-white max-w-4xl">
             Open Source Contributions
             {'   '}
-            <span className="italic text-sm text-blue-400 flex gap-4">
-              <a href="https://github.com/JaiminPatel345" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 hover:underline">
+            <span className="italic text-sm text-blue-500 dark:text-blue-400 flex gap-4">
+              <a href="https://github.com/JaiminPatel345" target="_blank" rel="noopener noreferrer" className="text-blue-500 dark:text-blue-400 hover:text-blue-600 dark:hover:text-blue-300 hover:underline">
                 My GitHub
               </a>
-              <p className={'text-gray-200'}> ( List will be gone big )</p>
+              <p className="text-neutral-600 dark:text-neutral-400">( List will be gone big )</p>
             </span>
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -389,9 +389,9 @@ const Profiles = () => {
                     whileTap={{scale: 0.97}}
                 >
                   <div
-                      className="bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+                      className="bg-white dark:bg-neutral-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-neutral-200 dark:border-neutral-700 hover:border-blue-300 dark:hover:border-blue-500">
                     <div
-                        className="h-40 bg-gray-800 flex items-center justify-center overflow-hidden">
+                        className="h-40 bg-neutral-100 dark:bg-neutral-700 flex items-center justify-center overflow-hidden">
                       <img
                           src={contribution.image}
                           alt={contribution.name}
@@ -400,12 +400,12 @@ const Profiles = () => {
                     </div>
                     <div className="p-5">
                       <div className="flex items-center gap-2 mb-2">
-                        <IconBrandGithub className="text-white" size={20}/>
-                        <h3 className="text-xl font-semibold text-white">{contribution.name}</h3>
+                        <IconBrandGithub className="text-neutral-800 dark:text-white" size={20}/>
+                        <h3 className="text-xl font-semibold text-neutral-900 dark:text-white">{contribution.name}</h3>
                       </div>
-                      <div className="text-gray-400 mb-3">
+                      <div className="text-neutral-600 dark:text-neutral-400 mb-3">
 
-                        <ul className={'list-disc list-inside text-gray-300 text-sm mt-2'}>
+                        <ul className="list-disc list-inside text-neutral-700 dark:text-neutral-300 text-sm mt-2">
                           {contribution.description.map((desc, i) => (
                               <li key={i}>
                                 {desc}
@@ -417,7 +417,7 @@ const Profiles = () => {
                       <div className="flex items-center">
                         <a href={contribution.url} target="_blank" rel="noopener noreferrer">
                           <div
-                              className="text-blue-400 hover:text-blue-300 transition-colors flex items-center">
+                              className="text-blue-500 dark:text-blue-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors flex items-center">
                             <span>View Repository</span>
                             <IconExternalLink size={16} className="ml-1"/>
                           </div>
@@ -432,13 +432,13 @@ const Profiles = () => {
 
         {/* DSA Profiles Section */}
         <div className="max-w-5xl mx-auto mb-24">
-          <h3 className="text-lg md:text-2xl mb-4 text-black dark:text-white max-w-4xl">
+          <h3 className="text-lg md:text-2xl mb-4 text-neutral-900 dark:text-white max-w-4xl">
             Coding Profiles
           </h3>
           <div className="w-full flex justify-center items-center">
             <div
-                className="bg-neutral-900 p-8 md:p-12 rounded-lg shadow-2xl flex items-center justify-center relative w-full">
-              <p className="absolute top-3 left-5 text-gray-400 text-sm">click
+                className="bg-white dark:bg-neutral-800 p-8 md:p-12 rounded-lg shadow-xl flex items-center justify-center relative w-full border border-neutral-200 dark:border-neutral-700">
+              <p className="absolute top-3 left-5 text-neutral-500 dark:text-neutral-400 text-sm">click
                 to show details</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
                 {profiles.map((profile, index) => (
@@ -453,19 +453,19 @@ const Profiles = () => {
                         whileTap={{scale: 0.95}}
                     >
                       <div
-                          className="relative bg-gray-900 rounded-xl p-6 flex flex-col md:flex-row gap-5 w-full items-center space-x-6 hover:bg-gray-800 transition-colors group">
-                        <div className="bg-gray-700 p-4 rounded-full">
+                          className="relative bg-neutral-100 dark:bg-neutral-700 rounded-xl p-6 flex flex-col md:flex-row gap-5 w-full items-center space-x-6 hover:bg-neutral-200 dark:hover:bg-neutral-600 transition-colors group border border-neutral-200 dark:border-neutral-600 hover:border-blue-300 dark:hover:border-blue-500">
+                        <div className="bg-white dark:bg-neutral-800 p-4 rounded-full">
                           <profile.icon
                               className={`${profile.color} stroke-current`}
                               size={40}
                           />
                         </div>
                         <div className="flex-grow">
-                          <h3 className="text-xl font-semibold text-white mb-2">
+                          <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-2">
                             {profile.name}
                           </h3>
                           {profile.stats && (
-                              <div className="text-gray-400 space-y-1">
+                              <div className="text-neutral-600 dark:text-neutral-400 space-y-1">
                                 {profile.name === 'LeetCode' ? (
                                     <>
                                       <p>Total
@@ -487,7 +487,7 @@ const Profiles = () => {
                         </div>
                         <div
                             className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                          <IconExternalLink className="text-gray-400"
+                          <IconExternalLink className="text-neutral-600 dark:text-neutral-400"
                                             size={20}/>
                         </div>
                       </div>
