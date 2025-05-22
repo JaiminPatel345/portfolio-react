@@ -6,8 +6,14 @@ html{
     scroll-behavior: smooth;
 }
 
-.dark-mode-whoami {
-    color: #64ffda; /* Teal in dark mode */
+/* Light mode styles */
+:root {
+  --highlight-color: #2563eb; /* Blue-600 for light mode */
+}
+
+/* Dark mode styles */
+.dark {
+  --highlight-color: #64ffda; /* Original teal for dark mode */
 }
 
 .light,
@@ -17,10 +23,10 @@ html:not(.dark)  {
 
 .light-mode-whoami,
 html:not(.dark) .light-mode-whoami {
-    color: blue;
+    color: var(--highlight-color);
 }
 
 .dark .dark-mode-whoami,
 html.dark .dark-mode-whoami {
-    color: #64ffda; /* Keep the original teal in dark mode */
+    color: var(--highlight-color);
 }

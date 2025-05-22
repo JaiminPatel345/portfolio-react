@@ -1,5 +1,5 @@
 import AchievementCard from '../../components/achievementCard.jsx';
-import { motion } from 'framer-motion';
+import {motion} from 'framer-motion';
 
 const Achievements = () => {
   const achievements = [
@@ -24,7 +24,7 @@ const Achievements = () => {
       btnText: 'View Details',
       description: [
         'Shortlist name in waiting list',
-        '7th out of 500 teams across India',
+        '7th out of top 500 teams across India',
       ],
     },
     {
@@ -84,39 +84,41 @@ const Achievements = () => {
       link: 'https://drive.google.com/file/d/118_UHHGKqQ_2aQP452ZRDp860UVqE_P1/view?usp=sharing',
       btnText: 'View Details',
       description: [
-        'Cleared JEE Advanced 2022 with AIR 28k',
+        'Cleared JEE Advanced 2022',
+        'AIR 28,063',
       ],
     },
   ];
 
   return (
-    <section
-      className="w-full font-sans px-3 md:px-10 bg-white dark:bg-neutral-900 transition-colors duration-300"
-      id="achievements"
-    >
-      <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-neutral-900 dark:text-white">
-            Achievements 
-          </h2>
-          <p className="text-neutral-700 dark:text-neutral-300 text-base md:text-lg max-w-2xl">
-            Notable milestones that highlight my growth and dedication in the tech world.
-          </p>
-        </motion.div>
-      </div>
-      <div className="max-w-7xl mx-auto pb-20">
-        <div className="flex flex-wrap gap-6">
-          {achievements.map((achievement, index) => (
-            <AchievementCard key={index} {...achievement} index={index} />
-          ))}
+      <section
+          className="w-full font-sans px-3 md:px-10 bg-white dark:bg-neutral-900 transition-colors duration-300"
+          id="achievements"
+      >
+        <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
+          <motion.div
+              initial={{opacity: 0, y: 20}}
+              whileInView={{opacity: 1, y: 0}}
+              transition={{duration: 0.5}}
+              viewport={{once: true}}
+          >
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-neutral-900 dark:text-white">
+              Achievements
+            </h2>
+            <p className="text-neutral-700 dark:text-neutral-300 text-base md:text-lg max-w-2xl">
+              Notable milestones that highlight my growth and dedication in the
+              tech world.
+            </p>
+          </motion.div>
         </div>
-      </div>
-    </section>
+        <div className="max-w-7xl mx-auto pb-20">
+          <div className="flex flex-wrap gap-6">
+            {achievements.map((achievement, index) => (
+                <AchievementCard key={index} {...achievement} index={index}/>
+            ))}
+          </div>
+        </div>
+      </section>
   );
 };
 

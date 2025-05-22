@@ -1,7 +1,9 @@
 import AnimatedCursor from "react-animated-cursor"
 import { useState, useEffect } from "react"
+import { useTheme } from '../lib/ThemeProvider'
 
 const MyCursor = () => {
+    const { theme } = useTheme()
     const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 768)
 
     useEffect(() => {
@@ -20,7 +22,8 @@ const MyCursor = () => {
         }
     }, [])
 
-    // Force cursor reinitialization when switching modes
+    // Different colors for light and dark modes
+    const cursorColor = theme === 'dark' ? "102,255,255" : "37,99,235" // dark: teal, light: blue-600
     const cursorKey = `cursor-${isDesktop ? 'desktop' : 'mobile'}-${Date.now()}`
 
     return (
@@ -77,7 +80,7 @@ const MyCursor = () => {
                             "button",
                             ".link",
                         ]}
-                        color={"102,255,255"}
+                        color={cursorColor}
                         innerScale={0.6}
                         innerSize={8}
                         outerAlpha={0.4}
