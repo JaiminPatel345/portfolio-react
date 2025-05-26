@@ -99,7 +99,7 @@ const Achievements = () => {
           <motion.div
               initial={{opacity: 0, y: 20}}
               whileInView={{opacity: 1, y: 0}}
-              transition={{duration: 0.5}}
+              transition={{duration: 0.2}}
               viewport={{once: true}}
           >
             <h2 className="text-3xl md:text-5xl font-bold mb-4 text-neutral-900 dark:text-white">

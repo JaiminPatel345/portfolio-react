@@ -378,7 +378,7 @@ const Profiles = () => {
         </div>
 
         {/* Contributions Section */}
-        <div className="max-w-5xl  mb-24">
+        <div className="max-w-6xl mx-auto pb-20">
           <h3 className="text-lg md:text-2xl mb-4 text-neutral-900 dark:text-white max-w-4xl">
             Open Source Contributions
             {'   '}
@@ -392,6 +392,8 @@ const Profiles = () => {
               <p className="text-neutral-600 dark:text-neutral-400">( List will be gone big )</p>
             </span>
           </h3>
+          
+          {/*Cards*/}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {contributions.map((contribution, index) => (
                 <motion.div
@@ -400,11 +402,13 @@ const Profiles = () => {
                     initial={{opacity: 0, translateY: 20}}
                     animate={{opacity: 1, translateY: 0}}
                     transition={{delay: index * 0.2, duration: 0.5}}
-                    whileHover={{scale: 1.03, transition: {duration: 0.2}}}
                     whileTap={{scale: 0.97}}
+                    onClick={() => {
+                      window.open(contribution.url, '_blank')
+                    }}
                 >
                   <div
-                      className="bg-white dark:bg-neutral-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-neutral-200 dark:border-neutral-700 hover:border-blue-300 dark:hover:border-blue-500">
+                      className="bg-white dark:bg-neutral-800 rounded-xl overflow-hidden shadow-lg  transition-all duration-300 border border-neutral-200 dark:border-neutral-700 hover">
                     <div
                         className="h-40 bg-neutral-100 dark:bg-neutral-700 flex items-center justify-center overflow-hidden">
                       <img
@@ -450,7 +454,7 @@ const Profiles = () => {
         </div>
 
         {/* DSA Profiles Section */}
-        <div className="max-w-5xl mb-24">
+        <div className="max-w-6xl mx-auto pb-20">
           <h3 className="text-lg md:text-2xl mb-4 text-neutral-900 dark:text-white max-w-4xl">
             Coding Profiles
           </h3>

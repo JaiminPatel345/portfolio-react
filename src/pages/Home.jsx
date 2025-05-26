@@ -18,7 +18,7 @@ const Home = () => {
     'Innovative Mindset',
     'Open-Source Contributor',
     'Lifelong Knowledge Seeker',
-    'Strategic Chess Enthusiast',
+    'Chess lover ',
   ];
 
   return (
@@ -78,9 +78,8 @@ const Home = () => {
           initial={{opacity: 0, y: 20}}
           animate={{opacity: 1, y: 0}}
           transition={{duration: 0.5, delay: 0.2}}
-          className="w-full md:w-3/5"
+          className="w-full md:w-3/5 h-[400px] md:h-[530px] overflow-hidden rounded-lg shadow-xl border-2 border-neutral-200 dark:border-neutral-700"
         >
-          <div className="w-full h-[400px] md:h-[530px] overflow-hidden rounded-lg shadow-xl border-2 border-neutral-200 dark:border-neutral-700">
             <ReactTerminal
               welcomeMessage={welcomeMessage}
               themes={themes}
@@ -90,7 +89,6 @@ const Home = () => {
               showControlButtons={true}
               errorMessage={'Command not found. Type \'help\' for available commands.'}
             />
-          </div>
         </motion.div>
       </div>
     </div>

@@ -283,20 +283,19 @@ export const commands = {
 {`
 ──────────────── MY SKILLS & TECH STACK ────────────────
            
-  ⚡ BACKEND         ⚡ FRONTEND        ⚡ DATA/ML
+  ⚡ BACKEND         ⚡ FRONTEND        ⚡ DATABASE
   ---------------   ---------------   ---------------
   ✅ Node.js        ✅ React.js       ✅ MongoDB
   ✅ Express.js     ✅ React Native   ✅ PostgreSQL
-  ✅ Redis          ✅ Redux          ✅ Numpy
-  ✅ Socket.io      ✅ Tailwind CSS   ✅ Pandas
-                                      ✅ TensorFlow
+  ✅ Redis          ✅ Redux           
+  ✅ Socket.io      ✅ Tailwind CSS   
 
-  ⚡ DEVOPS         ⚡ LANGUAGES      ⚡ TOOLS
+  ⚡ DEVOPS          ⚡ LANGUAGES       ⚡ ML
   ---------------   ---------------   ---------------
-  ✅ Docker         ✅ TypeScript     ✅ Git/GitHub
-  ✅ Azure          ✅ JavaScript     ✅ Cloudinary
-                    ✅ Python         ✅ Figma
-                    ✅ Java
+  ✅ Docker         ✅ TypeScript     ✅ Numpy
+  ✅ Azure          ✅ JavaScript     ✅ Pandas
+  ✅ Git            ✅ Python         ✅ TensorFlow
+  ✅ Cloudinary     ✅ Java
       
 ────────────────────────────────────────────────────────
 `}

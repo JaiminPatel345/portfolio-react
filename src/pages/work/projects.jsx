@@ -209,7 +209,7 @@ const Projects = () => {
                 
                 {/* Project card with offset image and content */}
                 <div 
-                  className="relative bg-white dark:bg-neutral-800 rounded-2xl shadow-md overflow-hidden p-5 md:p-8 border border-neutral-200 dark:border-neutral-700 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-lg transition-all duration-300 cursor-pointer"
+                  className="relative bg-white dark:bg-neutral-800 rounded-2xl shadow-md overflow-hidden p-5 md:p-8 border border-neutral-200 dark:border-neutral-700 hover:shadow-lg transition-all duration-300 cursor-pointer"
                   onClick={() => primaryLink && window.open(primaryLink, '_blank')}
                 >
                   

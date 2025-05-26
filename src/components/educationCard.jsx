@@ -18,7 +18,7 @@ const EducationCard = ({
       className="relative w-full mb-6"
     >
       <motion.div 
-        className="rounded-lg bg-white dark:bg-neutral-800 p-6 border-l-4 shadow-md hover:shadow-lg transition-all duration-300 border border-neutral-200 dark:border-neutral-700 hover:border-y-blue-300 hover:border-r-blue-300 dark:hover:border-y-blue-500 dark:hover:border-r-blue-500"
+        className="rounded-lg bg-white dark:bg-neutral-800 p-6 border-l-4 shadow-md hover:shadow-lg transition-all duration-300 border border-neutral-200 dark:border-neutral-700 "
         style={{ borderLeftColor: color }}
       >
         <div className="flex flex-col md:flex-row md:items-start gap-4">

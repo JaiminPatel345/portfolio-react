@@ -3,38 +3,38 @@ import getSkillIcon from '../../utils/getSkillIcon.jsx';
 import { motion } from 'framer-motion';
 
 const skills = {
-  advanced: [
-    {name: 'JavaScript'},
+  languages: [
     {name: 'TypeScript'},
-    {name: 'Java'},
-    {name: 'Node.js'},
-    {name: 'React.js'},
-    {name: 'React Native'},
-    {name: 'Express.js'},
-    {name: 'MongoDB'},
-    {name: 'Redis'},
-    {name: 'Git'},
-    {name: 'Redux'},
-    {name: 'Tailwind'},
-    {name: 'CSS'},
-    {name: 'HTML'},
-  ],
-  intermediate: [
+    {name: 'JavaScript'},
     {name: 'Python'},
-    {name: 'TensorFlow'},
-    {name: 'PostgreSQL'},
-    {name: 'Docker'},
-    {name: 'Azure'},
-    {name: 'Linux'},
+    {name: 'Java'},
+  ],
+  backend: [
+    {name: 'Node.js'},
+    {name: 'Express.js'},
+    {name: 'Redis'},
     {name: 'Socket.io'},
   ],
-  familiar: [
-    {name: 'Firebase'},
-    {name: 'GCP'},
-    {name: 'ONDC'},
-    {name: 'Peer js'},
-    {name: 'C++'},
-    {name: 'C'},
+  frontend: [
+    {name: 'React.js'},
+    {name: 'React Native'},
+    {name: 'Redux'},
+    {name: 'Tailwind CSS'},
+  ],
+  database: [
+    {name: 'MongoDB'},
+    {name: 'PostgreSQL'},
+  ],
+  devops: [
+    {name: 'Docker'},
+    {name: 'Azure'},
+    {name: 'Git'},
+    {name: 'Cloudinary'},
+  ],
+  ml: [
+    {name: 'Numpy'},
+    {name: 'Pandas'},
+    {name: 'TensorFlow'},
   ],
 };
 
@@ -48,7 +48,7 @@ const SkillCard = ({name, index}) => {
     >
       <CardContainer className="inter-var">
         <CardBody
-          className="relative group/card h-12 w-full rounded-lg bg-white dark:bg-neutral-800 backdrop-blur-sm border border-neutral-200 dark:border-neutral-700 hover:border-blue-300 dark:hover:border-blue-500 transition-all duration-200"
+          className="relative group/card h-12 w-full rounded-lg bg-white dark:bg-neutral-800 backdrop-blur-sm border border-neutral-200 dark:border-neutral-700 transition-all duration-200"
         >
           <CardItem
             translateZ="20"
@@ -110,19 +110,34 @@ const SkillSet = () => {
         
         <div className="space-y-6">
           <SkillCategory
-            title="Advanced"
-            skills={skills.advanced}
+            title="Languages"
+            skills={skills.languages}
             borderColor="border-blue-500"
           />
           <SkillCategory
-            title="Intermediate"
-            skills={skills.intermediate}
+            title="Backend"
+            skills={skills.backend}
             borderColor="border-purple-500"
           />
           <SkillCategory
-            title="Familiar"
-            skills={skills.familiar}
+            title="Frontend"
+            skills={skills.frontend}
             borderColor="border-teal-500"
+          />
+          <SkillCategory
+            title="Database"
+            skills={skills.database}
+            borderColor="border-pink-500"
+          />
+          <SkillCategory
+            title="DevOps"
+            skills={skills.devops}
+            borderColor="border-yellow-500"
+          />
+          <SkillCategory
+            title="Machine Learning"
+            skills={skills.ml}
+            borderColor="border-green-500"
           />
         </div>
       </div>

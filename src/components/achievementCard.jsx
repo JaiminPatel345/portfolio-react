@@ -31,8 +31,7 @@ const AchievementCard = ({
     >
       <div
         className="relative overflow-hidden rounded-xl bg-white dark:bg-neutral-800 p-6 md:p-8 shadow-md min-h-[360px] md:min-h-[420px] 
-                transition-all duration-300 border border-neutral-200 dark:border-neutral-700
-                hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-lg pb-16"
+                transition-all duration-300 border border-neutral-200 dark:border-neutral-700 pb-16"
       >
         {/* Date badge */}
         <div className="absolute top-4 right-4 bg-neutral-100 dark:bg-neutral-700 px-3 py-1 rounded-full">

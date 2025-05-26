@@ -5,7 +5,7 @@ import {MyCursor, Navbar} from './components/index.js';
 export const Layout = () => {
   return (
     <>
-      <MyCursor/>
+      {/*<MyCursor/>*/}
       <div className="bg-white dark:bg-neutral-900 min-h-screen transition-colors duration-300 overflow-x-hidden">
         <div>
           <Navbar/>

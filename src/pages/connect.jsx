@@ -41,7 +41,7 @@ const Connect = () => {
                 <motion.div 
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 0.2 }}
                     className="mb-3 md:mb-12"
                 >
                     <h2 className="text-3xl md:text-5xl font-bold mb-4 text-black dark:text-white max-w-4xl">
@@ -68,20 +68,17 @@ const Connect = () => {
                             className={`
                                 block p-6 rounded-xl
                                 bg-white dark:bg-neutral-800 
-                                transform transition-all duration-300
-                                hover:scale-105 
                                 border border-neutral-200 dark:border-neutral-700
-                                hover:border-neutral-300 dark:hover:border-neutral-600
+                                hover:border-neutral-400 dark:hover:border-neutral-500
                                 shadow-sm hover:shadow-md
                                 group
                             `}
-                            whileHover={{ scale: 1.02 }}
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.3, delay: 0.1 * index }}
                         >
                             <div className="flex items-center space-x-4">
-                                <div className={`transition-transform duration-300 text-blue-500 dark:text-blue-400 group-hover:text-blue-600 dark:group-hover:text-blue-300`}>
+                                <div className={`transition-transform duration-300 text-blue-500 dark:text-blue-400 `}>
                                     {link.icon}
                                 </div>
                                 <span className="text-xl font-semibold text-neutral-900 dark:text-white">{link.name}</span>
@@ -102,17 +99,14 @@ const Connect = () => {
                             key={info.name}
                             className="flex items-center space-x-4 p-4 rounded-lg
                                 bg-white dark:bg-neutral-800 
-                                transform transition-all duration-300
-                                hover:translate-x-2
+                                duration-300
                                 border border-neutral-200 dark:border-neutral-700
-                                hover:border-neutral-300 dark:hover:border-neutral-600
+                                hover:border-neutral-400 dark:hover:border-neutral-500
                                 shadow-sm hover:shadow-md"
                             href={info.link}
                             target="_blank"
-                            whileHover={{ x: 8 }}
-                            initial={{ opacity: 0, x: -20 }}
+                            initial={{ opacity: 0, x: 0 }}
                             animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.3, delay: 0.1 * index }}
                         >
                             <div className="text-blue-500 dark:text-blue-400">
                                 {info.icon}
