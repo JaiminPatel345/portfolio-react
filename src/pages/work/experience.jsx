@@ -10,13 +10,8 @@ function Experience() {
             link: "https://gdg.community.dev/",
             description: [
                 "Google Developer Groups on Campus at Birla Vishwakarma Mahavidyalaya",
-                "Organized tech talks, workshops, and meetups",
+                "Organized 10+ tech talks, workshops, and meetups",
                 "Served as a facilitator in the Google Generative AI Code Jam",
-            ],
-            learnings: [
-                "Enhanced public speaking and leadership skills",
-                "Built a strong network of tech enthusiasts and professionals",
-                "Collaborated with other GDG chapters across India",
             ],
             startDate: "Sep '24",
             endDate: "Present",
@@ -29,15 +24,8 @@ function Experience() {
             link: "https://passdn.com/",
             description: [
                 "PassDN is a platform that provide   services like rides , foods , grocery and tickets base on ONDC",
-                "Contributed to the backend using Node.js, Express.js, MongoDB, and Postman",
+                "Contributed to the backend using Node.js, Express.js, MongoDB, Redis and Postman",
                 "Developed a RESTful API for third-party validation and note management",
-            ],
-            learnings: [
-                "Gained a solid understanding of the Beckn protocol and ONDC (Open Network for Digital Commerce)",
-                "Worked on ONDC APIs and created controllers for the driver-side app",
-                "Learned the importance of API documentation and rigorous testing",
-                "Collaborated with the team to troubleshoot technical issues and enhance the platform",
-                "Familiarized with professional platforms such as Slack and Jira",
             ],
             startDate: "Jun",
             endDate: "July '24",

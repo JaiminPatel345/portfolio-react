@@ -25,10 +25,10 @@ const Timeline = ({ experiences }) => {
     return (
         <div className="w-full font-sans px-3 md:px-10 relative" ref={containerRef}>
             <div className="max-w-7xl mx-auto py-10 md:py-20 px-4 md:px-8 lg:px-10">
-                <h2 className="text-xl md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
+                <h2 className="text-3xl md:text-5xl font-bold mb-4 text-neutral-900 dark:text-white max-w-4xl">
                     Professional Experience
                 </h2>
-                <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm">
+                <p className="text-neutral-700 dark:text-neutral-300 text-base md:text-lg max-w-2xl">
                     A timeline of my professional journey and growth
                 </p>
             </div>
@@ -96,23 +96,23 @@ const Timeline = ({ experiences }) => {
                                     </ul>
                                 </div>
 
-                                <div className="space-y-4 md:space-y-5">
-                                    <h4 className="font-semibold text-base md:text-lg text-neutral-900 dark:text-neutral-100">
-                                        Key Learnings:
-                                    </h4>
-                                    <ul className="list-disc pl-4 space-y-2 md:space-y-3">
-                                        {experience.learnings.map(
-                                            (learning, idx) => (
-                                                <li
-                                                    key={idx}
-                                                    className="text-sm md:text-base text-neutral-700 dark:text-neutral-300"
-                                                >
-                                                    {learning}
-                                                </li>
-                                            )
-                                        )}
-                                    </ul>
-                                </div>
+                              {experience.learnings && (<div className="space-y-4 md:space-y-5">
+                                <h4 className="font-semibold text-base md:text-lg text-neutral-900 dark:text-neutral-100">
+                                  Key Learnings:
+                                </h4>
+                                <ul className="list-disc pl-4 space-y-2 md:space-y-3">
+                                  {experience.learnings.map(
+                                      (learning, idx) => (
+                                          <li
+                                              key={idx}
+                                              className="text-sm md:text-base text-neutral-700 dark:text-neutral-300"
+                                          >
+                                            {learning}
+                                          </li>
+                                      ),
+                                  )}
+                                </ul>
+                              </div>)}
                             </div>
                         </div>
                         

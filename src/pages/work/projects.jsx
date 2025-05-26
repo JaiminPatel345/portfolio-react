@@ -181,7 +181,7 @@ const Projects = () => {
           My Personal Projects
         </h2>
         <p className="text-neutral-700 dark:text-neutral-300 text-base md:text-lg max-w-2xl">
-          A showcase of my technical expertise and creative problem-solving abilities through various personal projects.
+          A showcase of my technical expertise through various personal projects.
         </p>
       </motion.div>
 

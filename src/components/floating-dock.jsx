@@ -1,8 +1,7 @@
 /* eslint-disable react/prop-types */
 import {cn} from '../lib/utils';
 import {IconMenu2, IconX} from '@tabler/icons-react';
-import {useState} from 'react';
-import {Link, useLocation} from 'react-router';
+import {useState, useEffect} from 'react';
 import {ThemeToggle} from './ui/ThemeToggle';
 import {AnimatePresence, motion} from 'framer-motion';
 import {useTheme} from '../lib/ThemeProvider.jsx';
@@ -18,8 +17,26 @@ export const FloatingDock = ({items, desktopClassName, mobileClassName}) => {
 
 const FloatingDockMobile = ({items, className}) => {
   const [open, setOpen] = useState(false);
-  const location = useLocation();
+  const [activeSection, setActiveSection] = useState('');
   const {toggleTheme} = useTheme();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = items.map(item => item.href?.replace('#', '')).filter(Boolean);
+      const currentSection = sections.find(section => {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          return rect.top <= 100 && rect.bottom >= 100;
+        }
+        return false;
+      });
+      setActiveSection(currentSection ? '#' + currentSection : '');
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [items]);
 
   return (
       <div
@@ -38,8 +55,7 @@ const FloatingDockMobile = ({items, className}) => {
                   className="fixed top-0 right-0 h-screen w-64 py-16 px-4 flex flex-col gap-2 bg-white/95 dark:bg-neutral-800/95 shadow-lg z-50 backdrop-blur-md border-l border-neutral-200 dark:border-neutral-700"
               >
                 {items.map((item) => {
-                  const isActive = location.pathname === item.href ||
-                      (item.href === '/' && location.pathname === '/');
+                  const isActive = activeSection === item.href;
                   const activeColor = 'text-blue-600 dark:text-blue-400';
 
                   return (
@@ -49,15 +65,23 @@ const FloatingDockMobile = ({items, className}) => {
                           transition={{delay: 0.1 * items.indexOf(item)}}
                           key={item.title}
                       >
-                        <Link
-                            to={item.href}
+                        <a
+                            href={item.href}
                             target={item.target ? '_blank' : '_self'}
                             className={cn(
                                 'flex items-center gap-3 px-4 py-3 hover:bg-gray-100 dark:hover:bg-neutral-700 rounded-md transition-colors',
                                 isActive &&
                                 'bg-gray-100 dark:bg-neutral-700 font-medium',
                             )}
-                            onClick={() => setOpen(false)}
+                            onClick={() => {
+                              if (!item.target) {
+                                const element = document.getElementById(item.href.replace('#', ''));
+                                if (element) {
+                                  element.scrollIntoView({ behavior: 'smooth' });
+                                }
+                                setOpen(false);
+                              }
+                            }}
                         >
                           <div className={cn('h-6 w-6',
                               isActive && activeColor,
@@ -66,9 +90,9 @@ const FloatingDockMobile = ({items, className}) => {
                               'text-base font-medium text-gray-800 dark:text-gray-200',
                               isActive && activeColor,
                           )}>
-                                            {item.title}
-                                        </span>
-                        </Link>
+                            {item.title}
+                          </span>
+                        </a>
                       </motion.div>
                   );
                 })}
@@ -79,8 +103,8 @@ const FloatingDockMobile = ({items, className}) => {
                     <ThemeToggle/>
                     <span
                         className="text-base font-medium text-gray-800 dark:text-gray-200">
-                                    Toggle Theme
-                                </span>
+                      Toggle Theme
+                    </span>
                   </div>
                 </div>
               </motion.div>
@@ -103,8 +127,25 @@ const FloatingDockMobile = ({items, className}) => {
 };
 
 const FloatingDockDesktop = ({items, className}) => {
-  const location = useLocation();
-  const activeColor = 'text-blue-600 dark:text-blue-400';
+  const [activeSection, setActiveSection] = useState('');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = items.map(item => item.href?.replace('#', '')).filter(Boolean);
+      const currentSection = sections.find(section => {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          return rect.top <= 100 && rect.bottom >= 100;
+        }
+        return false;
+      });
+      setActiveSection(currentSection ? '#' + currentSection : '');
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [items]);
 
   return (
       <div className={cn(
@@ -112,12 +153,12 @@ const FloatingDockDesktop = ({items, className}) => {
           className,
       )}>
         {items.map((item) => {
-          const isActive = location.pathname === item.href ||
-              (item.href === '/' && location.pathname === '/');
+          const isActive = activeSection === item.href;
+          const activeColor = 'text-blue-600 dark:text-blue-400';
 
           return (
-              <Link
-                  to={item.href}
+              <a
+                  href={item.href}
                   key={item.title}
                   target={item.target ? '_blank' : '_self'}
                   className={cn(
@@ -125,6 +166,15 @@ const FloatingDockDesktop = ({items, className}) => {
                       isActive &&
                       'border-b-2 border-blue-500 bg-gray-50 dark:bg-neutral-700',
                   )}
+                  onClick={(e) => {
+                    if (!item.target) {
+                      e.preventDefault();
+                      const element = document.getElementById(item.href.replace('#', ''));
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }
+                  }}
               >
                 <div className={cn('h-5 w-5',
                     isActive && activeColor,
@@ -133,9 +183,9 @@ const FloatingDockDesktop = ({items, className}) => {
                     'text-sm font-medium text-gray-800 dark:text-gray-200',
                     isActive && activeColor,
                 )}>
-                            {item.title}
-                        </span>
-              </Link>
+                  {item.title}
+                </span>
+              </a>
           );
         })}
       </div>
