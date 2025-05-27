@@ -18,7 +18,6 @@ const Home = () => {
     'Innovative Mindset',
     'Open-Source Contributor',
     'Lifelong Knowledge Seeker',
-    'Chess lover ',
   ];
 
   return (
