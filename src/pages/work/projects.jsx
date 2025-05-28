@@ -1,9 +1,11 @@
 import {IconBrandGithub, IconExternalLink} from '@tabler/icons-react';
 import {MarkdownRenderer, markdownStyles} from '../../components/ui/Markdown.jsx';
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import ProjectModal from '../../components/ui/ProjectModal';
 
 const Projects = () => {
+  const [selectedProject, setSelectedProject] = useState(null);
   const projects = [
     {
       title: 'ABHINAVAM',
@@ -186,132 +188,90 @@ const Projects = () => {
       </motion.div>
 
       <div className="max-w-7xl mx-auto px-4 relative">
-        {/* Projects with staggered layout */}
-        <div className="flex flex-col gap-16 md:gap-24">
-          {projects.map((project, index) => {
-            const primaryLink = getProjectPrimaryLink(project);
-            
-            return (
-              <motion.div 
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true, margin: "-100px" }}
-                className="relative"
-              >
-                {/* Project date tag */}
-                <div className="absolute -top-4 right-4 md:right-8 bg-neutral-100 dark:bg-neutral-800/50 px-4 py-1 rounded-full z-10 border border-neutral-200 dark:border-neutral-700 shadow-sm">
-                  <span className="text-neutral-700 dark:text-neutral-300 font-medium text-sm">
-                    {project.time}
-                  </span>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              className="group cursor-pointer"
+              onClick={() => setSelectedProject(project)}
+            >
+              <div className="bg-white dark:bg-neutral-800 rounded-2xl shadow-md overflow-hidden border border-neutral-200 dark:border-neutral-700 hover:shadow-lg transition-all duration-300 h-full flex flex-col">
+                {/* Project Image */}
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
-                
-                {/* Project card with offset image and content */}
-                <div 
-                  className="relative bg-white dark:bg-neutral-800 rounded-2xl shadow-md overflow-hidden p-5 md:p-8 border border-neutral-200 dark:border-neutral-700 hover:shadow-lg transition-all duration-300 cursor-pointer"
-                  onClick={() => primaryLink && window.open(primaryLink, '_blank')}
-                >
-                  
-                  {/* Project title */}
-                  <h3 className="text-xl md:text-2xl font-bold text-neutral-900 dark:text-white mb-4">
-                    {project.title}
-                  </h3>
-                  
-                  <div className="flex flex-col lg:flex-row gap-6 md:gap-8">
-                    {/* Project image */}
-                    <div className="w-full lg:w-2/5 h-[250px] md:h-[280px] rounded-xl shadow-md overflow-hidden border border-neutral-200 dark:border-neutral-700">
-                      <img 
-                        src={project.image} 
-                        alt={project.title} 
-                        className="w-full h-full object-cover transition-transform duration-300"
+
+                {/* Project Info */}
+                <div className="p-5 flex flex-col flex-grow">
+                  <div className="flex justify-between items-start mb-3">
+                    <h3 className="text-xl font-bold text-neutral-900 dark:text-white group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors">
+                      {project.title}
+                    </h3>
+                    <span className="text-sm text-neutral-500 dark:text-neutral-400">
+                      {project.time.split(' - ')[0]}
+                    </span>
+                  </div>
+
+                  <p className="text-neutral-700 dark:text-neutral-300 text-sm line-clamp-2 mb-4">
+                    {project.description}
+                  </p>
+
+                  {/* Technologies Preview */}
+                  <div className="flex flex-wrap gap-1.5 mb-4">
+                    {project.technology.slice(0, 3).map((tech, i) => (
+                      <span
+                        key={i}
+                        className="text-xs px-2 py-0.5 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 border border-blue-100 dark:border-blue-800"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                    {project.technology.length > 3 && (
+                      <span className="text-xs px-2 py-0.5 rounded-full bg-neutral-100 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-300">
+                        +{project.technology.length - 3}
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Read More Indicator */}
+                  <div className="mt-auto text-blue-500 dark:text-blue-400 text-sm font-medium flex items-center gap-1 transition-all">
+                    <span>Read more</span>
+                    <svg 
+                      className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" 
+                      fill="none" 
+                      viewBox="0 0 24 24" 
+                      stroke="currentColor"
+                    >
+                      <path 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round" 
+                        strokeWidth={2.5} 
+                        d="M9 5l6 7-6 7"
                       />
-                    </div>
-                    
-                    {/* Project details */}
-                    <div className="w-full lg:w-3/5 flex flex-col justify-between">
-                      <div>
-                        <p className="text-base text-neutral-700 dark:text-neutral-300 mb-3">
-                          {project.description}
-                        </p>
-                        
-                        <div className="mt-4">
-                          <h4 className="text-sm uppercase font-semibold tracking-wider text-neutral-500 dark:text-neutral-400 mb-2">Key Features</h4>
-                          <ul className="space-y-3">
-                            {project.points.map((point, i) => (
-                              <li key={i} className="text-neutral-800 dark:text-neutral-200 flex items-start">
-                                <span className="text-blue-500 dark:text-blue-400 mr-2 mt-1 flex-shrink-0">•</span>
-                                <div className="flex-grow">
-                                  <MarkdownRenderer markdown={point} />
-                                </div>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-                      
-                      <div className="mt-6">
-                        <h4 className="text-sm uppercase font-semibold tracking-wider text-neutral-500 dark:text-neutral-400 mb-2">Technologies</h4>
-                        <div className="flex flex-wrap gap-2 mb-5">
-                          {project.technology.map((tech, i) => (
-                            <span 
-                              key={i} 
-                              className="inline-flex text-xs px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 border border-blue-100 dark:border-blue-800"
-                            >
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                        
-                        <div className="flex gap-3 mt-2">
-                          {project.github && (
-                            <a 
-                              href={project.github} 
-                              target="_blank" 
-                              rel="noopener noreferrer"
-                              className="flex items-center gap-2 px-4 py-2 rounded-full text-neutral-700 dark:text-neutral-300 hover:text-blue-500 dark:hover:text-blue-400 bg-neutral-100 dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 hover:border-blue-300 dark:hover:border-blue-500 transition-all text-base font-medium"
-                              onClick={(e) => e.stopPropagation()}
-                            >
-                              <IconBrandGithub className="w-5 h-5" />
-                              <span>GitHub</span>
-                            </a>
-                          )}
-                          
-                          {project.live && (
-                            <a 
-                              href={project.live} 
-                              target="_blank" 
-                              rel="noopener noreferrer"
-                              className="flex items-center gap-2 px-4 py-2 rounded-full text-neutral-700 dark:text-neutral-300 hover:text-blue-500 dark:hover:text-blue-400 bg-neutral-100 dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 hover:border-blue-300 dark:hover:border-blue-500 transition-all text-base font-medium"
-                              onClick={(e) => e.stopPropagation()}
-                            >
-                              <IconExternalLink className="w-5 h-5" />
-                              <span>Live Demo</span>
-                            </a>
-                          )}
-                          
-                          {project.apk && (
-                            <a 
-                              href={project.apk} 
-                              target="_blank" 
-                              rel="noopener noreferrer"
-                              className="flex items-center gap-2 px-4 py-2 rounded-full text-neutral-700 dark:text-neutral-300 hover:text-blue-500 dark:hover:text-blue-400 bg-neutral-100 dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 hover:border-blue-300 dark:hover:border-blue-500 transition-all text-base font-medium"
-                              onClick={(e) => e.stopPropagation()}
-                            >
-                              <IconExternalLink className="w-5 h-5" />
-                              <span>APK</span>
-                            </a>
-                          )}
-                        </div>
-                      </div>
-                    </div>
+                    </svg>
                   </div>
                 </div>
-              </motion.div>
-            );
-          })}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
+
+      {/* Project Modal */}
+      <ProjectModal
+        project={selectedProject}
+        isOpen={!!selectedProject}
+        onClose={() => setSelectedProject(null)}
+      />
     </div>
   );
 };

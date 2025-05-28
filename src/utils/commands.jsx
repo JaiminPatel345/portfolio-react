@@ -90,7 +90,7 @@ export const commands = {
               rel="noopener noreferrer">GitHub</a> | 
         <a
             href="https://wanderlust.jaimin-detroja.tech" target="_blank"
-            rel="noopener noreferrer"> Live Demo</a></p>
+            rel="noopener noreferrer"> Live</a></p>
       
       <br/>
       <p>Type <strong
@@ -117,7 +117,7 @@ export const commands = {
     <p>• <a href="https://github.com/JaiminPatel345/wanderlust" target="_blank"
             rel="noopener noreferrer">GitHub</a> | 
         <a href="https://wanderlust.jaimin-detroja.tech" target="_blank"
-           rel="noopener noreferrer"> Live Demo</a></p>
+           rel="noopener noreferrer"> Live</a></p>
     <br/>
 
     <p><strong style={{color: 'var(--highlight-color)'}}>BARTER TALK</strong> | Real-time Messaging & Video Calling App | <em>Nov – Dec 2024</em></p>
@@ -127,7 +127,7 @@ export const commands = {
     <p>• <a href="https://github.com/JaiminPatel345/BarterTalk" target="_blank"
             rel="noopener noreferrer">GitHub</a> | 
         <a href="https://barter-talk.vercel.app" target="_blank"
-           rel="noopener noreferrer"> Live Demo</a></p>
+           rel="noopener noreferrer"> Live</a></p>
     <br/>
 
     <p><strong style={{color: 'var(--highlight-color)'}}>LOCKSMITH</strong> | Password & Document Manager App | <em>Dec 2024 – Jan 2025</em></p>
@@ -148,7 +148,7 @@ export const commands = {
     <p>• <a href="https://github.com/Bhargavimachhi/Health-Pie" target="_blank"
             rel="noopener noreferrer">GitHub</a> | 
         <a href="https://health-pie.onrender.com/" target="_blank"
-           rel="noopener noreferrer"> Live Demo</a></p>
+           rel="noopener noreferrer"> Live</a></p>
     <br/>
 
     <p><strong style={{color: 'var(--highlight-color)'}}>GDGC BVM</strong> | Official Website for GDGC Club at BVM | <em>Nov 2024</em></p>
@@ -159,7 +159,7 @@ export const commands = {
         href="https://github.com/GDG-On-Campus-BVM/GDG-On-Campus-BVM-Website"
         target="_blank" rel="noopener noreferrer">GitHub</a> | 
         <a href="https://gdg-on-campus-bvm.vercel.app" target="_blank"
-           rel="noopener noreferrer"> Live Demo</a></p>
+           rel="noopener noreferrer"> Live</a></p>
     <br/>
 
     <p>Type <strong style={{color: 'var(--highlight-color)'}}>skills</strong> to view my technical expertise!</p>
