@@ -37,10 +37,11 @@ const Home = () => {
           className="min-h-screen relative w-full overflow-hidden flex items-center justify-center flex-col gap-10 py-16 px-4 md:px-8"
           id="home">
         <div
-            className="absolute inset-0 w-full h-full bg-gradient-to-b from-transparent z-10 pointer-events-none"/>
+            className="absolute inset-0 w-full h-full bg-gradient-to-b from-transparent z-10 pointer-events-none"
+        />
 
         {/* Location for md+ screens - Absolute positioned */}
-        <div className="hidden md:flex items-center gap-3 fixed md:absolute bottom-8 md:bottom-12 right-8 md:right-12 z-50">
+        <div className="hidden md:absolute md:flex items-center gap-3  bottom-8 md:bottom-12 right-8 md:right-12 z-50">
           <IconMapPin className="w-6 h-6 text-emerald-500 dark:text-emerald-400" />
           <p className="text-lg md:text-xl font-medium text-neutral-800 dark:text-neutral-200 bg-white/90 dark:bg-neutral-900/90 px-4 py-2 rounded-full backdrop-blur-sm shadow-sm">
             Vadodara, India
@@ -67,7 +68,7 @@ const Home = () => {
                 <div className="flex items-center gap-3">
                   <IconSchool className="w-5 h-5 text-purple-500 dark:text-purple-400" />
                   <p className="text-lg font-medium text-neutral-700 dark:text-neutral-300">
-                    21 years old Student
+                    CSE Student
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
@@ -79,10 +80,10 @@ const Home = () => {
               </div>
 
               {/* Student Info - Desktop Only */}
-              <div className="hidden md:flex items-center gap-3 mt-4">
+              <div className="hidden md:flex items-center ml-10 gap-3 mt-4">
                 <IconSchool className="w-6 h-6 text-purple-500 dark:text-purple-400" />
                 <p className="text-xl font-medium text-neutral-700 dark:text-neutral-300">
-                  21 years old Student
+                  CSE Student
                 </p>
               </div>
             </div>
@@ -146,14 +147,14 @@ const Home = () => {
               initial={{opacity: 0, y: 20}}
               animate={{opacity: 1, y: 0}}
               transition={{duration: 0.5, delay: 0.2}}
-              className="w-full lg:w-[50%] h-[400px] md:h-[530px] overflow-hidden rounded-lg shadow-xl border-2 border-neutral-200 dark:border-neutral-700"
+              className="w-full lg:w-[50%] h-[400px] lg:h-[530px] overflow-hidden rounded-lg shadow-xl border-2 border-neutral-200 dark:border-neutral-700"
           >
             <ReactTerminal
                 welcomeMessage={welcomeMessage}
                 themes={themes}
                 theme={theme === 'dark' ? 'my-custom-theme' : 'light'}
                 commands={commands}
-                showControlBar={true}
+                showControlBar={true} 
                 showControlButtons={true}
                 errorMessage={'Command not found. Type \'help\' for available commands.'}
             />

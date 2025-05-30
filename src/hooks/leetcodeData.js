@@ -3,23 +3,23 @@ const USERNAME = 'soldier_of_god'
 
 // Default data to use when API fails or rate limited
 const defaultProblemData = {
-  solvedProblem: 152,
-  easySolved: 65,
-  mediumSolved: 72,
-  hardSolved: 15,
+  solvedProblem: 252,
+  easySolved: 98,
+  mediumSolved: 149,
+  hardSolved: 4,
   acSubmissionNum: [{ submissions: 435 }],
   totalSubmissionNum: [
     { submissions: 578 },
     { count: 98 },  // easy
-    { count: 194 }, // medium
-    { count: 65 }   // hard
-  ]
+    { count: 160 }, // medium
+    { count: 6 }   // hard
+  ] 
 };
 
 const defaultContestData = {
-  contestRating: 1547,
-  contestAttend: 17,
-  contestTopPercentage: 28.5
+  contestRating: 1830,
+  contestAttend: 26,
+  contestTopPercentage: 6.53
 };
 
 export const getProblemData = async () => {
