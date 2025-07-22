@@ -21,6 +21,10 @@ const getSkillIcon = (skillName) => {
       </g>
     </svg>,
 
+    'SQL' :
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" />
+    ,
+
     'React Native': <svg xmlns="http://www.w3.org/2000/svg"
                          width={ICON_SIZE} height={ICON_SIZE}
                          viewBox="0 0 128 128">

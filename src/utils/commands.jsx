@@ -294,8 +294,9 @@ export const commands = {
   ---------------   ---------------   ---------------
   ✅ Docker         ✅ TypeScript     ✅ Numpy
   ✅ Azure          ✅ JavaScript     ✅ Pandas
-  ✅ Git            ✅ Python         ✅ TensorFlow
+  ✅ Git            ✅ Python         ✅ OpenCV
   ✅ Cloudinary     ✅ Java
+                    ✅ SQL
       
 ────────────────────────────────────────────────────────
 `}

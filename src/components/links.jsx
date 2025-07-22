@@ -49,7 +49,7 @@ export function Navbar() {
               className="h-full w-full text-neutral-600 dark:text-neutral-300"/>
       ),
       target: '_blank',
-      href: 'https://drive.google.com/drive/folders/1nZtEwQeZXatneEilDkSel_jTYtBRgjhv?usp=sharing',
+      href: 'https://drive.google.com/file/d/19nkTVuaXvF7YW6bcV8OEx5Vj3sd1suzq/view?usp=sharing',
     },
   ];
 

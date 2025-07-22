@@ -4,10 +4,11 @@ import { motion } from 'framer-motion';
 
 const skills = {
   languages: [
+    {name: 'Java'},
     {name: 'TypeScript'},
     {name: 'JavaScript'},
     {name: 'Python'},
-    {name: 'Java'},
+    {name: 'SQL'},
   ],
   backend: [
     {name: 'Node.js'},
@@ -34,7 +35,8 @@ const skills = {
   ml: [
     {name: 'Numpy'},
     {name: 'Pandas'},
-    {name: 'TensorFlow'},
+    {name: 'OpenCV'},
+    // {name: 'TensorFlow'},
   ],
 };
 
@@ -69,7 +71,7 @@ const SkillCard = ({name, index}) => {
 
 const SkillCategory = ({title, skills, borderColor}) => {
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -107,7 +109,7 @@ const SkillSet = () => {
             Technologies I work with, categorized by proficiency level
           </p>
         </motion.div>
-        
+
         <div className="space-y-6">
           <SkillCategory
             title="Languages"
