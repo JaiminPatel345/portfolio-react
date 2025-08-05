@@ -27,7 +27,7 @@ export const Intro = () => {
         >
           <ul className="list-disc text-neutral-700 dark:text-neutral-200 text-lg md:text-xl space-y-4">
             <li>
-              Backend-first Full Stack <strong className="text-blue-600 dark:text-blue-400">JavaScript Developer</strong>
+              Full Stack <strong className="text-blue-600 dark:text-blue-400">JavaScript Developer</strong>
             </li>
             <li>
               <strong className="text-blue-600 dark:text-blue-400">Machine Learning</strong> Enthusiast

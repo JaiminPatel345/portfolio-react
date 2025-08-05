@@ -27,7 +27,7 @@ const Connect = () => {
         {
             name: 'Resume',
             icon: <IconFileDescription className="w-6 h-6"/>,
-            link: 'https://drive.google.com/drive/folders/1nZtEwQeZXatneEilDkSel_jTYtBRgjhv?usp=sharing',
+            link: 'https://drive.google.com/file/d/19nkTVuaXvF7YW6bcV8OEx5Vj3sd1suzq/view?usp=drive_link',
             value: 'My Resume'
         }
     ];

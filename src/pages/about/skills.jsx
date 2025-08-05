@@ -30,7 +30,6 @@ const skills = {
     {name: 'Docker'},
     {name: 'Azure'},
     {name: 'Git'},
-    {name: 'Cloudinary'},
   ],
   ml: [
     {name: 'Numpy'},

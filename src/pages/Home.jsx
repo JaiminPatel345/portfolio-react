@@ -68,7 +68,7 @@ const Home = () => {
                 <div className="flex items-center gap-3">
                   <IconSchool className="w-5 h-5 text-purple-500 dark:text-purple-400" />
                   <p className="text-lg font-medium text-neutral-700 dark:text-neutral-300">
-                    CSE Student
+                    Final year CSE Student
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
@@ -83,7 +83,7 @@ const Home = () => {
               <div className="hidden md:flex items-center ml-10 gap-3 mt-4">
                 <IconSchool className="w-6 h-6 text-purple-500 dark:text-purple-400" />
                 <p className="text-xl font-medium text-neutral-700 dark:text-neutral-300">
-                  CSE Student
+                  Final year CSE Student
                 </p>
               </div>
             </div>

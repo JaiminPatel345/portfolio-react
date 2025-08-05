@@ -8,7 +8,7 @@ export const Education = () => {
       location: 'Anand, Gujarat',
       degree: 'B.Tech, Computer Science',
       duration: '2022 – 2026',
-      achievements: ['SPI: 7.35'],
+      achievements: ['SPI: 7.20'],
       color: '#3b82f6', // blue-500
     },
     {
