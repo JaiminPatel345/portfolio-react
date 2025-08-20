@@ -97,7 +97,7 @@ const Achievements = () => {
       >
         <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
           <motion.div
-              initial={{opacity: 0, y: 20}}
+              initial={{opacity: 0, y: 10}}
               whileInView={{opacity: 1, y: 0}}
               transition={{duration: 0.2}}
               viewport={{once: true}}

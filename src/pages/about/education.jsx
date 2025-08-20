@@ -50,6 +50,7 @@ export const Education = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
+          viewport={{once: true }}
           className="text-3xl md:text-5xl font-bold mb-3 text-neutral-900 dark:text-white"
         >
           Education
@@ -58,6 +59,7 @@ export const Education = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
+          viewport={{once: true }}
           className="text-neutral-700 dark:text-neutral-300 text-base md:text-lg mb-12"
         >
           My शैक्षनिक Journey 
@@ -68,6 +70,7 @@ export const Education = () => {
           initial="hidden"
           animate="show"
           className="space-y-6"
+          viewport={{once: true }}
         >
           {educationData.map((education, index) => (
             <EducationCard 
@@ -85,6 +88,7 @@ export const Education = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5, duration: 0.5 }}
+            viewport={{once: true }}
             className="mt-8 pl-4 text-neutral-300"
           >
           </motion.p>
