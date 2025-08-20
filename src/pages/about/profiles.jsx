@@ -222,19 +222,20 @@ const CodeChefDetailModal = ({isOpen, onClose, data}) => {
             </div>
           </div>
 
-          <div className="mt-6">
-            <div className="bg-neutral-100 dark:bg-neutral-700 rounded-xl p-4">
-              <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-4">Rating
-                Graph</h3>
-              <div className="w-full h-64">
-                <iframe
-                    src="https://codechef-api.vercel.app/rating/jaimin_patel_3"
-                    className="w-full h-full rounded-lg"
-                    frameBorder="0"
-                />
-              </div>
-            </div>
-          </div>
+          {/*Commented because that github user's account is pause*/}
+          {/*<div className="mt-6">*/}
+          {/*  <div className="bg-neutral-100 dark:bg-neutral-700 rounded-xl p-4">*/}
+          {/*    <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-4">Rating*/}
+          {/*      Graph</h3>*/}
+          {/*    <div className="w-full h-64">*/}
+          {/*      <iframe*/}
+          {/*          src="https://codechef-api.vercel.app/rating/jaimin_patel_3"*/}
+          {/*          className="w-full h-full rounded-lg"*/}
+          {/*          frameBorder="0"*/}
+          {/*      />*/}
+          {/*    </div>*/}
+          {/*  </div>*/}
+          {/*</div>*/}
         </motion.div>
       </motion.div>
   );
@@ -246,7 +247,6 @@ const Profiles = () => {
   const [leetcodeProblemData, setLeetcodeProblemData] = useState(null);
   const [leetcodeContestData, setLeetcodeContestData] = useState(null);
   const [codechefData, setCodechefData] = useState(null);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -280,8 +280,6 @@ const Profiles = () => {
         setCodechefData(ccData);
       } catch (error) {
         console.error('Error in overall data fetching:', error);
-      } finally {
-        setLoading(false);
       }
     };
 

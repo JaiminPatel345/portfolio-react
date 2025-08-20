@@ -33,10 +33,10 @@ export const Intro = () => {
               <strong className="text-blue-600 dark:text-blue-400">Machine Learning</strong> Enthusiast
             </li>
             <li>
-              Open Source Contributor (beginner)
+              Knight in LeetCode
             </li>
             <li>
-              Strong in <strong className="text-blue-600 dark:text-blue-400">DSA</strong> with <strong className="text-blue-600 dark:text-blue-400">Java</strong>
+              Open Source Contributor (beginner)
             </li>
             <li>
               2026 Passout of <strong className="text-blue-600 dark:text-blue-400">Computer Science Student</strong> from BVM, Anand, Gujarat

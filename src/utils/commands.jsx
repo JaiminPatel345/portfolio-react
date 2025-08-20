@@ -8,8 +8,7 @@ export const commands = {
       <strong>education</strong> - My academic background <br/>
       <strong>skills</strong> - Technical expertise <br/>
       <strong>achievements</strong> - My notable accomplishments <br/>
-      <strong>contact</strong> - How to reach me <br/>
-      <strong>socials</strong> - Connect with me online <br/>
+      <strong>socials</strong> - Connect with me  <br/>
       <strong>activities</strong> - Community involvement <br/>
       <strong>contributions</strong> - Open source work <br/>
       <strong>dsa</strong> - Data Structures & Algorithms profile <br/>
@@ -45,11 +44,11 @@ export const commands = {
 
   about: (
       <span>
-      <p>• I&#39;m a <strong style={{color: 'var(--highlight-color)'}}>Backend-first Full Stack Developer</strong> with a passion for building efficient, scalable applications.</p>
+      <p>• I&#39;m a <strong style={{color: 'var(--highlight-color)'}}>Full Stack JavaScript Developer</strong>.</p>
       <p>• Machine Learning Enthusiast </p>
-      <p>• Currently pursuing B.Tech in <strong>Computer Science at BVM Anand, India</strong> (2022-2026).</p>
-      <p>• I enjoy tackling complex problems through clean code and innovative solutions.</p>
-      <p>• When I&#39;m not coding, you can find me on <i>Chess.com</i> .</p>
+      <p>• Knight in LeetCode </p>
+      <p>• {`'26`} grad of <strong>B.Tech Computer Science</strong>.</p>
+      <p>• When I&#39;m not coding, you can find me on <a href={'https://www.chess.com/member/jaimindetroja'} target={'_blank'} className="text-blue-600 dark:text-blue-400 hover:underline">Chess.com</a>.</p>
         <br/>
       <p> Type <strong style={{color: 'var(--highlight-color)'}}>skills</strong> to see my technical toolkit or <strong
           style={{color: 'var(--highlight-color)'}}>projects</strong> to view my work!</p>
@@ -62,9 +61,9 @@ export const commands = {
       <p><strong style={{color: 'var(--highlight-color)'}}><a
           href={`https://passdn.com/`}
           target={'_blank'}>PASSDN</a> (Startup)</strong> | <em>SDE Intern</em> | Jun – July 2024</p>
-      <p>• Engineered backend features with Node.js, Express.js, and MongoDB following ONDC protocols</p>
-      <p>• Implemented Redis caching to dramatically reduce API response times</p>
-      <p>• Architected payload structures and API routes for the ONDC Mobility module</p>
+      <p>• Developed backend features using Node.js, Express.js, and MongoDB</p>
+      <p>• Designed payload structures and API routes for the ONDC Mobility module</p>
+      <p>• Collaborated with the team via Slack; worked on tasks assigned through Jira</p>
       <br/>
     </span>
   ),
@@ -171,7 +170,7 @@ export const commands = {
       <div>
         <p><strong style={{color: 'var(--highlight-color)'}}>Birla Vishvakarma Mahavidyalaya</strong>, Anand, Gujarat</p>
         <p>B.Tech, Computer Science | 2022 – 2026</p>
-        <p>SPI: 7.35</p>
+        <p>SPI: 7.20</p>
         <br/>
       </div>
       <div>
@@ -207,29 +206,22 @@ export const commands = {
     </span>
   ),
 
-  contact: (
-      <span>
-      <p>📱 Phone: <strong>+91 8511633118</strong></p>
-      <p>📧 Email: <a
-          href="mailto:officialjaimin345@gmail.com">officialjaimin345@gmail.com</a></p>
-      <br/>
-      <p>Type <strong style={{color: 'var(--highlight-color)'}}>socials</strong> to connect with me online!</p>
-    </span>
-  ),
-
   socials: (
       <span>
-      <p>🔗 <strong>LinkedIn:</strong> <a
+        <p><strong>Email:</strong> <a
+            href="mailto:officialjaimin345@gmail.com">officialjaimin345@gmail.com</a></p>
+
+      <p><strong>LinkedIn:</strong> <a
           href="https://www.linkedin.com/in/jaimindetroja345"
           target="_blank"
           rel="noopener noreferrer">linkedin.com/in/jaimindetroja345</a></p>
-      <p>💻 <strong>GitHub:</strong> <a href="https://github.com/JaiminPatel345"
+      <p><strong>GitHub:</strong> <a href="https://github.com/JaiminPatel345"
                                        target="_blank"
                                        rel="noopener noreferrer">github.com/JaiminPatel345</a></p>
-      <p>🌐 <strong>Portfolio:</strong> <a
-          href="https://portfolio.jaimin-detroja.tech/"
+      <p><strong>Portfolio:</strong> <a
+          href="https://portfolio.jaimin-detroja.tech"
           target="_blank"
-          rel="noopener noreferrer">jaimin-detroja.tech</a> {`// what you are watching :)`}  </p>
+          rel="noopener noreferrer">jaimin-detroja.tech</a> {`// what you're viewing :)`}  </p>
     </span>
   ),
 
@@ -252,10 +244,10 @@ export const commands = {
 
   contributions: (
       <span>
-      <p>🌟 <a target={'_blank'}
+      <p><a target={'_blank'}
               href={`https://github.com/freeCodeCamp/freeCodeCamp`}><strong
           style={{color: 'var(--highlight-color)'}}>Free Code Camp</strong></a> - Contributed documentation improvements</p>
-      <p>🌟 <a target={'_blank'}
+      <p><a target={'_blank'}
               href={`https://github.com/cboard-org/cboard`}><strong
           style={{color: 'var(--highlight-color)'}}>Cboard</strong></a> - Assisted with open source AAC communication tool</p>
       <br/>
@@ -265,13 +257,13 @@ export const commands = {
 
   dsa: (
       <span>
-      <p>🔥 <a target={'_blank'}
+      <p>Knight in <a target={'_blank'}
               href={`https://leetcode.com/u/soldier_of_god`}><strong
-          style={{color: 'var(--highlight-color)'}}>Leetcode:</strong></a> Top 6% in contests</p>
+          style={{color: 'var(--highlight-color)'}}>LeetCode</strong></a></p>
         
-      <p>⭐ <a href={`https://www.codechef.com/users/jaimin_patel_3`}
+      <p>3-star rated coder in <a href={`https://www.codechef.com/users/jaimin_patel_3`}
               target={'_blank'}><strong
-          style={{color: 'var(--highlight-color)'}}>Codechef:</strong></a> 3-star rated coder</p>
+          style={{color: 'var(--highlight-color)'}}>CodeChef</strong></a></p>
       <br/>
       <p>I regularly practice algorithmic problem-solving to strengthen my analytical thinking.</p>
     </span>
@@ -281,24 +273,24 @@ export const commands = {
       <span>
       <pre style={{color: 'var(--highlight-color)'}}>
 {`
-──────────────── MY SKILLS & TECH STACK ────────────────
+──────────────── MY SKILLS & TECH STACK ───────────
            
   ⚡ BACKEND         ⚡ FRONTEND        ⚡ DATABASE
-  ---------------   ---------------   ---------------
+  ---------------   ---------------   -------------
   ✅ Node.js        ✅ React.js       ✅ MongoDB
   ✅ Express.js     ✅ React Native   ✅ PostgreSQL
   ✅ Redis          ✅ Redux           
   ✅ Socket.io      ✅ Tailwind CSS   
 
   ⚡ DEVOPS          ⚡ LANGUAGES       ⚡ ML
-  ---------------   ---------------   ---------------
+  ---------------   ---------------   -------------
   ✅ Docker         ✅ TypeScript     ✅ Numpy
   ✅ Azure          ✅ JavaScript     ✅ Pandas
   ✅ Git            ✅ Python         ✅ OpenCV
-  ✅ Cloudinary     ✅ Java
+                    ✅ Java
                     ✅ SQL
       
-────────────────────────────────────────────────────────
+───────────────────────────────────────────────────
 `}
       </pre>
     </span>
@@ -308,6 +300,7 @@ export const commands = {
 };
 
 commands.skill = commands.skills;
+commands.contact = commands.socials;
 
 export const welcomeMessage = (
     <span>
