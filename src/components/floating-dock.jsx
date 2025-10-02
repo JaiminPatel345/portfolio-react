@@ -149,7 +149,7 @@ const FloatingDockDesktop = ({items, className}) => {
 
   return (
       <div className={cn(
-          'mx-auto hidden md:flex h-12 items-center border border-gray-300 dark:border-neutral-700 rounded-md bg-white/90 dark:bg-neutral-800/90 backdrop-blur-md px-4 shadow-sm',
+          'mx-auto hidden md:flex h-12 items-center border border-gray-300 dark:border-neutral-700 rounded-md bg-white/90 dark:bg-neutral-800/90 backdrop-blur-md px-4 shadow-sm z-50',
           className,
       )}>
         {items.map((item) => {

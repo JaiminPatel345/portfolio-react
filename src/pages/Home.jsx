@@ -41,7 +41,7 @@ const Home = () => {
         />
 
         {/* Location for md+ screens - Absolute positioned */}
-        <div className="hidden md:absolute md:flex items-center gap-3  bottom-8 md:bottom-12 right-8 md:right-12 z-50">
+        <div className="hidden md:absolute md:flex items-center gap-3  bottom-8 md:bottom-12 right-8 md:right-12 z-10">
           <IconMapPin className="w-6 h-6 text-emerald-500 dark:text-emerald-400" />
           <p className="text-lg md:text-xl font-medium text-neutral-800 dark:text-neutral-200 bg-white/90 dark:bg-neutral-900/90 px-4 py-2 rounded-full backdrop-blur-sm shadow-sm">
             Vadodara, India
@@ -67,15 +67,17 @@ const Home = () => {
               <div className="md:hidden flex flex-col gap-1 mt-3">
                 <div className="flex items-center gap-3">
                   <IconSchool className="w-5 h-5 text-purple-500 dark:text-purple-400" />
-                  <p className="text-lg font-medium text-neutral-700 dark:text-neutral-300">
-                    B.Tech CSE | 2026 Graduate
-                  </p>
+                    <FlipWords
+                        currentWord={`B.Tech CSE | 2026 Graduate`}
+                        className="text-lg font-medium text-neutral-700 dark:text-neutral-300"
+                    />
                 </div>
                 <div className="flex items-center gap-3">
                   <IconMapPin className="w-5 h-5 text-emerald-500 dark:text-emerald-400" />
-                  <p className="text-lg font-medium text-neutral-700 dark:text-neutral-300">
-                    Vadodara, India
-                  </p>
+                    <FlipWords
+                        currentWord={`Vadodara, India`}
+                        className="text-lg font-medium text-neutral-700 dark:text-neutral-300"
+                    />
                 </div>
               </div>
 
