@@ -8,7 +8,7 @@ const Projects = () => {
     const projects = [
         {
             title: 'Quizzer',
-            image: 'https://opengraph.githubassets.com/1/jaiminpatel345/quizzer',
+            image: 'assets/quizzer.png',
             description: `Ai powered quiz microservice application that generates quizzes based on user-defined topics and difficulty levels.`,
             points: [
                 `Developed a backend only Typescript Node.js microservice to generate quizzes using Groq and Gemini AI.`,
@@ -130,7 +130,7 @@ and pagination.`,
         },
         {
             title: 'LOCKSMITH',
-            image: 'https://opengraph.githubassets.com/1/jaiminpatel345/locksmith',
+            image: 'assets/locksmith.png',
             description: 'Secure Password Manager for Android & iOS',
             points: [
                 'Built a cross-platform mobile application for **securely storing** sensitive credentials.',
