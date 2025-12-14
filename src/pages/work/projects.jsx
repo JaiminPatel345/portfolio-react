@@ -24,7 +24,7 @@ const Projects = () => {
                 'Express.js',
                 'Python',
                 'FastAPI',
-                'React 19',
+                'React',
                 'PostgreSQL',
                 'Prisma',
                 'Redis',
