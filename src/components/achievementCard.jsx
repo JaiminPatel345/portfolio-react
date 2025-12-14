@@ -1,5 +1,5 @@
 import React from 'react';
-import {Award, Brain, Code, Crown, Star, Trophy} from 'lucide-react';
+import { Award, Brain, Code, Crown, Star, Trophy } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const AchievementCard = ({
@@ -7,6 +7,7 @@ const AchievementCard = ({
   date,
   icon,
   iconColor,
+  logo,
   link,
   btnText,
   description,
@@ -40,12 +41,20 @@ const AchievementCard = ({
 
         {/* Icon Section */}
         <div className="flex justify-center mb-6 mt-4">
-          <div className={`p-4 rounded-full bg-neutral-100 dark:bg-neutral-700/50`}>
-            {IconComponent && (
-              <IconComponent
-                size={24}
-                color={iconColor}
+          <div className={`p-4 rounded-full bg-neutral-100 dark:bg-neutral-700/50 w-20 h-20 flex items-center justify-center`}>
+            {logo ? (
+              <img
+                src={logo}
+                alt={`${title} logo`}
+                className="w-full h-full object-contain"
               />
+            ) : (
+              IconComponent && (
+                <IconComponent
+                  size={32}
+                  color={iconColor}
+                />
+              )
             )}
           </div>
         </div>
