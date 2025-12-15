@@ -1,64 +1,63 @@
-import {CardBody, CardContainer, CardItem} from '../../components/ui/3d-card.jsx';
+import { CardBody, CardContainer, CardItem } from '../../components/ui/3d-card.jsx';
 import getSkillIcon from '../../utils/getSkillIcon.jsx';
 import { motion } from 'framer-motion';
 
 const skills = {
   languages: [
-    {name: 'Java'},
-    {name: 'TypeScript'},
-    {name: 'JavaScript'},
-    {name: 'Python'},
-    {name: 'SQL'},
+    { name: 'Java' },
+    { name: 'TypeScript' },
+    { name: 'JavaScript' },
+    { name: 'Python' },
+    { name: 'SQL' },
   ],
   backend: [
-    {name: 'Node.js'},
-    {name: 'Express.js'},
-    {name: 'Redis'},
-    {name: 'Socket.io'},
+    { name: 'Node.js' },
+    { name: 'Express.js' },
+    { name: 'Redis' },
+    { name: 'Socket.io' },
   ],
   frontend: [
-    {name: 'React.js'},
-    {name: 'React Native'},
-    {name: 'Redux'},
-    {name: 'Tailwind CSS'},
+    { name: 'React.js' },
+    { name: 'React Native' },
+    { name: 'Redux' },
+    { name: 'Tailwind CSS' },
   ],
   database: [
-    {name: 'MongoDB'},
-    {name: 'PostgreSQL'},
+    { name: 'MongoDB' },
+    { name: 'PostgreSQL' },
   ],
   devops: [
-    {name: 'Docker'},
-    {name: 'Azure'},
-    {name: 'Git'},
+    { name: 'Docker' },
+    { name: 'Azure' },
+    { name: 'Git' },
   ],
   ml: [
-    {name: 'Numpy'},
-    {name: 'Pandas'},
-    {name: 'OpenCV'},
-    // {name: 'TensorFlow'},
+    { name: 'Numpy' },
+    { name: 'Pandas' },
+    { name: 'OpenCV' },
   ],
 };
 
-const SkillCard = ({name, index}) => {
+const SkillCard = ({ name, index }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3, delay: index * 0.05 }}
+      transition={{ duration: 0.2, delay: index * 0.03 }}
       viewport={{ once: true }}
     >
       <CardContainer className="inter-var">
         <CardBody
-          className="relative group/card h-12 w-full rounded-lg bg-white dark:bg-neutral-800 backdrop-blur-sm border border-neutral-200 dark:border-neutral-700 transition-all duration-200"
+          className="relative group/card h-10 w-full rounded-md bg-white dark:bg-neutral-800 backdrop-blur-sm border border-neutral-200 dark:border-neutral-700 transition-all duration-200"
         >
           <CardItem
-            translateZ="20"
-            className="w-full h-full flex items-center gap-3 px-4"
+            translateZ="15"
+            className="w-full h-full flex items-center gap-2 px-3"
           >
-            <div className="w-6 h-6 flex items-center justify-center text-blue-500 dark:text-blue-400">
+            <div className="w-5 h-5 flex items-center justify-center text-blue-500 dark:text-blue-400">
               {getSkillIcon(name)}
             </div>
-            <span className="text-sm font-medium text-neutral-800 dark:text-neutral-200">
+            <span className="text-xs font-medium text-neutral-800 dark:text-neutral-200 truncate">
               {name}
             </span>
           </CardItem>
@@ -68,17 +67,17 @@ const SkillCard = ({name, index}) => {
   );
 };
 
-const SkillCategory = ({title, skills, borderColor}) => {
+const SkillCategory = ({ title, skills, borderColor }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 15 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.4 }}
       viewport={{ once: true }}
-      className={`p-6 md:p-8 rounded-lg bg-white dark:bg-neutral-800 border-l-4 ${borderColor} shadow-md`}
+      className={`p-4 rounded-lg bg-white dark:bg-neutral-800 border-l-4 ${borderColor} shadow-md`}
     >
-      <h2 className="text-xl font-semibold text-neutral-800 dark:text-white mb-4">{title}</h2>
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+      <h3 className="text-base font-semibold text-neutral-800 dark:text-white mb-3">{title}</h3>
+      <div className="grid grid-cols-2 gap-2">
         {skills.map((skill, index) => (
           <SkillCard
             key={`${title}-${index}`}
@@ -94,22 +93,23 @@ const SkillCategory = ({title, skills, borderColor}) => {
 const SkillSet = () => {
   return (
     <div className="w-full font-sans px-3 md:px-10 bg-white dark:bg-neutral-900 transition-colors duration-300" id="skills">
-      <div className="max-w-7xl mx-auto py-16 px-4 md:px-8">
+      <div className="max-w-7xl mx-auto py-12 px-4 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-3 text-neutral-900 dark:text-white">
+          <h2 className="text-3xl md:text-5xl font-bold mb-2 text-neutral-900 dark:text-white">
             Skill Set
           </h2>
-          <p className="text-neutral-700 dark:text-neutral-300 text-base md:text-lg mb-12">
-            Technologies I work with, categorized by proficiency level
+          <p className="text-neutral-700 dark:text-neutral-300 text-base md:text-lg mb-8">
+            Technologies I work with
           </p>
         </motion.div>
 
-        <div className="space-y-6">
+        {/* Grid layout for skill categories - 2 cols on mobile, 3 cols on larger screens */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <SkillCategory
             title="Languages"
             skills={skills.languages}

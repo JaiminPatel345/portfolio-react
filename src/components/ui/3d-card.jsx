@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 "use client"
 import { cn } from "../../lib/utils"
-import  {
+import {
     createContext,
     useState,
     useContext,
@@ -11,12 +11,24 @@ import  {
 
 const MouseEnterContext = createContext(undefined)
 
+// Detect if device supports touch (mobile/tablet)
+const isTouchDevice = () => {
+    if (typeof window === 'undefined') return false
+    return 'ontouchstart' in window || navigator.maxTouchPoints > 0
+}
+
 export const CardContainer = ({ children, className, containerClassName }) => {
     const containerRef = useRef(null)
     const [isMouseEntered, setIsMouseEntered] = useState(false)
+    const [isTouch, setIsTouch] = useState(false)
+
+    useEffect(() => {
+        setIsTouch(isTouchDevice())
+    }, [])
 
     const handleMouseMove = (e) => {
-        if (!containerRef.current) return
+        // Disable 3D effect on touch devices to prevent blurry text
+        if (isTouch || !containerRef.current) return
         const { left, top, width, height } =
             containerRef.current.getBoundingClientRect()
         const x = (e.clientX - left - width / 2) / 25
@@ -25,6 +37,7 @@ export const CardContainer = ({ children, className, containerClassName }) => {
     }
 
     const handleMouseEnter = (e) => {
+        if (isTouch) return
         setIsMouseEntered(true)
         if (!containerRef.current) return
     }
@@ -38,11 +51,11 @@ export const CardContainer = ({ children, className, containerClassName }) => {
         <MouseEnterContext.Provider value={[isMouseEntered, setIsMouseEntered]}>
             <div
                 className={cn(
-                    "py-3 flex items-center justify-center",
+                    "py-1 flex items-center justify-center",
                     containerClassName
                 )}
                 style={{
-                    perspective: "1000px",
+                    perspective: isTouch ? "none" : "1000px",
                 }}
             >
                 <div
@@ -51,11 +64,13 @@ export const CardContainer = ({ children, className, containerClassName }) => {
                     onMouseMove={handleMouseMove}
                     onMouseLeave={handleMouseLeave}
                     className={cn(
-                        "flex items-center justify-center relative transition-all duration-200 ease-linear",
+                        "flex items-center justify-center relative transition-all duration-200 ease-linear w-full",
                         className
                     )}
                     style={{
-                        transformStyle: "preserve-3d",
+                        transformStyle: isTouch ? "flat" : "preserve-3d",
+                        backfaceVisibility: "hidden",
+                        WebkitBackfaceVisibility: "hidden",
                     }}
                 >
                     {children}
@@ -69,9 +84,15 @@ export const CardBody = ({ children, className }) => {
     return (
         <div
             className={cn(
-                " [transform-style:preserve-3d]  [&>*]:[transform-style:preserve-3d]",
+                "[transform-style:preserve-3d] [&>*]:[transform-style:preserve-3d]",
                 className
             )}
+            style={{
+                backfaceVisibility: "hidden",
+                WebkitBackfaceVisibility: "hidden",
+                WebkitFontSmoothing: "antialiased",
+                MozOsxFontSmoothing: "grayscale",
+            }}
         >
             {children}
         </div>
@@ -92,14 +113,20 @@ export const CardItem = ({
 }) => {
     const ref = useRef(null)
     const [isMouseEntered] = useMouseEnter()
+    const [isTouch, setIsTouch] = useState(false)
+
+    useEffect(() => {
+        setIsTouch(isTouchDevice())
+    }, [])
 
     useEffect(() => {
         handleAnimations()
-    }, [isMouseEntered])
+    }, [isMouseEntered, isTouch])
 
     const handleAnimations = () => {
         if (!ref.current) return
-        if (isMouseEntered) {
+        // Disable translateZ on touch devices to prevent blurry text
+        if (isMouseEntered && !isTouch) {
             ref.current.style.transform = `translateX(${translateX}px) translateY(${translateY}px) translateZ(${translateZ}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`
         } else {
             ref.current.style.transform = `translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)`
@@ -113,6 +140,12 @@ export const CardItem = ({
                 "w-fit transition duration-200 ease-linear",
                 className
             )}
+            style={{
+                backfaceVisibility: "hidden",
+                WebkitBackfaceVisibility: "hidden",
+                WebkitFontSmoothing: "antialiased",
+                MozOsxFontSmoothing: "grayscale",
+            }}
             {...rest}
         >
             {children}
@@ -130,3 +163,4 @@ export const useMouseEnter = () => {
     }
     return context
 }
+
