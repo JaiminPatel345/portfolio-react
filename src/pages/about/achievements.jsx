@@ -5,7 +5,7 @@ const Achievements = () => {
   const achievements = [
     {
       title: 'ODOO X Mindbend Hackathon',
-      date: '5-6 April 2025',
+      date: 'Apr 2025',
       icon: 'Code',
       logo: '/assets/logos/odoo.png',
       iconColor: '#4CAF50',
@@ -31,7 +31,7 @@ const Achievements = () => {
     },
     {
       title: 'LeetCode ',
-      date: 'Sep 15, 2024',
+      date: 'Sep 2024',
       icon: 'Code',
       logo: '/assets/logos/leetcode.svg',
       iconColor: '#FF9800',

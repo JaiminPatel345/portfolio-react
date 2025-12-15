@@ -62,7 +62,7 @@ and pagination.`,
                 'Docker',
                 'Azure',
             ],
-            time: 'Sept 2025',
+            time: 'Sep 2025',
             github: 'https://github.com/JaiminPatel345/quizzer',
         },
         {
@@ -103,7 +103,7 @@ and pagination.`,
                 'Cloudinary',
                 'Git',
             ],
-            time: 'March - April 2025',
+            time: 'Mar - Apr 2025',
             github: 'https://github.com/JaiminPatel345/Abhinavam',
         },
         {
@@ -292,8 +292,8 @@ and pagination.`,
                                             {project.title}
                                         </h3>
                                         <span
-                                            className="text-sm text-neutral-500 dark:text-neutral-400">
-                                            {project.time.split(' - ')[0]}
+                                            className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-neutral-100 dark:bg-neutral-700/50 text-neutral-600 dark:text-neutral-400 border border-neutral-200 dark:border-neutral-700 whitespace-nowrap">
+                                            {project.time}
                                         </span>
                                     </div>
 

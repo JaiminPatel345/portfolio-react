@@ -14,7 +14,7 @@ function Experience() {
                 "Hosted 5+ tech sessions and workshops on tools and platforms including Git & GitHub, Figma, Azure, and AI\n" +
                 "in 30 Days Code Jam.",
             ],
-            startDate: "Sep '24",
+            startDate: "Sep 2024",
             endDate: "Present",
             duration: null,
         },
@@ -29,8 +29,8 @@ function Experience() {
                 "Designed payload structures and API routes for the ONDC Mobility module.",
                 "Collaborated with the team via Slack; worked on tasks assigned through Jira",
             ],
-            startDate: "Jun",
-            endDate: "July '24",
+            startDate: "Jun 2024",
+            endDate: "Jul 2024",
             duration: "2 months",
         },
     ]
