@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
@@ -33,17 +33,20 @@ html{
 
 /* Light mode styles */
 :root {
-  --highlight-color: #2563eb; /* Blue-600 for light mode */
+    --highlight-color: #2563eb;
+    /* Blue-600 for light mode */
 }
 
 /* Dark mode styles */
 .dark {
-  --highlight-color: #64ffda; /* Original teal for dark mode */
+    --highlight-color: #64ffda;
+    /* Original teal for dark mode */
 }
 
 .light,
-html:not(.dark)  {
-    color: #3b82f6; /* Blue-500 in light mode */
+html:not(.dark) {
+    color: #3b82f6;
+    /* Blue-500 in light mode */
 }
 
 .light-mode-whoami,
@@ -54,4 +57,68 @@ html:not(.dark) .light-mode-whoami {
 .dark .dark-mode-whoami,
 html.dark .dark-mode-whoami {
     color: var(--highlight-color);
+}
+
+/* ============================
+   View Transition API - Theme Toggle Animation
+   Creates a circular reveal effect from the toggle button
+   ============================ */
+
+/* Disable default view transition animations */
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+}
+
+/* The old view (current theme) stays on top initially */
+::view-transition-old(root) {
+    z-index: 1;
+}
+
+/* The new view (incoming theme) is below */
+::view-transition-new(root) {
+    z-index: 9999;
+}
+
+/* Circular reveal animation for the new theme */
+::view-transition-new(root) {
+    animation: theme-reveal-animation var(--theme-transition-duration, 500ms) cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* The old theme fades out while being clipped */
+::view-transition-old(root) {
+    animation: theme-hide-animation var(--theme-transition-duration, 500ms) cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Keyframe for revealing the new theme with expanding circle */
+@keyframes theme-reveal-animation {
+    0% {
+        clip-path: circle(0px at var(--theme-transition-x, 50%) var(--theme-transition-y, 50%));
+    }
+
+    100% {
+        clip-path: circle(var(--theme-transition-radius, 150vmax) at var(--theme-transition-x, 50%) var(--theme-transition-y, 50%));
+    }
+}
+
+/* Keyframe for hiding the old theme */
+@keyframes theme-hide-animation {
+    0% {
+        clip-path: circle(var(--theme-transition-radius, 150vmax) at var(--theme-transition-x, 50%) var(--theme-transition-y, 50%));
+    }
+
+    100% {
+        clip-path: circle(var(--theme-transition-radius, 150vmax) at var(--theme-transition-x, 50%) var(--theme-transition-y, 50%));
+    }
+}
+
+/* Prefer reduced motion - instant toggle for accessibility */
+@media (prefers-reduced-motion: reduce) {
+
+    ::view-transition-group(root),
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+        animation: none !important;
+    }
 }
