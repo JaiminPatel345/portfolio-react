@@ -137,7 +137,7 @@ and pagination.`,
         },
         {
             title: 'BARTER TALK',
-            image: 'https://res.cloudinary.com/dm4xqk12g/image/upload/v1746385904/1cda5f27-d3df-4461-87ec-2053208c3270.png',
+            image: 'assets/barter-talk.png',
             description: 'Real-time Chat & Video Calling Application',
             points: [
                 'Developed a comprehensive communication platform with **text and video** capabilities.',
