@@ -24,12 +24,11 @@ const MyCursor = () => {
 
     // Different colors for light and dark modes
     const cursorColor = theme === 'dark' ? "102,255,255" : "37,99,235" // dark: teal, light: blue-600
-    const cursorKey = `cursor-${isDesktop ? 'desktop' : 'mobile'}-${Date.now()}`
 
     return (
         <div>
             {isDesktop && (
-                <div key={cursorKey}>
+                <div>
                     <AnimatedCursor
                         clickables={[
                             {

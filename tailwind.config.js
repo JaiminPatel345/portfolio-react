@@ -7,6 +7,10 @@ export default {
     darkMode: "class",
     theme: {
         extend: {
+            fontFamily: {
+                sans: ['Inter', 'sans-serif'],
+                heading: ['Outfit', 'sans-serif'],
+            },
             colors: {
                 primary: {
                     50: "#eff6ff",
@@ -60,7 +64,7 @@ export default {
     plugins: [
         daisyui,
         addVariablesForColors,
-        function({ addUtilities }) {
+        function ({ addUtilities }) {
             addUtilities({
                 '.text-gradient': {
                     '@apply text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-blue-500 to-purple-500 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent animate-text-gradient': {}
@@ -100,6 +104,6 @@ function addVariablesForColors({ addBase, theme }) {
     );
 
     addBase({
-                ":root": newVars,
-            });
+        ":root": newVars,
+    });
 }

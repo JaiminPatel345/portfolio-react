@@ -1,6 +1,6 @@
-import {markdownStyles} from '../../components/ui/Markdown.jsx';
-import {useRef, useState} from 'react';
-import {motion} from 'framer-motion';
+import { markdownStyles } from '../../components/ui/Markdown.jsx';
+import { useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 import ProjectModal from '../../components/ui/ProjectModal';
 
 const Projects = () => {
@@ -243,9 +243,9 @@ and pagination.`,
         >
             <style>{markdownStyles}</style>
             <motion.div
-                initial={{opacity: 0, y: 20}}
-                animate={{opacity: 1, y: 0}}
-                transition={{duration: 0.5}}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
                 className="max-w-7xl mx-auto py-10 md:py-20 px-4 md:px-8 lg:px-10"
             >
                 <h2 className="text-3xl md:text-5xl font-bold mb-4 text-neutral-900 dark:text-white max-w-4xl">
@@ -264,10 +264,10 @@ and pagination.`,
                     {projects.map((project, index) => (
                         <motion.div
                             key={index}
-                            initial={{opacity: 0, y: 20}}
-                            whileInView={{opacity: 1, y: 0}}
-                            transition={{duration: 0.5, delay: index * 0.1}}
-                            viewport={{once: true, margin: '-100px'}}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            viewport={{ once: true, margin: '-100px' }}
                             className="group cursor-pointer"
                             onClick={() => setSelectedProject(project)}
                         >
@@ -281,7 +281,7 @@ and pagination.`,
                                         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                     />
                                     <div
-                                        className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"/>
+                                        className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                 </div>
 
                                 {/* Project Info */}
@@ -293,8 +293,8 @@ and pagination.`,
                                         </h3>
                                         <span
                                             className="text-sm text-neutral-500 dark:text-neutral-400">
-                      {project.time.split(' - ')[0]}
-                    </span>
+                                            {project.time.split(' - ')[0]}
+                                        </span>
                                     </div>
 
                                     <p className="text-neutral-700 dark:text-neutral-300 text-sm line-clamp-2 mb-4">
@@ -310,14 +310,14 @@ and pagination.`,
                                                     key={i}
                                                     className="text-xs px-2 py-0.5 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 border border-blue-100 dark:border-blue-800"
                                                 >
-                        {tech}
-                      </span>
+                                                    {tech}
+                                                </span>
                                             ))}
                                         {project.technology.length > 3 && (
                                             <span
                                                 className="text-xs px-2 py-0.5 rounded-full bg-neutral-100 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-300">
-                        +{project.technology.length - 3}
-                      </span>
+                                                +{project.technology.length - 3}
+                                            </span>
                                         )}
                                     </div>
 

@@ -6,6 +6,31 @@ html{
     scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #444;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}
+
 /* Light mode styles */
 :root {
   --highlight-color: #2563eb; /* Blue-600 for light mode */
