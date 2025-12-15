@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import  { useRef, useState, useEffect } from "react"
+import { useRef, useState, useEffect } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 
 const Timeline = ({ experiences }) => {
@@ -39,16 +39,15 @@ const Timeline = ({ experiences }) => {
                         className="flex flex-col md:flex-row md:justify-start pt-10 md:pt-40 md:gap-16 relative mb-16 md:mb-6"
                     >
                         {/* Left side - Date and Duration (Positioned differently on mobile) */}
-                        <div className="md:sticky flex flex-col z-20 md:top-40 self-start md:w-48 mb-5 md:mb-0">
-                            <div className="pl-16 md:pl-12">
-                                <div className="text-base font-medium bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 px-4 py-1 rounded-full inline-block md:block">
-                                    {experience.startDate} -{" "}
-                                    {experience.endDate}
-                                </div>
+                        <div className="md:sticky flex flex-col z-20 md:top-40 self-start md:w-48 mb-5 md:mb-0 md:items-end">
+                            <div className="pl-16 md:pl-0 md:pr-12 flex flex-col items-start md:items-end">
+                                <span className="text-sm font-medium px-3 py-1 rounded-full bg-neutral-100 dark:bg-neutral-700/50 text-neutral-600 dark:text-neutral-400 border border-neutral-200 dark:border-neutral-700 whitespace-nowrap shadow-sm">
+                                    {experience.startDate} - {experience.endDate}
+                                </span>
                                 {experience.duration && (
-                                    <div className="text-sm text-neutral-500 dark:text-neutral-400 mt-1 ml-2">
+                                    <span className="text-xs text-neutral-500 dark:text-neutral-500 mt-2 font-medium">
                                         {experience.duration}
-                                    </div>
+                                    </span>
                                 )}
                             </div>
                         </div>
@@ -67,11 +66,11 @@ const Timeline = ({ experiences }) => {
                                         </div>
                                     </a>
                                     <div>
-                                        <h3 className="text-xl md:text-2xl font-bold text-primary">
+                                        <h3 className="text-xl md:text-2xl font-bold text-neutral-900 dark:text-white">
                                             {experience.role}
                                         </h3>
                                         <a href={experience.link} target="_blank" rel="noopener noreferrer">
-                                            <span className="text-base md:text-lg text-blue-400 hover:text-blue-300 hover:underline">
+                                            <span className="text-base md:text-lg text-blue-500 dark:text-blue-400 hover:text-blue-400 dark:hover:text-blue-300 hover:underline">
                                                 {experience.name}
                                             </span>
                                         </a>
@@ -96,36 +95,36 @@ const Timeline = ({ experiences }) => {
                                     </ul>
                                 </div>
 
-                              {experience.learnings && (<div className="space-y-4 md:space-y-5">
-                                <h4 className="font-semibold text-base md:text-lg text-neutral-900 dark:text-neutral-100">
-                                  Key Learnings:
-                                </h4>
-                                <ul className="list-disc pl-4 space-y-2 md:space-y-3">
-                                  {experience.learnings.map(
-                                      (learning, idx) => (
-                                          <li
-                                              key={idx}
-                                              className="text-sm md:text-base text-neutral-700 dark:text-neutral-300"
-                                          >
-                                            {learning}
-                                          </li>
-                                      ),
-                                  )}
-                                </ul>
-                              </div>)}
+                                {experience.learnings && (<div className="space-y-4 md:space-y-5">
+                                    <h4 className="font-semibold text-base md:text-lg text-neutral-900 dark:text-neutral-100">
+                                        Key Learnings:
+                                    </h4>
+                                    <ul className="list-disc pl-4 space-y-2 md:space-y-3">
+                                        {experience.learnings.map(
+                                            (learning, idx) => (
+                                                <li
+                                                    key={idx}
+                                                    className="text-sm md:text-base text-neutral-700 dark:text-neutral-300"
+                                                >
+                                                    {learning}
+                                                </li>
+                                            ),
+                                        )}
+                                    </ul>
+                                </div>)}
                             </div>
                         </div>
-                        
+
                     </div>
                 ))}
-                
+
                 {/* Timeline vertical line */}
                 <div
                     style={{
                         height: height + "px",
                         marginLeft: "-1.5px"
                     }}
-                    className="absolute left-6 md:left-0 top-0 overflow-hidden w-[3px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-neutral-200 dark:via-neutral-700 to-transparent to-[99%] [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]"
+                    className="absolute left-6 md:left-48 top-0 overflow-hidden w-[3px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-neutral-200 dark:via-neutral-700 to-transparent to-[99%] [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]"
                 >
                     <motion.div
                         style={{
