@@ -9,7 +9,7 @@ const Projects = () => {
         {
             title: 'MicroMerit Portal',
             image: 'assets/micromerit.png',
-            description: `AI-powered digital credential management system with blockchain integration, external credential sync, skill profiling, and employer matching capabilities.`,
+            description: `AI-powered digital Micro Credential aggregator platform with blockchain integration, external credential sync, skill profiling, and employer matching capabilities.`,
             points: [
                 `Built a full-stack microservices architecture with 6 modules including Node.js backend, Python AI service, blockchain service, and dual React frontends (main app + admin dashboard).`,
                 `Implemented AI-powered features using Groq LLM for OCR extraction from certificates, automatic skill profile generation, personalized learning roadmaps, and intelligent employer chatbot for candidate queries.`,

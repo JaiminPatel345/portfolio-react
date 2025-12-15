@@ -3,6 +3,20 @@ import { motion } from 'framer-motion';
 
 const Achievements = () => {
   const achievements = [
+      {
+          title: 'SIH 2025',
+          date: 'Dec 2025',
+          icon: 'Brain',
+          logo: '/assets/logos/sih.png',
+          iconColor: '#34bba9',
+          link: 'https://drive.google.com/file/d/1xiICImjmDm72I6JSL4QWGQE4PDI3L_sb/view?usp=sharing',
+          btnText: 'View Photo',
+          description: [
+              'Finialist in Smart India Hackathon 2025',
+              'Top 5 team across India',
+              'Make Micro Credential aggregator platform',
+          ],
+      },
     {
       title: 'ODOO X Mindbend Hackathon',
       date: 'Apr 2025',
