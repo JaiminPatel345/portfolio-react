@@ -21,21 +21,21 @@ const Home = () => {
     {
       text: 'Backend Development',
       icon: <div className='rounded-full bg-[#ffffff] overflow-hidden'>
-        <img src="/assets/logos/code.gif" alt="Backend Icon" className="w-10 h-10 " />
+        <img src="/assets/logos/code.gif" alt="Backend Icon" className="w-7 h-7 md:w-10 md:h-10" />
       </div>
     },
     {
       text: 'Complex Problem Solving',
       icon: 
-      <div className='rounded-full bg-[#ffffff]'>
-        <img src="/assets/logos/brain.gif" alt="Brain Icon" className="w-10 h-10 " />
+      <div className='rounded-full bg-[#ffffff] overflow-hidden'>
+        <img src="/assets/logos/brain.gif" alt="Brain Icon" className="w-7 h-7 md:w-10 md:h-10 " />
       </div>
     },
     {
       text: 'Microservices & Algorithms',
       icon: 
-      <div className='rounded-full bg-[#ffffff]'>
-        <img src="/assets/logos/algorithm.gif" alt="Microservices & Algorithms Icon" className="w-10 h-10" />
+      <div className='rounded-full bg-[#ffffff] overflow-hidden'>
+        <img src="/assets/logos/algorithm.gif" alt="Microservices & Algorithms Icon" className="w-7 h-7 md:w-10 md:h-10" />
       </div>
     }
   ];
@@ -77,7 +77,8 @@ const Home = () => {
 
             {/* Student Info - Responsive */}
             <div className="flex items-center gap-2 mt-2 md:mt-4 text-neutral-700 dark:text-neutral-300">
-              <IconSchool className="w-5 h-5 md:w-6 md:h-6 text-purple-500 dark:text-purple-400" />
+              {/* <IconSchool className="w-5 h-5 md:w-6 md:h-6 text-purple-500 dark:text-purple-400" /> */}
+              <img src="/assets/education.png" alt="University Icon" className="w-5 h-5 md:w-6 md:h-6" />
               <p className="text-base md:text-xl font-medium">
                 B.Tech CSE | 2026 Graduate
               </p>
