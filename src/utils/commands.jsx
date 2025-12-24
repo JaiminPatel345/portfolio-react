@@ -240,7 +240,6 @@ export const commands = {
       <p>🥇 <strong style={{ color: 'var(--highlight-color)' }}>1st Rank</strong> in Byte Quest - College coding competition</p>
       <p>🏅 <strong style={{ color: 'var(--highlight-color)' }}>GeeksForGeeks</strong> - 19th rank in Contest 135, 53rd rank in Contest 129</p>
       <p>🏅 <strong style={{ color: 'var(--highlight-color)' }}>3rd Place</strong> in Code Ramzat - DSA competition on CodeChef</p>
-      <p>🎯 Qualified <strong style={{ color: 'var(--highlight-color)' }}>JEE Advanced 2022</strong> with AIR 28k</p>
       <br />
       <p>Type <strong style={{ color: 'var(--highlight-color)' }}>dsa</strong> to see my competitive programming stats!</p>
     </span>

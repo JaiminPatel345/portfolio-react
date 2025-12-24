@@ -3,20 +3,20 @@ import { motion } from 'framer-motion';
 
 const Achievements = () => {
   const achievements = [
-      {
-          title: 'SIH 2025',
-          date: 'Dec 2025',
-          icon: 'Brain',
-          logo: '/assets/logos/sih.png',
-          iconColor: '#34bba9',
-          link: 'https://drive.google.com/file/d/1xiICImjmDm72I6JSL4QWGQE4PDI3L_sb/view?usp=sharing',
-          btnText: 'View Photo',
-          description: [
-              'Finialist in Smart India Hackathon 2025',
-              'Top 5 team across India',
-              'Make Micro Credential aggregator platform',
-          ],
-      },
+    {
+      title: 'SIH 2025',
+      date: 'Dec 2025',
+      icon: 'Brain',
+      logo: '/assets/logos/sih.png',
+      iconColor: '#34bba9',
+      link: 'https://drive.google.com/file/d/1xiICImjmDm72I6JSL4QWGQE4PDI3L_sb/view?usp=sharing',
+      btnText: 'View Photo',
+      description: [
+        'Finialist in Smart India Hackathon 2025',
+        'Top 5 team across India',
+        'Make Micro Credential aggregator platform',
+      ],
+    },
     {
       title: 'ODOO X Mindbend Hackathon',
       date: 'Apr 2025',
@@ -95,19 +95,19 @@ const Achievements = () => {
         'DSA competition on CodeChef ',
       ],
     },
-    {
-      title: 'JEE Advanced',
-      date: '2022',
-      icon: 'Star',
-      logo: '/assets/logos/jee.png',
-      iconColor: '#FFC107',
-      link: 'https://drive.google.com/file/d/118_UHHGKqQ_2aQP452ZRDp860UVqE_P1/view?usp=sharing',
-      btnText: 'View Details',
-      description: [
-        'Cleared JEE Advanced 2022',
-        'AIR 28,063',
-      ],
-    },
+    // {
+    //   title: 'JEE Advanced',
+    //   date: '2022',
+    //   icon: 'Star',
+    //   logo: '/assets/logos/jee.png',
+    //   iconColor: '#FFC107',
+    //   link: 'https://drive.google.com/file/d/118_UHHGKqQ_2aQP452ZRDp860UVqE_P1/view?usp=sharing',
+    //   btnText: 'View Details',
+    //   description: [
+    //     'Cleared JEE Advanced 2022',
+    //     'AIR 28,063',
+    //   ],
+    // },
   ];
 
   return (
