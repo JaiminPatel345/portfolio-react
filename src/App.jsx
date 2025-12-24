@@ -1,13 +1,13 @@
 import { TerminalContextProvider } from 'react-terminal';
 import { ThemeProvider } from './lib/ThemeProvider';
-import { Navbar, MyCursor } from './components';
+import { Navbar } from './components';
 import { About, Connect, Home, Work } from './pages';
 
 function App() {
   return (
     <ThemeProvider>
       <TerminalContextProvider>
-        <MyCursor />
+        {/* <MyCursor /> */}
         <div
           className="bg-white dark:bg-neutral-900 min-h-screen transition-colors duration-300 overflow-x-hidden">
           <Navbar />
