@@ -1,7 +1,7 @@
 import { TerminalContextProvider } from 'react-terminal';
 import { ThemeProvider } from './lib/ThemeProvider';
 import { Navbar } from './components';
-import { About, Connect, Home, Work } from './pages';
+import { About, Connect, Home, Work, Resume } from './pages';
 
 function App() {
   return (
@@ -21,6 +21,9 @@ function App() {
             <section id="about" className="min-h-screen">
               <About />
             </section>
+            <section id="resume" className="min-h-screen">
+              <Resume />
+            </section>
             <section id="connect" className="min-h-screen">
               <Connect />
             </section>
@@ -32,3 +35,4 @@ function App() {
 }
 
 export default App;
+
