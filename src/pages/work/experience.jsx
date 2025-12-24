@@ -5,18 +5,20 @@ function Experience() {
     const experiences = [
         {
             role: "Tech Expert",
-            name: "GDGC BVM",
+            name: "Google Developer Groups on Campus BVM",
             logo: "/assets/gdg.png",
             link: "https://gdg.community.dev/gdg-on-campus-birla-vishvakarma-mahavidyalaya-engineering-college-anand-india",
             description: [
-                "Google Developer Groups on Campus at Birla Vishwakarma Mahavidyalaya",
+                "Google Developer Groups on Campus (GDGC) is a student community\n" +
+                "that aims to bring together students interested in Google technologies and provide them with\n" +
+                "opportunities to learn, collaborate, and grow their skills.",
                 "Built and deployed the official GDG BVM website using React.js",
                 "Hosted 5+ tech sessions and workshops on tools and platforms including Git & GitHub, Figma, Azure, and AI\n" +
                 "in 30 Days Code Jam.",
             ],
             startDate: "Sep 2024",
-            endDate: "Present",
-            duration: null,
+            endDate: "Sep 2025",
+            duration: "1 year",
         },
         {
             role: "SDE Intern",

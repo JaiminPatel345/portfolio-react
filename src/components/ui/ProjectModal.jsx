@@ -106,7 +106,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                         className="flex items-center gap-2 px-6 py-2.5 rounded-xl bg-blue-600 text-white font-bold hover:bg-blue-700 transition-all active:scale-95 shadow-lg shadow-blue-500/20"
                       >
                         <IconExternalLink className="w-5 h-5" />
-                        <span>Live Demo</span>
+                        <span>Live</span>
                       </a>
                     )}
                     {project.apk && (
