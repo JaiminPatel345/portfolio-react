@@ -9,7 +9,7 @@ const Projects = () => {
         {
             title: 'MicroMerit Portal',
             image: 'assets/micromerit.png',
-            description: `AI-powered digital Micro Credential aggregator platform with blockchain integration, external credential sync, skill profiling, and employer matching capabilities.`,
+            description: `A comprehensive Micro credential aggregator platform with blockchain integration, external credential sync, OCR, AI-powered skill profiling, and employer matching capabilities.`,
             points: [
                 `Built a full-stack microservices architecture with 6 modules including Node.js backend, Python AI service, blockchain service, and dual React frontends (main app + admin dashboard).`,
                 `Implemented AI-powered features using Groq LLM for OCR extraction from certificates, automatic skill profile generation, personalized learning roadmaps, and intelligent employer chatbot for candidate queries.`,
@@ -83,7 +83,7 @@ and pagination.`,
         },
         {
             title: 'ABHINAVAM',
-            image: 'https://res.cloudinary.com/dm4xqk12g/image/upload/v1746389403/placeholder-image_rkf7ej.png',
+            image: '/assets/abhinavam.png',
             description: `Personalized social media platform tailored for artists and creative professionals.`,
             points: [
                 'Built a **production-grade app** with a strong focus on **performance, efficiency, and security**.',
@@ -166,7 +166,7 @@ and pagination.`,
         },
         {
             title: 'LOCKSMITH',
-            image: 'assets/locksmith.png',
+            image: 'assets/locksmith.jpg',
             description: 'Secure Password Manager for Android & iOS',
             points: [
                 'Built a cross-platform mobile application for **securely storing** sensitive credentials.',
