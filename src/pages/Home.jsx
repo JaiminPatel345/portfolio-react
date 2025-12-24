@@ -20,15 +20,23 @@ const Home = () => {
   const hireMeFor = [
     {
       text: 'Backend Development',
-      icon: IconCode
+      icon: <div className='rounded-full bg-[#ffffff] overflow-hidden'>
+        <img src="/assets/logos/code.gif" alt="Backend Icon" className="w-10 h-10 " />
+      </div>
     },
     {
-      text: 'Frontend Development',
-      icon: IconBrandReact
+      text: 'Complex Problem Solving',
+      icon: 
+      <div className='rounded-full bg-[#ffffff]'>
+        <img src="/assets/logos/brain.gif" alt="Brain Icon" className="w-10 h-10 " />
+      </div>
     },
     {
-      text: 'Machine Learning',
-      icon: IconBrain
+      text: 'Microservices & Algorithms',
+      icon: 
+      <div className='rounded-full bg-[#ffffff]'>
+        <img src="/assets/logos/algorithm.gif" alt="Microservices & Algorithms Icon" className="w-10 h-10" />
+      </div>
     }
   ];
 
@@ -83,14 +91,7 @@ const Home = () => {
             <div className="flex flex-col gap-1 md:gap-3">
               {hireMeFor.map((item, index) => (
                 <div key={index} className="flex items-center gap-2 md:gap-3 justify-center lg:justify-start">
-                  <item.icon
-                    className={`w-4 h-4 md:w-5 md:h-5 ${index === 0
-                      ? "text-amber-500 dark:text-amber-400"
-                      : index === 1
-                        ? "text-sky-500 dark:text-sky-400"
-                        : "text-rose-500 dark:text-rose-400"
-                      }`}
-                  />
+                  {item.icon}
                   <FlipWords
                     currentWord={item.text}
                     className="text-base md:text-xl font-medium text-neutral-700 dark:text-neutral-300"
