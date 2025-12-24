@@ -38,7 +38,7 @@ const FloatingDockMobile = ({ items, className }) => {
 
   return (
     <div
-      className={cn('fixed top-4 right-4 block md:hidden z-50', className)}>
+      className={cn('fixed top-4 right-4 block lg:hidden z-50', className)}>
       {open && (
         <div className="fixed inset-0 z-40 bg-black bg-opacity-50"
           onClick={() => setOpen(false)} />
@@ -50,8 +50,18 @@ const FloatingDockMobile = ({ items, className }) => {
             animate={{ opacity: 1, x: 0, y: 0 }}
             exit={{ opacity: 0, x: 300 }}
             transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
-            className="fixed top-0 right-0 h-screen w-64 py-16 px-4 flex flex-col gap-2 bg-white/95 dark:bg-neutral-800/95 shadow-lg z-50 backdrop-blur-md border-l border-neutral-200 dark:border-neutral-700"
+            className="fixed top-0 right-0 h-screen w-64 py-6 px-4 flex flex-col gap-2 bg-white/95 dark:bg-neutral-800/95 shadow-lg z-50 backdrop-blur-md border-l border-neutral-200 dark:border-neutral-700"
           >
+            <div className="flex justify-between items-center mb-4 px-2">
+              <span className="text-lg font-bold text-neutral-800 dark:text-neutral-200">Menu</span>
+              <button
+                onClick={() => setOpen(false)}
+                className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-neutral-700 transition-colors"
+              >
+                <IconX className="h-5 w-5 text-neutral-600 dark:text-neutral-400" />
+              </button>
+            </div>
+
             {items.map((item) => {
               const isActive = activeSection === item.href;
               const activeColor = 'text-blue-600 dark:text-blue-400';
@@ -95,7 +105,7 @@ const FloatingDockMobile = ({ items, className }) => {
               );
             })}
             <div
-              className="mt-6 pt-4 border-t border-gray-200 dark:border-neutral-700">
+              className="mt-auto pt-4 border-t border-gray-200 dark:border-neutral-700">
               <div className="px-4 flex items-center gap-3">
                 <AnimatedThemeToggle />
                 <span
@@ -146,7 +156,7 @@ const FloatingDockDesktop = ({ items, className }) => {
 
   return (
     <div className={cn(
-      'mx-auto hidden md:flex h-12 items-center border border-gray-300 dark:border-neutral-700 rounded-md bg-white/90 dark:bg-neutral-800/90 backdrop-blur-md px-4 shadow-sm z-50',
+      'mx-auto hidden lg:flex h-12 items-center border border-gray-300 dark:border-neutral-700 rounded-md bg-white/90 dark:bg-neutral-800/90 backdrop-blur-md px-4 shadow-sm z-50',
       className,
     )}>
       {items.map((item) => {

@@ -57,11 +57,11 @@ export function Navbar() {
     <div
       className="fixed top-0 left-0 right-0 z-40 px-4 py-2 pointer-events-none">
       <div className="flex items-center justify-between">
-        <div className="hidden md:block pointer-events-auto">
+        <div className="hidden lg:block pointer-events-auto">
           <AnimatedThemeToggle />
         </div>
         <div
-          className="pointer-events-auto md:pointer-events-auto w-full md:w-auto flex justify-end">
+          className="pointer-events-auto lg:pointer-events-auto w-full lg:w-auto flex justify-end">
           <FloatingDock
             desktopClassName="bg-white dark:bg-neutral-800/90 shadow-md"
             items={links}
