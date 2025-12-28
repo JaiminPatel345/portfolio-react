@@ -231,6 +231,25 @@ and pagination.`,
             github: 'https://github.com/GDG-On-Campus-BVM/GDG-On-Campus-BVM-Website',
             live: 'https://gdg-on-campus-bvm.vercel.app',
         },
+        {
+            title: 'PORTFOLIO',
+            image: 'assets/portfolio.png',
+            description: 'The portfolio you are currently viewing.',
+            points: [
+                "Does I need to explain ?",
+                "Can't you see your slef ?"
+            ],
+            technology: [
+                'React.js',
+                'TailwindCSS',
+                'DaisyUI',
+                'Git',
+                'Vercel',
+            ],
+            time: `Nov 2024 - Current`,
+            github: 'https://github.com/JaiminPatel345/portfolio-react',
+            live: 'https://portfolio.jaimin-detroja.tech',
+        },
     ];
 
     const containerRef = useRef(null);

@@ -155,7 +155,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                             transition={{ duration: 0.3 }}
                           >
                             <ul className="grid gap-3 p-4">
-                              {project.points.map((point, i) => (
+                              {project.points?.map((point, i) => (
                                 <li key={i} className="flex gap-3 text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
                                   <div className="mt-1.5 min-w-[6px] h-[6px] rounded-full bg-blue-500 dark:bg-blue-400" />
                                   <span>
