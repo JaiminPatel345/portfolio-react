@@ -28,7 +28,7 @@ const Connect = () => {
 
     return (
         <section
-            className="min-h-screen px-3 md:px-10 py-20"
+            className="relative min-h-screen px-3 md:px-10 py-20"
             id="connect"
         >
             <div className="max-w-4xl mx-auto py-10 px-4 md:px-8 lg:px-10 flex flex-col gap-10">
@@ -112,6 +112,13 @@ const Connect = () => {
                         </motion.a>
                     ))}
                 </motion.div>
+            </div>
+            
+            {/* Footer */}
+            <div className="absolute bottom-4 left-0 right-0 text-center w-full px-4">
+                <p className="text-neutral-600 dark:text-neutral-400 text-sm">
+                    Jaimin Detroja from INDIA <span className="text-blue-500">💙</span> 
+                </p>
             </div>
         </section>
     );
