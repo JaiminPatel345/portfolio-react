@@ -59,6 +59,12 @@ export const commands = {
   experience: (
     <span>
       <p><strong style={{ color: 'var(--highlight-color)' }}><a
+        href={`https://zupple.technology`}
+        target={'_blank'}>Zupple Labs</a></strong> | <em>SDE Intern</em> | Feb 2026 – Present</p>
+      <p>• Zupple is a new age software company with deep expertise in digital credentials & enterprise grade blockchain solutions</p>
+      <p>• Architect systems capable of operating at a scale of millions</p>
+      <br />
+      <p><strong style={{ color: 'var(--highlight-color)' }}><a
         href={`https://gdg.community.dev/gdg-on-campus-birla-vishvakarma-mahavidyalaya-engineering-college-anand-india`}
         target={'_blank'}>Google Developer Groups on Campus BVM</a></strong> | <em>Tech Expert</em> | Sep 2024 – Present</p>
       <p>• Developed and deployed the official GDG BVM website using React.js and Three.js</p>

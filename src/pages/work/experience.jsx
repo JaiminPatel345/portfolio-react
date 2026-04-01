@@ -4,6 +4,19 @@ import { Timeline } from "../../components/index.js"
 function Experience() {
     const experiences = [
         {
+            role: "SDE Intern",
+            name: "Zupple Labs",
+            logo: "/assets/zupple.png",
+            link: "https://zupple.technology",
+            description: [
+                "Zupple is a new age software company with deep expertise in digital credentials & enterprise grade blockchain solutions",
+                "Architect systems capable of operating at a scale of millions"
+            ],
+            startDate: "Feb 2026",
+            endDate: "Continue",
+            // duration: "2 months",
+        },
+        {
             role: "Tech Expert",
             name: "Google Developer Groups on Campus BVM",
             logo: "/assets/gdg.png",
