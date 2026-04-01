@@ -64,14 +64,14 @@ const Home = () => {
               Jaimin <span className="relative inline-block text-blue-500 dark:text-blue-400">
                 Detroja
 
-                {/* Responsive Badge - Anchored to Detroja */}
-                <span className="absolute -top-6 -right-6 md:-top-7 md:-right-8 text-emerald-600 dark:text-emerald-400 text-[10px] md:text-sm font-semibold flex items-center gap-1.5 transform hover:scale-105 transition-transform cursor-default whitespace-nowrap">
+                {/* Will uncomment when want to switch  */}
+                {/* <span className="absolute -top-6 -right-6 md:-top-7 md:-right-8 text-emerald-600 dark:text-emerald-400 text-[10px] md:text-sm font-semibold flex items-center gap-1.5 transform hover:scale-105 transition-transform cursor-default whitespace-nowrap">
                   <span className="relative flex h-2 w-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                   </span>
                   Open to Work
-                </span>
+                </span> */}
               </span>
             </h1>
 
