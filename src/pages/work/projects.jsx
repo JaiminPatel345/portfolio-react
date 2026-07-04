@@ -7,6 +7,53 @@ const Projects = () => {
     const [selectedProject, setSelectedProject] = useState(null);
     const projects = [
         {
+            title: 'AURA ORBIT',
+            image: 'assets/auraorbit.png',
+            description: `A next-generation Android Live Wallpaper featuring a fully interactive 3D sphere that orbits apps on the home screen.`,
+            points: [
+                'Built on the high-performance libGDX game engine, utilizing a golden angle Fibonacci distribution for perfect 3D app placement.',
+                'Supports true 120 FPS hardware refresh rates with natural quaternion-based momentum for smooth rotation.',
+                'Offers extensive customization including custom backgrounds, dual blur systems, color-coded app groups, and a standalone immersive mode.'
+            ],
+            technology: [
+                'Java',
+            ],
+            time: 'Jun 2026',
+            github: 'https://github.com/JaiminPatel345/AuraOrbit',
+            apk: 'https://f-droid.org/en/packages/dev.jaimin.auraorbit/',
+        },
+        {
+            title: 'TEMPLATE GOBLIN',
+            image: 'assets/template-goblin.png',
+            description: `Open-source PDF template engine for generating PDFs at scale with a visual drag-and-drop builder.`,
+            points: [
+                'Allows non-technical users to design templates using a visual builder, which are exported as portable .tgbl ZIP archives.',
+                'Provides an npm library for developers to generate millions of PDFs from JSON data with zero disk I/O.',
+                'Supports custom fonts, background images, dynamic text fields, image fields, and multi-page tables.'
+            ],
+            technology: [
+                'TypeScript',
+            ],
+            time: 'Apr 2026',
+            github: 'https://github.com/JaiminPatel345/template-goblin',
+            live: 'https://jaiminpatel345.github.io/template-goblin/',
+        },
+        {
+            title: 'GLANCEBAR',
+            image: 'assets/glancebar.png',
+            description: `A beautiful glassmorphism desktop widget for Ubuntu featuring a clock, weather, music player, and system toggles.`,
+            points: [
+                'Built with Python 3, GTK3, and Cairo, avoiding heavy web frameworks like Electron for a fast and clean architecture.',
+                'Features a live clock, current weather, MPRIS music player integration, and a highly customizable app launcher.',
+                'Provides quick system toggles for Wi-Fi, Bluetooth, Night Light, and Mute, all configurable via a single JSON file.'
+            ],
+            technology: [
+                'Python',
+            ],
+            time: 'Mar 2026',
+            github: 'https://github.com/JaiminPatel345/glancebar',
+        },
+        {
             title: 'MicroMerit Portal',
             image: 'assets/micromerit.png',
             description: `A comprehensive Micro credential aggregator platform with blockchain integration, external credential sync, OCR, AI-powered skill profiling, and employer matching capabilities.`,
