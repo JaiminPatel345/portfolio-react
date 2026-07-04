@@ -50,15 +50,15 @@ export const commands = {
 
   about: (
     <span>
-      <p>• I&#39;m a <strong style={{ color: 'var(--highlight-color)' }}>Full Stack JavaScript Developer</strong>.</p>
-      <p>• Machine Learning Enthusiast </p>
-      <p>• Knight in LeetCode </p>
-      <p>• 2026 graduate of <strong>B.Tech Computer Science</strong>.</p>
-      <p>• When I&#39;m not coding, you can find me on <a href={'https://www.chess.com/member/jaimindetroja'} target={'_blank'} className="text-blue-600 dark:text-blue-400 hover:underline">Chess.com</a>.</p>
+      <p>• <strong style={{ color: 'var(--highlight-color)' }}>Software Developer</strong></p>
+      <p>• <strong style={{ color: 'var(--highlight-color)' }}>Machine Learning</strong> Enthusiast</p>
+      <p>• Knight in LeetCode</p>
+      <p>• Open Source Contributor (beginner)</p>
+      <p>• 2026 Passout of <strong style={{ color: 'var(--highlight-color)' }}>Computer Science Student</strong> from BVM, Anand, Gujarat</p>
+      <p>• Wanna Chess Match? <a href={'https://www.chess.com/member/jaimindetroja'} target={'_blank'} className="text-blue-600 dark:text-blue-400 hover:underline">Chess.com</a></p>
       <br />
       <p> Type <strong style={{ color: 'var(--highlight-color)' }}>skills</strong> to see my technical toolkit or <strong
         style={{ color: 'var(--highlight-color)' }}>projects</strong> to view my work!</p>
-
     </span>
   ),
 
@@ -66,7 +66,7 @@ export const commands = {
     <span>
       <p><strong style={{ color: 'var(--highlight-color)' }}><a
         href={`https://zupple.technology`}
-        target={'_blank'}>Zupple Labs</a></strong> | <em>SDE-1</em> | Jul 2026 – Present</p>
+        target={'_blank'}>Zupple Labs</a></strong> | <em>SDE 1</em> | Jul 2026 – Continue</p>
       <p>• Same work higher payout :)</p>
       <br />
       <p><strong style={{ color: 'var(--highlight-color)' }}><a
@@ -80,15 +80,16 @@ export const commands = {
       <p><strong style={{ color: 'var(--highlight-color)' }}><a
         href={`https://gdg.community.dev/gdg-on-campus-birla-vishvakarma-mahavidyalaya-engineering-college-anand-india`}
         target={'_blank'}>Google Developer Groups on Campus BVM</a></strong> | <em>Tech Expert</em> | Sep 2024 – Sep 2025</p>
-      <p>• Developed and deployed the official GDG BVM website using React.js and Three.js</p>
-      <p>• Hosted 5+ tech sessions and workshops on Git & GitHub, Figma, Azure, and AI in 30 Days Code Jam</p>
-      <p>• Led technical initiatives to bring together students interested in Google technologies</p>
+      <p>• Google Developer Groups on Campus (GDGC) is a student community that aims to bring together students interested in Google technologies and provide them with opportunities to learn, collaborate, and grow their skills.</p>
+      <p>• Built and deployed the official GDG BVM website using React.js</p>
+      <p>• Hosted 5+ tech sessions and workshops on tools and platforms including Git & GitHub, Figma, Azure, and AI in 30 Days Code Jam.</p>
       <br />
       <p><strong style={{ color: 'var(--highlight-color)' }}><a
         href={`https://passdn.com/`}
-        target={'_blank'}>PASSDN</a> (Startup)</strong> | <em>SDE Intern</em> | Jun – Jul 2024</p>
+        target={'_blank'}>PassDN</a></strong> | <em>SDE Intern</em> | Jun 2024 – Jul 2024</p>
+      <p>• PassDN is a platform that provide services like rides , foods , grocery and tickets base on ONDC</p>
       <p>• Developed backend features using Node.js, Express.js, and MongoDB</p>
-      <p>• Designed payload structures and API routes for the ONDC Mobility module</p>
+      <p>• Designed payload structures and API routes for the ONDC Mobility module.</p>
       <p>• Collaborated with the team via Slack; worked on tasks assigned through Jira</p>
       <br />
     </span>
@@ -243,16 +244,15 @@ export const commands = {
       </div>
       <div>
         <p><strong style={{ color: 'var(--highlight-color)' }}>Baroda High School Danteshwar</strong>, Vadodara, Gujarat</p>
-        <p>Science, Gujarat Board | 2020 – 2022</p>
+        <p>Science, Gujarat Board (12th) | 2020 – 2022</p>
         <p>• HSC: 88%</p>
         <p>• GUJCATE: 88/120</p>
         <p>• JEE Advanced 2022: AIR 28k</p>
         <br />
       </div>
       <div>
-        <p><strong
-          style={{ color: 'var(--highlight-color)' }}>Nutan Vidyalaya</strong>, Vadodara, Gujarat</p>
-        <p>Gujarat Board | till 2020 </p>
+        <p><strong style={{ color: 'var(--highlight-color)' }}>Nutan Vidyalaya</strong>, Vadodara, Gujarat</p>
+        <p>Gujarat Board (10th) | till 2020 </p>
         <p>• SSC: 86.83%</p>
         <br />
       </div>
@@ -264,14 +264,13 @@ export const commands = {
 
   achievements: (
     <span>
-      <p>🏆 <strong style={{ color: 'var(--highlight-color)' }}>ODOO X Parul Hackathon</strong> - 2nd runner up of 36-hour hackathon, built a customer-centric cafe app</p>
-      <p>🏆 <strong style={{ color: 'var(--highlight-color)' }}>SIH 2025 Finalist</strong> - Top 5 team across India, built Micro Credential aggregator platform</p>
-      <p>🏆 <strong style={{ color: 'var(--highlight-color)' }}>Odoo x Mindbend Hackathon '25</strong> (at SVNIT) - Qualified as finalist</p>
-
-      <p>🏅 <strong style={{ color: 'var(--highlight-color)' }}>LeetCode Weekly Contest 415</strong> - Ranked 1644 out of 33,921 participants</p>
-      <p>🥇 <strong style={{ color: 'var(--highlight-color)' }}>1st Rank</strong> in Byte Quest - College coding competition</p>
-      <p>🏅 <strong style={{ color: 'var(--highlight-color)' }}>GeeksForGeeks</strong> - 19th rank in Contest 135, 53rd rank in Contest 129</p>
-      <p>🏅 <strong style={{ color: 'var(--highlight-color)' }}>3rd Place</strong> in Code Ramzat - DSA competition on CodeChef</p>
+      <p>🏆 <strong style={{ color: 'var(--highlight-color)' }}>ODOO X Parul Hackathon</strong> - 2nd runner up of 36-hour Odoo hackathon, Built a customer-centric cafe app with real-world features</p>
+      <p>🏆 <strong style={{ color: 'var(--highlight-color)' }}>SIH 2025</strong> - Finialist in Smart India Hackathon 2025, Top 5 team across India, Make Micro Credential aggregator platform</p>
+      <p>🏆 <strong style={{ color: 'var(--highlight-color)' }}>ODOO X Mindbend Hackathon</strong> - Qualified as finalist in prestigious offline ODOO X Mindbend Hackathon at SVNIT, Developed innovative solutions under time constraints</p>
+      <p>🏅 <strong style={{ color: 'var(--highlight-color)' }}>LeetCode</strong> - LeetCode Weekly Contest 415, Ranked 1644 out of 33,921 global participants</p>
+      <p>🥇 <strong style={{ color: 'var(--highlight-color)' }}>Byte Quest</strong> - Secured 1rd position among all year students, Solved complex algorithmic challenges, Recognized for optimal solution approaches</p>
+      <p>🏅 <strong style={{ color: 'var(--highlight-color)' }}>GeeksForGeeks</strong> - Weekly Coding Contest 135 | 19th rank, Weekly Coding Contest 129 | 53rd rank</p>
+      <p>🏅 <strong style={{ color: 'var(--highlight-color)' }}>Code Ramzat</strong> - Secured 3rd position among all year students, DSA competition on CodeChef</p>
       <br />
       <p>Type <strong style={{ color: 'var(--highlight-color)' }}>dsa</strong> to see my competitive programming stats!</p>
     </span>
