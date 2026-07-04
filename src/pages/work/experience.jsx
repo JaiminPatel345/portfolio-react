@@ -6,7 +6,7 @@ function Experience() {
         {
             role: "SDE 1",
             name: "Zupple Labs",
-            logo: "/assets/zupple.png",
+            logo: "assets/zupple.png",
             link: "https://zupple.technology",
             description: [
                 "Same work higher payout :)"
@@ -17,7 +17,7 @@ function Experience() {
         {
             role: "SDE Intern",
             name: "Zupple Labs",
-            logo: "/assets/zupple.png",
+            logo: "assets/zupple.png",
             link: "https://zupple.technology",
             description: [
                 "Zupple is a new-age software company with deep expertise in digital credentials & enterprise-grade blockchain solutions.",
@@ -32,7 +32,7 @@ function Experience() {
         {
             role: "Tech Expert",
             name: "Google Developer Groups on Campus BVM",
-            logo: "/assets/gdg.png",
+            logo: "assets/gdg.png",
             link: "https://gdg.community.dev/gdg-on-campus-birla-vishvakarma-mahavidyalaya-engineering-college-anand-india",
             description: [
                 "Google Developer Groups on Campus (GDGC) is a student community\n" +
@@ -49,7 +49,7 @@ function Experience() {
         {
             role: "SDE Intern",
             name: "PassDN",
-            logo: "/assets/passdn.jpg",
+            logo: "assets/passdn.jpg",
             link: "https://passdn.com",
             description: [
                 "PassDN is a platform that provide   services like rides , foods , grocery and tickets base on ONDC",

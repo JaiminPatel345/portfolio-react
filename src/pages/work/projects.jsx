@@ -130,7 +130,7 @@ and pagination.`,
         },
         {
             title: 'ABHINAVAM',
-            image: '/assets/abhinavam.png',
+            image: 'assets/abhinavam.png',
             description: `Personalized social media platform tailored for artists and creative professionals.`,
             points: [
                 'Built a **production-grade app** with a strong focus on **performance, efficiency, and security**.',

@@ -16,7 +16,7 @@ import {
 // Set up PDF.js worker
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
-const RESUME_PDF = '/assets/resume/Jaimin Detroja.pdf';
+const RESUME_PDF = 'assets/resume/Jaimin Detroja.pdf';
 
 export const Resume = () => {
     const [numPages, setNumPages] = useState(null);
