@@ -10,11 +10,12 @@ const Projects = () => {
         {
             title: 'TRAVELOOP',
             images: [
-                'https://drive.google.com/file/d/1ZUPKJSQy-6kBo6gIg-VBqHXBzkN9-8By/view?usp=drive_link',
                 'assets/traveloop-1.png',
                 'assets/traveloop-2.png',
-                'assets/traveloop-3.png'
+                'assets/traveloop-3.png',
+                'https://drive.google.com/file/d/1ZUPKJSQy-6kBo6gIg-VBqHXBzkN9-8By/view?usp=drive_link'
             ],
+            video: 'https://drive.google.com/file/d/1ZUPKJSQy-6kBo6gIg-VBqHXBzkN9-8By/view?usp=drive_link',
             description: 'Personalized, intelligent, collaborative travel planning platform.',
             points: [
                 'AI powered place recommendation based on user filters on specific city.',

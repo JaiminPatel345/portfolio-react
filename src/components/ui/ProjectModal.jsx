@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { IconBrandGithub, IconExternalLink, IconX, IconChevronDown, IconChevronUp, IconChevronLeft, IconChevronRight } from '@tabler/icons-react';
+import { IconBrandGithub, IconExternalLink, IconX, IconChevronDown, IconChevronUp, IconChevronLeft, IconChevronRight, IconPlayerPlay } from '@tabler/icons-react';
 import { MarkdownRenderer } from './Markdown.jsx'; // Removed markdownStyles import as we might not need it explicitly if unused or we can keep it
 import { motion, AnimatePresence } from 'framer-motion';
 import './modal-scrollbar.css';
@@ -155,6 +155,17 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                       >
                         <IconExternalLink className="w-5 h-5" />
                         <span>Live</span>
+                      </a>
+                    )}
+                    {project.video && (
+                      <a
+                        href={project.video}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-6 py-2.5 rounded-xl bg-red-600 text-white font-bold hover:bg-red-700 transition-all active:scale-95 shadow-lg shadow-red-500/20"
+                      >
+                        <IconPlayerPlay className="w-5 h-5" />
+                        <span>Video</span>
                       </a>
                     )}
                     {project.apk && (
