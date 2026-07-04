@@ -60,9 +60,16 @@ export const commands = {
     <span>
       <p><strong style={{ color: 'var(--highlight-color)' }}><a
         href={`https://zupple.technology`}
-        target={'_blank'}>Zupple Labs</a></strong> | <em>SDE Intern</em> | Feb 2026 – Present</p>
-      <p>• Zupple is a new age software company with deep expertise in digital credentials & enterprise grade blockchain solutions</p>
-      <p>• Architect systems capable of operating at a scale of millions</p>
+        target={'_blank'}>Zupple Labs</a></strong> | <em>SDE-1</em> | Jul 2026 – Present</p>
+      <p>• Same work higher payout :)</p>
+      <br />
+      <p><strong style={{ color: 'var(--highlight-color)' }}><a
+        href={`https://zupple.technology`}
+        target={'_blank'}>Zupple Labs</a></strong> | <em>SDE Intern</em> | Feb 2026 – Jun 2026</p>
+      <p>• Zupple is a new-age software company with deep expertise in digital credentials & enterprise-grade blockchain solutions.</p>
+      <p>• Architected and implemented systems capable of operating at a scale of millions, significantly reducing manual workloads for clients.</p>
+      <p>• Developed and integrated advanced blockchain technologies into enterprise applications.</p>
+      <p>• Actively participated in internal team discussions and client-facing meetings to align technical solutions with business requirements.</p>
       <br />
       <p><strong style={{ color: 'var(--highlight-color)' }}><a
         href={`https://gdg.community.dev/gdg-on-campus-birla-vishvakarma-mahavidyalaya-engineering-college-anand-india`}

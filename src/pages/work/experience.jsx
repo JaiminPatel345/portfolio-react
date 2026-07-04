@@ -4,16 +4,29 @@ import { Timeline } from "../../components/index.js"
 function Experience() {
     const experiences = [
         {
+            role: "SDE 1",
+            name: "Zupple Labs",
+            logo: "/assets/zupple.png",
+            link: "https://zupple.technology",
+            description: [
+                "Same work higher payout :)"
+            ],
+            startDate: "Jul 2026",
+            endDate: "Continue",
+        },
+        {
             role: "SDE Intern",
             name: "Zupple Labs",
             logo: "/assets/zupple.png",
             link: "https://zupple.technology",
             description: [
-                "Zupple is a new age software company with deep expertise in digital credentials & enterprise grade blockchain solutions",
-                "Architect systems capable of operating at a scale of millions"
+                "Zupple is a new-age software company with deep expertise in digital credentials & enterprise-grade blockchain solutions.",
+                "Architected and implemented systems capable of operating at a scale of millions, significantly reducing manual workloads for clients.",
+                "Developed and integrated advanced blockchain technologies into enterprise applications.",
+                "Actively participated in internal team discussions and client-facing meetings to align technical solutions with business requirements."
             ],
             startDate: "Feb 2026",
-            endDate: "Continue",
+            endDate: "Jun 2026",
             // duration: "2 months",
         },
         {

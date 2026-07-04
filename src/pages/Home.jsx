@@ -25,7 +25,7 @@ const Home = () => {
       </div>
     },
     {
-      text: 'Complex Problem Solving',
+      text: 'System Design & Architecture',
       icon: 
       <div className='rounded-full bg-[#ffffff] overflow-hidden'>
         <img src="/assets/logos/brain.gif" alt="Brain Icon" className="w-7 h-7 md:w-10 md:h-10 " />
@@ -42,7 +42,7 @@ const Home = () => {
 
   return (
     <div
-      className="h-[100dvh] relative w-full overflow-hidden flex flex-col lg:flex-row items-center justify-center gap-4 px-4 md:px-8 lg:px-12 pt-16 md:pt-12 lg:pt-0 pb-4 lg:pb-0"
+      className="h-[100dvh] relative w-full overflow-hidden flex flex-col lg:flex-row items-center justify-center gap-4 px-4 md:px-8 lg:px-10 pt-16 md:pt-12 lg:pt-0 pb-4 lg:pb-0"
       id="home">
       <div
         className="absolute inset-0 w-full h-full bg-gradient-to-b from-transparent z-10 pointer-events-none"
@@ -50,17 +50,17 @@ const Home = () => {
 
       {/* Main Content */}
       <div
-        className="flex flex-col lg:flex-row items-center lg:items-center justify-between w-full max-w-7xl h-full lg:h-auto gap-4 md:gap-8 lg:gap-20 z-20">
+        className="flex flex-col lg:flex-row items-center lg:items-center justify-between w-full  h-full lg:h-auto gap-4 md:gap-8  z-20">
 
         {/* Left Column - Text Introduction - Fixed Height / Flex Initial */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="flex flex-col items-center lg:items-start gap-4 text-center lg:text-left w-full lg:w-[45%] flex-shrink-0 lg:sticky lg:top-16 justify-center lg:justify-start pt-4 lg:pt-0"
+          className="flex flex-col items-center lg:items-start gap-4 text-center lg:text-left w-full lg:w-[40%] flex-shrink-0 lg:sticky lg:top-16 justify-center lg:justify-start pt-4 lg:pt-0"
         >
           <div className="relative w-full flex flex-col items-center lg:items-start">
-            <h1 className="text-4xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-neutral-900 to-neutral-600 dark:from-white dark:to-neutral-400 whitespace-nowrap relative z-20">
+            <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-neutral-900 to-neutral-600 dark:from-white dark:to-neutral-400 whitespace-nowrap relative z-20">
               Jaimin <span className="relative inline-block text-blue-500 dark:text-blue-400">
                 Detroja
 
@@ -136,7 +136,7 @@ const Home = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="w-full lg:w-[50%] flex-1 min-h-[300px] lg:h-[580px] lg:flex-none overflow-hidden rounded-xl shadow-2xl border-2 border-neutral-200 dark:border-neutral-700 bg-white dark:bg-[#1a1b26] mb-12 sm:mb-8 lg:mb-0"
+          className="w-full flex-1 min-h-[300px] lg:h-[580px] overflow-hidden rounded-xl shadow-2xl border-2 border-neutral-200 dark:border-neutral-700 bg-white dark:bg-[#1a1b26] mb-12 sm:mb-8 lg:mb-0"
         >
           <ReactTerminal
             welcomeMessage={welcomeMessage}
