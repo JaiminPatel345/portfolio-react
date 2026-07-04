@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { IconBrandGithub, IconExternalLink, IconX, IconChevronDown, IconChevronUp } from '@tabler/icons-react';
 import { MarkdownRenderer } from './Markdown.jsx'; // Removed markdownStyles import as we might not need it explicitly if unused or we can keep it
 import { motion, AnimatePresence } from 'framer-motion';
@@ -22,7 +23,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
 
   if (!project) return null;
 
-  return (
+  const modalContent = (
     <AnimatePresence>
       {isOpen && (
         <>
@@ -194,6 +195,8 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
       )}
     </AnimatePresence>
   );
+
+  return typeof document !== 'undefined' ? createPortal(modalContent, document.body) : modalContent;
 };
 
 export default ProjectModal; 
