@@ -145,7 +145,7 @@ const Home = () => {
             commands={commands}
             showControlBar={true}
             showControlButtons={true}
-            errorMessage={'Command not found. Type \'help\' for available commands.'}
+            errorMessage={'404 bro! Type \'help\' for available commands.'}
           />
         </motion.div>
       </div>
