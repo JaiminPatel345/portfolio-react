@@ -79,7 +79,7 @@ export const commands = {
       <br />
       <p><strong style={{ color: 'var(--highlight-color)' }}><a
         href={`https://gdg.community.dev/gdg-on-campus-birla-vishvakarma-mahavidyalaya-engineering-college-anand-india`}
-        target={'_blank'}>Google Developer Groups on Campus BVM</a></strong> | <em>Tech Expert</em> | Sep 2024 – Present</p>
+        target={'_blank'}>Google Developer Groups on Campus BVM</a></strong> | <em>Tech Expert</em> | Sep 2024 – Sep 2025</p>
       <p>• Developed and deployed the official GDG BVM website using React.js and Three.js</p>
       <p>• Hosted 5+ tech sessions and workshops on Git & GitHub, Figma, Azure, and AI in 30 Days Code Jam</p>
       <p>• Led technical initiatives to bring together students interested in Google technologies</p>
@@ -96,6 +96,13 @@ export const commands = {
 
   projects: (
     <span>
+      <p><strong style={{ color: 'var(--highlight-color)' }}>TRAVELOOP</strong> | Collaborative Travel Planner | <em>Jul 2024</em></p>
+      <p>• AI powered place recommendation and map integration with complex optimization journey algorithm.</p>
+      <p>• Comprehensive budget analysis and real-time collaboration using Socket.IO.</p>
+      <p>• Tech: React, Node.js, Express, MongoDB, Socket.io, Leaflet, Tailwind CSS</p>
+      <p>• <a href="https://github.com/Naren7874/Traveloop" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://drive.google.com/file/d/1ZUPKJSQy-6kBo6gIg-VBqHXBzkN9-8By/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Video</a></p>
+      <br />
+
       <p><strong style={{ color: 'var(--highlight-color)' }}>AURA ORBIT</strong> | Android Live Wallpaper & Launcher | <em>Jun 2026</em></p>
       <p>• Fully interactive 3D sphere that orbits apps with 120 FPS hardware refresh rates</p>
       <p>• Built on libGDX utilizing a golden angle Fibonacci distribution for 3D app placement</p>
@@ -110,13 +117,6 @@ export const commands = {
       <p>• <a href="https://github.com/JaiminPatel345/template-goblin" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://jaiminpatel345.github.io/template-goblin/" target="_blank" rel="noopener noreferrer">Live</a></p>
       <br />
 
-      <p><strong style={{ color: 'var(--highlight-color)' }}>GLANCEBAR</strong> | Desktop Widget for Ubuntu | <em>Mar 2026</em></p>
-      <p>• Glassmorphism desktop widget featuring clock, weather, music player, and system toggles</p>
-      <p>• Built avoiding heavy web frameworks like Electron for a fast and clean architecture</p>
-      <p>• Tech: Python, GTK3, Cairo</p>
-      <p>• <a href="https://github.com/JaiminPatel345/glancebar" target="_blank" rel="noopener noreferrer">GitHub</a></p>
-      <br />
-
       <p>Type <strong
         style={{ color: 'var(--highlight-color)' }}>projects_all</strong> to see all projects</p>
       <br />
@@ -126,6 +126,13 @@ export const commands = {
 
   projects_all: (
     <span>
+      <p><strong style={{ color: 'var(--highlight-color)' }}>TRAVELOOP</strong> | Collaborative Travel Planner | <em>Jul 2024</em></p>
+      <p>• AI powered place recommendation and map integration with complex optimization journey algorithm.</p>
+      <p>• Comprehensive budget analysis and real-time collaboration using Socket.IO.</p>
+      <p>• Tech Stack: React, Node.js, Express, MongoDB, Socket.io, Leaflet, Tailwind CSS</p>
+      <p>• <a href="https://github.com/Naren7874/Traveloop" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://drive.google.com/file/d/1ZUPKJSQy-6kBo6gIg-VBqHXBzkN9-8By/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Video</a></p>
+      <br />
+
       <p><strong style={{ color: 'var(--highlight-color)' }}>AURA ORBIT</strong> | Android Live Wallpaper & Launcher | <em>Jun 2026</em></p>
       <p>• Fully interactive 3D sphere that orbits apps on the home screen using libGDX and Fibonacci distribution</p>
       <p>• Tech Stack: Java</p>
@@ -294,7 +301,7 @@ export const commands = {
       <p><a target={'_blank'}
         href={`https://gdg.community.dev/gdg-on-campus-birla-vishvakarma-mahavidyalaya-engineering-college-anand-india`
         }><strong style={{ color: 'var(--highlight-color)' }}>Google Developer Groups On Campus BVM</strong></a></p>
-      <p><em>Tech Expert</em> | Sep 2024 – Present</p>
+      <p><em>Tech Expert</em> | Sep 2024 – Sep 2025</p>
       <br />
       <p>• Developed and deployed the official <a target={'_blank'}
         href={`https://gdg-on-campus-bvm.vercel.app`}>GDG BVM website</a> using Next.js, Three.js, and Tailwind CSS</p>
