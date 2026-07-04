@@ -7,6 +7,30 @@ const Projects = () => {
     const [selectedProject, setSelectedProject] = useState(null);
     const projects = [
         {
+            title: 'TRAVELOOP',
+            image: 'assets/traveloop.jpg',
+            description: 'Personalized, intelligent, collaborative travel planning platform.',
+            points: [
+                'Build multi-city itineraries, assign activities and dates to each stop, and track budgets.',
+                'Share trip plans publicly or collaborate with friends in real-time using Socket.IO.',
+                'Integrated with Leaflet maps and OpenRouteService for driving and walking routes.',
+                'Features secure authentication with JWT, email OTP verification, and image uploads via Cloudinary.'
+            ],
+            technology: [
+                'React',
+                'Node.js',
+                'Express.js',
+                'MongoDB',
+                'Tailwind CSS',
+                'Zustand',
+                'Socket.io',
+                'Redis',
+                'Leaflet'
+            ],
+            time: 'Jul 2026',
+            github: 'https://github.com/Naren7874/Traveloop',
+        },
+        {
             title: 'AURA ORBIT',
             image: 'assets/auraorbit.png',
             description: `A next-generation Android Live Wallpaper featuring a fully interactive 3D sphere that orbits apps on the home screen.`,
