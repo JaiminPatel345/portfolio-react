@@ -341,7 +341,7 @@ and pagination.`,
                                 className="bg-white dark:bg-neutral-800 rounded-2xl shadow-md overflow-hidden border border-neutral-200 dark:border-neutral-700 hover:shadow-lg transition-all duration-300 h-full flex flex-col">
                                 {/* Project Image */}
                                 <div className="relative h-48 overflow-hidden">
-                                    <img
+                                    <ImageWithLoader
                                         src={project.image}
                                         alt={project.title}
                                         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
@@ -423,3 +423,22 @@ and pagination.`,
 };
 
 export default Projects;
+
+const ImageWithLoader = ({ src, alt, className }) => {
+    const [isLoaded, setIsLoaded] = useState(false);
+    return (
+        <>
+            {!isLoaded && (
+                <div className="absolute inset-0 flex items-center justify-center bg-neutral-200 dark:bg-neutral-800 animate-pulse">
+                    <span className="loading loading-spinner loading-md text-neutral-400"></span>
+                </div>
+            )}
+            <img
+                src={src}
+                alt={alt}
+                onLoad={() => setIsLoaded(true)}
+                className={`${className} ${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-500`}
+            />
+        </>
+    );
+};
