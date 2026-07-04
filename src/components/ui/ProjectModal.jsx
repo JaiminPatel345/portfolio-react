@@ -1,18 +1,20 @@
 import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { IconBrandGithub, IconExternalLink, IconX, IconChevronDown, IconChevronUp } from '@tabler/icons-react';
+import { IconBrandGithub, IconExternalLink, IconX, IconChevronDown, IconChevronUp, IconChevronLeft, IconChevronRight } from '@tabler/icons-react';
 import { MarkdownRenderer } from './Markdown.jsx'; // Removed markdownStyles import as we might not need it explicitly if unused or we can keep it
 import { motion, AnimatePresence } from 'framer-motion';
 import './modal-scrollbar.css';
 
 const ProjectModal = ({ project, isOpen, onClose }) => {
   const [isKeyPointsOpen, setIsKeyPointsOpen] = useState(true);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // Lock body scroll when modal is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
       setIsKeyPointsOpen(true); // Reset state when opening
+      setCurrentImageIndex(0);
     } else {
       document.body.style.overflow = 'unset';
     }
@@ -22,6 +24,20 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
   }, [isOpen]);
 
   if (!project) return null;
+
+  const nextImage = (e) => {
+    e.stopPropagation();
+    if (project?.images) {
+      setCurrentImageIndex((prev) => (prev + 1) % project.images.length);
+    }
+  };
+
+  const prevImage = (e) => {
+    e.stopPropagation();
+    if (project?.images) {
+      setCurrentImageIndex((prev) => (prev === 0 ? project.images.length - 1 : prev - 1));
+    }
+  };
 
   const modalContent = (
     <AnimatePresence>
@@ -58,18 +74,29 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                 {/* Image Header */}
                 <div className="relative w-full bg-neutral-900 group">
                   <img
-                    src={project.image}
+                    src={project?.images ? project.images[currentImageIndex] : project?.image}
                     alt={project.title}
                     className="w-full h-auto max-h-[50vh] object-contain mx-auto"
                   />
+                  {project?.images && project.images.length > 1 && (
+                    <>
+                      <button onClick={prevImage} className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity z-20 hover:bg-black/80">
+                        <IconChevronLeft className="w-6 h-6" />
+                      </button>
+                      <button onClick={nextImage} className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity z-20 hover:bg-black/80">
+                        <IconChevronRight className="w-6 h-6" />
+                      </button>
+                    </>
+                  )}
                   {/* Stronger gradient for better text visibility */}
                   <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black via-black/80 to-transparent" />
 
-                  <div className="absolute bottom-0 left-0 right-0 p-6 pt-12">
+                  <div className="absolute bottom-0 left-0 right-0 p-6 pt-12 flex flex-col justify-end">
                     <motion.div
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.1 }}
+                      className="mb-2"
                     >
                       <div className="flex flex-wrap items-center gap-3 mb-2">
                         <span className="inline-block px-3 py-1 text-xs font-bold tracking-wide text-white uppercase bg-blue-600 rounded-full shadow-lg">
@@ -80,6 +107,18 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                         {project.title}
                       </h2>
                     </motion.div>
+
+                    {/* Pagination Dots */}
+                    {project?.images && project.images.length > 1 && (
+                      <div className="flex justify-center gap-2 mt-4 z-20 relative">
+                        {project.images.map((_, idx) => (
+                          <div 
+                            key={idx} 
+                            className={`h-2 rounded-full transition-all duration-300 ${idx === currentImageIndex ? 'bg-white w-6' : 'bg-white/50 w-2'}`}
+                          />
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
 

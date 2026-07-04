@@ -1,6 +1,7 @@
 import { markdownStyles } from '../../components/ui/Markdown.jsx';
 import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
+import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react';
 import ProjectModal from '../../components/ui/ProjectModal';
 
 const Projects = () => {
@@ -8,7 +9,7 @@ const Projects = () => {
     const projects = [
         {
             title: 'TRAVELOOP',
-            image: 'assets/traveloop.jpg',
+            images: ['assets/traveloop.jpg'],
             description: 'Personalized, intelligent, collaborative travel planning platform.',
             points: [
                 'Build multi-city itineraries, assign activities and dates to each stop, and track budgets.',
@@ -32,7 +33,7 @@ const Projects = () => {
         },
         {
             title: 'AURA ORBIT',
-            image: 'assets/auraorbit.png',
+            images: ['assets/auraorbit.png'],
             description: `A next-generation Android Live Wallpaper featuring a fully interactive 3D sphere that orbits apps on the home screen.`,
             points: [
                 'Built on the high-performance libGDX game engine, utilizing a golden angle Fibonacci distribution for perfect 3D app placement.',
@@ -48,7 +49,7 @@ const Projects = () => {
         },
         {
             title: 'TEMPLATE GOBLIN',
-            image: 'assets/template-goblin.png',
+            images: ['assets/template-goblin.png'],
             description: `Open-source PDF template engine for generating PDFs at scale with a visual drag-and-drop builder.`,
             points: [
                 'Allows non-technical users to design templates using a visual builder, which are exported as portable .tgbl ZIP archives.',
@@ -64,7 +65,7 @@ const Projects = () => {
         },
         {
             title: 'GLANCEBAR',
-            image: 'assets/glancebar.png',
+            images: ['assets/glancebar.png'],
             description: `A beautiful glassmorphism desktop widget for Ubuntu featuring a clock, weather, music player, and system toggles.`,
             points: [
                 'Built with Python 3, GTK3, and Cairo, avoiding heavy web frameworks like Electron for a fast and clean architecture.',
@@ -79,7 +80,7 @@ const Projects = () => {
         },
         {
             title: 'MicroMerit Portal',
-            image: 'assets/micromerit.png',
+            images: ['assets/micromerit.png'],
             description: `A comprehensive Micro credential aggregator platform with blockchain integration, external credential sync, OCR, AI-powered skill profiling, and employer matching capabilities.`,
             points: [
                 `Built a full-stack microservices architecture with 6 modules including Node.js backend, Python AI service, blockchain service, and dual React frontends (main app + admin dashboard).`,
@@ -115,7 +116,7 @@ const Projects = () => {
         },
         {
             title: 'Quizzer',
-            image: 'assets/quizzer.png',
+            images: ['assets/quizzer.png'],
             description: `Ai powered quiz microservice application that generates quizzes based on user-defined topics and difficulty levels.`,
             points: [
                 `Developed a backend only Typescript Node.js microservice to generate quizzes using Groq and Gemini AI.`,
@@ -138,7 +139,7 @@ and pagination.`,
         },
         {
             title: 'FACE ANONYMIZER',
-            image: 'https://res.cloudinary.com/dm4xqk12g/image/upload/v1753207130/face_anonymiser_otbhjq.png',
+            images: ['https://res.cloudinary.com/dm4xqk12g/image/upload/v1753207130/face_anonymiser_otbhjq.png'],
             description: `Real-time Face Blurring`,
             points: [
                 'Captures input from the webcam and outputs a video stream with blurred faces in real time',
@@ -154,7 +155,7 @@ and pagination.`,
         },
         {
             title: 'ABHINAVAM',
-            image: 'assets/abhinavam.png',
+            images: ['assets/abhinavam.png'],
             description: `Personalized social media platform tailored for artists and creative professionals.`,
             points: [
                 'Built a **production-grade app** with a strong focus on **performance, efficiency, and security**.',
@@ -179,7 +180,7 @@ and pagination.`,
         },
         {
             title: 'LOCKSMITH',
-            image: 'assets/locksmith.jpg',
+            images: ['assets/locksmith.jpg'],
             description: 'Secure Password Manager for Android & iOS',
             points: [
                 'Built a cross-platform mobile application for **securely storing** sensitive credentials.',
@@ -201,7 +202,7 @@ and pagination.`,
         },
         {
             title: 'BARTER TALK',
-            image: 'assets/barter-talk.png',
+            images: ['assets/barter-talk.png'],
             description: 'Real-time Chat & Video Calling Application',
             points: [
                 'Developed a comprehensive communication platform with **text and video** capabilities.',
@@ -230,7 +231,7 @@ and pagination.`,
         },
         {
             title: 'PORTFOLIO',
-            image: 'assets/portfolio.png',
+            images: ['assets/portfolio.png'],
             description: 'The portfolio you are currently viewing.',
             points: [
                 "Does I need to explain ?",
@@ -249,7 +250,7 @@ and pagination.`,
         },
         {
             title: 'GDGC BVM',
-            image: 'https://res.cloudinary.com/dm4xqk12g/image/upload/v1746386650/40aa35df-1fb5-4a65-925b-41f1055480a8.png',
+            images: ['https://res.cloudinary.com/dm4xqk12g/image/upload/v1746386650/40aa35df-1fb5-4a65-925b-41f1055480a8.png'],
             description: 'Website for Google Developer Groups On Campus BVM',
             points: [
                 'Designed and developed the **official website for GDGC BVM** as a Tech Gig member.',
@@ -269,7 +270,7 @@ and pagination.`,
         },
         {
             title: 'HEALTH PIE',
-            image: 'https://res.cloudinary.com/dm4xqk12g/image/upload/v1746388335/497cb203-d7a7-42bc-a47e-94b21fc61aa6.png',
+            images: ['https://res.cloudinary.com/dm4xqk12g/image/upload/v1746388335/497cb203-d7a7-42bc-a47e-94b21fc61aa6.png'],
             description: 'Health Tracking & Doctor-Patient Connection Platform',
             points: [
                 'Developed a comprehensive health management application for patients and doctors.',
@@ -294,7 +295,7 @@ and pagination.`,
         },
         {
             title: 'WANDERLUST',
-            image: 'https://res.cloudinary.com/dm4xqk12g/image/upload/v1746385580/Wanderlust_pp6xrp.png',
+            images: ['https://res.cloudinary.com/dm4xqk12g/image/upload/v1746385580/Wanderlust_pp6xrp.png'],
             description: 'Travel & Accommodation Booking Platform',
             points: [
                 'Full-stack web application where users can explore and book unique accommodations.',
@@ -352,26 +353,66 @@ and pagination.`,
                 <div
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     {projects.map((project, index) => (
-                        <motion.div
+                        <ProjectCard key={index} project={project} index={index} onClick={() => setSelectedProject(project)} />
+                    ))}
+                </div>
+            </div>
+
+            {/* Project Modal */}
+            <ProjectModal
+                project={selectedProject}
+                isOpen={!!selectedProject}
+                onClose={() => setSelectedProject(null)}
+            />
+        </div>
+    );
+};
+
+
+const ProjectCard = ({ project, index, onClick }) => {
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+    const nextImage = (e) => {
+        e.stopPropagation();
+        setCurrentImageIndex((prev) => (prev + 1) % project.images.length);
+    };
+
+    const prevImage = (e) => {
+        e.stopPropagation();
+        setCurrentImageIndex((prev) => (prev === 0 ? project.images.length - 1 : prev - 1));
+    };
+
+    return (
+        <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             viewport={{ once: true, margin: '-100px' }}
                             className="group cursor-pointer"
-                            onClick={() => setSelectedProject(project)}
+                            onClick={onClick}
                         >
                             <div
                                 className="bg-white dark:bg-neutral-800 rounded-2xl shadow-md overflow-hidden border border-neutral-200 dark:border-neutral-700 hover:shadow-lg transition-all duration-300 h-full flex flex-col">
                                 {/* Project Image */}
-                                <div className="relative h-48 overflow-hidden">
+                                <div className="relative h-48 overflow-hidden group/image">
                                     <ImageWithLoader
-                                        src={project.image}
+                                        src={project.images[currentImageIndex]}
                                         alt={project.title}
                                         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                     />
-                                    <div
-                                        className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                    
+                                    {project.images.length > 1 && (
+                                        <>
+                                            <button onClick={prevImage} className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white rounded-full p-1 opacity-0 group-hover/image:opacity-100 transition-opacity z-10 hover:bg-black/80">
+                                                <IconChevronLeft className="w-5 h-5" />
+                                            </button>
+                                            <button onClick={nextImage} className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white rounded-full p-1 opacity-0 group-hover/image:opacity-100 transition-opacity z-10 hover:bg-black/80">
+                                                <IconChevronRight className="w-5 h-5" />
+                                            </button>
+                                        </>
+                                    )}
                                 </div>
 
                                 {/* Project Info */}
@@ -432,17 +473,6 @@ and pagination.`,
                                 </div>
                             </div>
                         </motion.div>
-                    ))}
-                </div>
-            </div>
-
-            {/* Project Modal */}
-            <ProjectModal
-                project={selectedProject}
-                isOpen={!!selectedProject}
-                onClose={() => setSelectedProject(null)}
-            />
-        </div>
     );
 };
 
