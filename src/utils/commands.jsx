@@ -1,18 +1,24 @@
 export const commands = {
   help: (
-    <span>
-      <strong>whoami</strong> - Who am I <br />
-      <strong>about</strong> - Short intro <br />
-      <strong>experience</strong> - My professional experience <br />
-      <strong>projects</strong> - Showcasing what I&#39;ve built <br />
-      <strong>education</strong> - My academic background <br />
-      <strong>skills</strong> - Technical expertise <br />
-      <strong>achievements</strong> - My notable accomplishments <br />
-      <strong>socials</strong> - Connect with me  <br />
-      <strong>activities</strong> - Community involvement <br />
-      <strong>contributions</strong> - Open source work <br />
-      <strong>dsa</strong> - Data Structures & Algorithms profile <br />
-    </span>
+    <div style={{ whiteSpace: "pre", fontFamily: "monospace" }}>
+{`
+  ┌──────────────────────────────────────────────┐
+  │              AVAILABLE COMMANDS              │
+  ├──────────────────────────────────────────────┤
+  │  whoami        - Who am I                    │
+  │  about         - Short intro                 │
+  │  experience    - My professional experience  │
+  │  projects      - Showcasing what I've built  │
+  │  education     - My academic background      │
+  │  skills        - Technical expertise         │
+  │  achievements  - My notable accomplishments  │
+  │  socials       - Connect with me             │
+  │  activities    - Community involvement       │
+  │  contributions - Open source work            │
+  │  dsa           - DSA profile                 │
+  │  clear         - Clear terminal              │
+  └──────────────────────────────────────────────┘
+`}</div>
   ),
 
   whoami: <span className="light-mode-whoami dark-mode-whoami">
@@ -39,7 +45,7 @@ export const commands = {
 `}
     </pre>
     <br />
-
+ Human | Software Developer
   </span>,
 
   about: (
@@ -90,31 +96,25 @@ export const commands = {
 
   projects: (
     <span>
-      <p><strong style={{ color: 'var(--highlight-color)' }}>MICROMERIT PORTAL</strong> | Micro Credential Aggregator Platform | <em>Nov – Dec 2025</em></p>
-      <p>• Full-stack microservices architecture with blockchain integration, AI-powered skill profiling, and employer matching</p>
-      <p>• 6 modules: Node.js backend, Python AI service, blockchain service, React frontends (main + admin dashboard)</p>
-      <p>• Tech: TypeScript, Node.js, Python, FastAPI, React, PostgreSQL, Prisma, Redis, BullMQ, Groq AI, Ethers.js, IPFS</p>
-      <p>• <a href="https://github.com/JaiminPatel345/MicroMerit-Portal"
-        target="_blank"
-        rel="noopener noreferrer">GitHub</a></p>
+      <p><strong style={{ color: 'var(--highlight-color)' }}>AURA ORBIT</strong> | Android Live Wallpaper & Launcher | <em>Jun 2026</em></p>
+      <p>• Fully interactive 3D sphere that orbits apps with 120 FPS hardware refresh rates</p>
+      <p>• Built on libGDX utilizing a golden angle Fibonacci distribution for 3D app placement</p>
+      <p>• Tech: Java, libGDX</p>
+      <p>• <a href="https://github.com/JaiminPatel345/AuraOrbit" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://f-droid.org/en/packages/dev.jaimin.auraorbit/" target="_blank" rel="noopener noreferrer">APK</a></p>
       <br />
 
-      <p><strong style={{ color: 'var(--highlight-color)' }}>QUIZZER</strong> | AI-Powered Quiz Microservice | <em>Sep 2025</em></p>
-      <p>• Production-grade TypeScript Node.js microservice generating quizzes using Groq and Gemini AI</p>
-      <p>• Adaptive learning with real-time difficulty adjustment, leaderboards, and analytics</p>
-      <p>• Tech: TypeScript, Node.js, Express.js, MongoDB, JWT, Docker, Azure</p>
-      <p>• <a href="https://github.com/JaiminPatel345/quizzer"
-        target="_blank"
-        rel="noopener noreferrer">GitHub</a></p>
+      <p><strong style={{ color: 'var(--highlight-color)' }}>TEMPLATE GOBLIN</strong> | PDF Template Engine | <em>Apr 2026</em></p>
+      <p>• Open-source PDF template engine generating PDFs at scale with zero disk I/O</p>
+      <p>• Includes a visual drag-and-drop builder for non-technical users to design templates</p>
+      <p>• Tech: TypeScript, npm</p>
+      <p>• <a href="https://github.com/JaiminPatel345/template-goblin" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://jaiminpatel345.github.io/template-goblin/" target="_blank" rel="noopener noreferrer">Live</a></p>
       <br />
 
-      <p><strong style={{ color: 'var(--highlight-color)' }}>ABHINAVAM</strong> | Social Media Mobile App | <em>Mar – Apr 2025</em></p>
-      <p>• Personalized platform for artistes and creative professionals</p>
-      <p>• Production-grade app with focus on performance, efficiency, and security</p>
-      <p>• Tech: TypeScript, React Native (Expo), Node.js, Express.js, MongoDB, Redux, Redis, Cloudinary</p>
-      <p>• <a href="https://github.com/JaiminPatel345/abhinavam"
-        target="_blank"
-        rel="noopener noreferrer">GitHub</a></p>
+      <p><strong style={{ color: 'var(--highlight-color)' }}>GLANCEBAR</strong> | Desktop Widget for Ubuntu | <em>Mar 2026</em></p>
+      <p>• Glassmorphism desktop widget featuring clock, weather, music player, and system toggles</p>
+      <p>• Built avoiding heavy web frameworks like Electron for a fast and clean architecture</p>
+      <p>• Tech: Python, GTK3, Cairo</p>
+      <p>• <a href="https://github.com/JaiminPatel345/glancebar" target="_blank" rel="noopener noreferrer">GitHub</a></p>
       <br />
 
       <p>Type <strong
@@ -126,29 +126,40 @@ export const commands = {
 
   projects_all: (
     <span>
+      <p><strong style={{ color: 'var(--highlight-color)' }}>AURA ORBIT</strong> | Android Live Wallpaper & Launcher | <em>Jun 2026</em></p>
+      <p>• Fully interactive 3D sphere that orbits apps on the home screen using libGDX and Fibonacci distribution</p>
+      <p>• Tech Stack: Java</p>
+      <p>• <a href="https://github.com/JaiminPatel345/AuraOrbit" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://f-droid.org/en/packages/dev.jaimin.auraorbit/" target="_blank" rel="noopener noreferrer">APK</a></p>
+      <br />
+
+      <p><strong style={{ color: 'var(--highlight-color)' }}>TEMPLATE GOBLIN</strong> | PDF Template Engine | <em>Apr 2026</em></p>
+      <p>• Open-source PDF template engine with a visual builder generating PDFs at scale</p>
+      <p>• Tech Stack: TypeScript</p>
+      <p>• <a href="https://github.com/JaiminPatel345/template-goblin" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://jaiminpatel345.github.io/template-goblin/" target="_blank" rel="noopener noreferrer">Live</a></p>
+      <br />
+
+      <p><strong style={{ color: 'var(--highlight-color)' }}>GLANCEBAR</strong> | Desktop Widget for Ubuntu | <em>Mar 2026</em></p>
+      <p>• Glassmorphism desktop widget for Ubuntu with clock, weather, music player, and system toggles</p>
+      <p>• Tech Stack: Python, GTK3, Cairo</p>
+      <p>• <a href="https://github.com/JaiminPatel345/glancebar" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+      <br />
+
       <p><strong style={{ color: 'var(--highlight-color)' }}>MICROMERIT PORTAL</strong> | Micro Credential Aggregator Platform | <em>Nov – Dec 2025</em></p>
       <p>• Full-stack microservices with 6 modules: Node.js backend, Python AI, blockchain, and dual React frontends</p>
-      <p>• AI-powered OCR, skill profiling, learning roadmaps, employer chatbot, and blockchain credential verification</p>
-      <p>• External credential sync from NSDC, Udemy with BullMQ job queues; advanced employer candidate search</p>
       <p>• Tech Stack: TypeScript, Node.js, Python, FastAPI, React, PostgreSQL, Prisma, Redis, BullMQ, Groq AI, Ethers.js, IPFS</p>
-      <p>• <a href="https://github.com/JaiminPatel345/MicroMerit-Portal" target="_blank"
-        rel="noopener noreferrer">GitHub</a></p>
+      <p>• <a href="https://github.com/JaiminPatel345/MicroMerit-Portal" target="_blank" rel="noopener noreferrer">GitHub</a></p>
       <br />
 
       <p><strong style={{ color: 'var(--highlight-color)' }}>QUIZZER</strong> | AI-Powered Quiz Microservice | <em>Sep 2025</em></p>
       <p>• Backend-only TypeScript Node.js microservice generating quizzes using Groq and Gemini AI</p>
-      <p>• Production-grade architecture with MongoDB aggregation, rate limiting, pagination</p>
-      <p>• Adaptive learning with real-time difficulty adjustment; leaderboards and analytics</p>
       <p>• Tech Stack: TypeScript, Node.js, Express.js, MongoDB, JWT, Docker, Azure</p>
-      <p>• <a href="https://github.com/JaiminPatel345/quizzer" target="_blank"
-        rel="noopener noreferrer">GitHub</a></p>
+      <p>• <a href="https://github.com/JaiminPatel345/quizzer" target="_blank" rel="noopener noreferrer">GitHub</a></p>
       <br />
 
       <p><strong style={{ color: 'var(--highlight-color)' }}>FACE ANONYMIZER</strong> | Real-time Face Blurring | <em>May 2025</em></p>
       <p>• Captures webcam input and outputs video stream with blurred faces in real time</p>
       <p>• Tech Stack: Python, OpenCV, MediaPipe</p>
-      <p>• <a href="https://github.com/JaiminPatel345/face-anonymizer" target="_blank"
-        rel="noopener noreferrer">GitHub</a></p>
+      <p>• <a href="https://github.com/JaiminPatel345/face-anonymizer" target="_blank" rel="noopener noreferrer">GitHub</a></p>
       <br />
 
       <p><strong style={{ color: 'var(--highlight-color)' }}>ABHINAVAM</strong> | Social Media Mobile App | <em>Mar – Apr 2025</em></p>
@@ -246,9 +257,10 @@ export const commands = {
 
   achievements: (
     <span>
+      <p>🏆 <strong style={{ color: 'var(--highlight-color)' }}>ODOO X Parul Hackathon</strong> - 2nd runner up of 36-hour hackathon, built a customer-centric cafe app</p>
       <p>🏆 <strong style={{ color: 'var(--highlight-color)' }}>SIH 2025 Finalist</strong> - Top 5 team across India, built Micro Credential aggregator platform</p>
       <p>🏆 <strong style={{ color: 'var(--highlight-color)' }}>Odoo x Mindbend Hackathon '25</strong> (at SVNIT) - Qualified as finalist</p>
-      <p>🏅 <strong style={{ color: 'var(--highlight-color)' }}>SIH 2024</strong> - 7th in waiting list, Top 500 teams across India</p>
+
       <p>🏅 <strong style={{ color: 'var(--highlight-color)' }}>LeetCode Weekly Contest 415</strong> - Ranked 1644 out of 33,921 participants</p>
       <p>🥇 <strong style={{ color: 'var(--highlight-color)' }}>1st Rank</strong> in Byte Quest - College coding competition</p>
       <p>🏅 <strong style={{ color: 'var(--highlight-color)' }}>GeeksForGeeks</strong> - 19th rank in Contest 135, 53rd rank in Contest 129</p>

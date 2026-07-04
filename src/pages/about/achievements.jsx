@@ -4,6 +4,19 @@ import { motion } from 'framer-motion';
 const Achievements = () => {
   const achievements = [
     {
+      title: 'ODOO X Parul Hackathon',
+      date: 'Jun 2026',
+      icon: 'Trophy',
+      logo: '/assets/logos/odoo.png',
+      iconColor: '#4CAF50',
+      link: '/assets/odoo-parul.jpg',
+      btnText: 'View Photo',
+      description: [
+        '2nd runner up of 36-hour Odoo hackathon',
+        'Built a customer-centric cafe app with real-world features',
+      ],
+    },
+    {
       title: 'SIH 2025',
       date: 'Dec 2025',
       icon: 'Brain',
@@ -30,19 +43,7 @@ const Achievements = () => {
         'Developed innovative solutions under time constraints',
       ],
     },
-    {
-      title: 'SIH 2024',
-      date: 'Dec 2024',
-      icon: 'Brain',
-      logo: '/assets/logos/sih.png',
-      iconColor: '#34bba9',
-      link: 'https://drive.google.com/file/d/1SJkA4exajP7UOF0JQhoJ3NB4yD2tkLNP/view?usp=sharing',
-      btnText: 'View Details',
-      description: [
-        'Shortlist name in waiting list',
-        '7th out of top 500 teams across India',
-      ],
-    },
+
     {
       title: 'LeetCode ',
       date: 'Sep 2024',
