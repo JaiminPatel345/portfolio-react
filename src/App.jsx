@@ -1,39 +1,52 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useRef } from 'react';
 import { TerminalContextProvider } from 'react-terminal';
 import { ThemeProvider } from './lib/ThemeProvider';
 import { Navbar } from './components';
+import { useInView } from 'framer-motion';
 
-const Home = lazy(() => import('./pages/Home'));
+import Home from './pages/Home';
+import { Work } from './pages/work';
+
 const Connect = lazy(() => import('./pages/connect'));
 const About = lazy(() => import('./pages/about').then(m => ({ default: m.About })));
-const Work = lazy(() => import('./pages/work').then(m => ({ default: m.Work })));
 const Resume = lazy(() => import('./pages/about/resume').then(m => ({ default: m.Resume })));
+
+const LazySection = ({ children, id, className }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "500px 0px" });
+
+  return (
+    <section ref={ref} id={id} className={className}>
+      {isInView ? children : null}
+    </section>
+  );
+};
 
 function App() {
   return (
     <ThemeProvider>
       <TerminalContextProvider>
         {/* <MyCursor /> */}
-        <div
-          className="bg-white dark:bg-neutral-900 min-h-screen transition-colors duration-300 overflow-x-hidden">
+        <div className="bg-white dark:bg-neutral-900 min-h-screen transition-colors duration-300 overflow-x-hidden">
           <Navbar />
           <div className="max-w-7xl mx-auto">
-            <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
-              <section id="home" className="min-h-screen [content-visibility:auto] [contain-intrinsic-size:1000px]">
-                <Home />
-              </section>
-              <section id="work" className="min-h-screen [content-visibility:auto] [contain-intrinsic-size:1000px]">
-                <Work />
-              </section>
-              <section id="about" className="min-h-screen [content-visibility:auto] [contain-intrinsic-size:1000px]">
+            <section id="home" className="min-h-screen [content-visibility:auto] [contain-intrinsic-size:1000px]">
+              <Home />
+            </section>
+            <section id="work" className="min-h-screen [content-visibility:auto] [contain-intrinsic-size:1000px]">
+              <Work />
+            </section>
+            
+            <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-neutral-500">Loading section...</div>}>
+              <LazySection id="about" className="min-h-screen [content-visibility:auto] [contain-intrinsic-size:1000px]">
                 <About />
-              </section>
-              <section id="resume" className="min-h-screen [content-visibility:auto] [contain-intrinsic-size:1000px]">
+              </LazySection>
+              <LazySection id="resume" className="min-h-screen [content-visibility:auto] [contain-intrinsic-size:1000px]">
                 <Resume />
-              </section>
-              <section id="connect" className="min-h-screen [content-visibility:auto] [contain-intrinsic-size:1000px]">
+              </LazySection>
+              <LazySection id="connect" className="min-h-screen [content-visibility:auto] [contain-intrinsic-size:1000px]">
                 <Connect />
-              </section>
+              </LazySection>
             </Suspense>
           </div>
         </div>
