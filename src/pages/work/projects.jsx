@@ -9,13 +9,18 @@ const Projects = () => {
     const projects = [
         {
             title: 'TRAVELOOP',
-            images: ['assets/traveloop.jpg'],
+            images: [
+                'https://drive.google.com/file/d/1ZUPKJSQy-6kBo6gIg-VBqHXBzkN9-8By/view?usp=drive_link',
+                'assets/traveloop-1.png',
+                'assets/traveloop-2.png',
+                'assets/traveloop-3.png'
+            ],
             description: 'Personalized, intelligent, collaborative travel planning platform.',
             points: [
-                'Build multi-city itineraries, assign activities and dates to each stop, and track budgets.',
-                'Share trip plans publicly or collaborate with friends in real-time using Socket.IO.',
-                'Integrated with Leaflet maps and OpenRouteService for driving and walking routes.',
-                'Features secure authentication with JWT, email OTP verification, and image uploads via Cloudinary.'
+                'AI powered place recommendation based on user filters on specific city.',
+                'Map integration with complex optimization journey algorithm using Leaflet and OpenRouteService.',
+                'Comprehensive budget analysis and expense tracking for multi-city itineraries.',
+                'Share trip plans publicly or collaborate with friends in real-time using Socket.IO.'
             ],
             technology: [
                 'React',
@@ -480,6 +485,27 @@ export default Projects;
 
 const ImageWithLoader = ({ src, alt, className }) => {
     const [isLoaded, setIsLoaded] = useState(false);
+    
+    if (src && src.includes('drive.google.com')) {
+        const embedUrl = src.replace('/view?usp=drive_link', '/preview').replace('/view', '/preview');
+        return (
+            <div className="w-full h-full relative">
+                {!isLoaded && (
+                    <div className="absolute inset-0 flex items-center justify-center bg-neutral-200 dark:bg-neutral-800 animate-pulse z-0">
+                        <span className="loading loading-spinner loading-md text-neutral-400"></span>
+                    </div>
+                )}
+                <iframe
+                    src={embedUrl}
+                    onLoad={() => setIsLoaded(true)}
+                    className={`w-full h-full absolute inset-0 z-10 ${className} ${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-500`}
+                    allow="autoplay"
+                    frameBorder="0"
+                />
+            </div>
+        );
+    }
+
     return (
         <>
             {!isLoaded && (

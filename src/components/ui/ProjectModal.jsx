@@ -73,11 +73,19 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
               <div className="overflow-y-auto modal-scrollbar flex-1 pb-6">
                 {/* Image Header */}
                 <div className="relative w-full bg-neutral-900 group">
-                  <img
-                    src={project?.images ? project.images[currentImageIndex] : project?.image}
-                    alt={project.title}
-                    className="w-full h-auto max-h-[50vh] object-contain mx-auto"
-                  />
+                  {project?.images && project.images[currentImageIndex]?.includes('drive.google.com') ? (
+                    <iframe
+                      src={project.images[currentImageIndex].replace('/view?usp=drive_link', '/preview').replace('/view', '/preview')}
+                      className="w-full h-[50vh] object-contain mx-auto border-0"
+                      allow="autoplay"
+                    />
+                  ) : (
+                    <img
+                      src={project?.images ? project.images[currentImageIndex] : project?.image}
+                      alt={project.title}
+                      className="w-full h-auto max-h-[50vh] object-contain mx-auto"
+                    />
+                  )}
                   {project?.images && project.images.length > 1 && (
                     <>
                       <button onClick={prevImage} className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity z-20 hover:bg-black/80">
