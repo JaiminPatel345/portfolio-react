@@ -51,10 +51,10 @@ export const commands = {
   about: (
     <span>
       <p>• <strong style={{ color: 'var(--highlight-color)' }}>Software Developer</strong></p>
-      <p>• <strong style={{ color: 'var(--highlight-color)' }}>Machine Learning</strong> Enthusiast</p>
-      <p>• Knight in LeetCode</p>
+      <p>• Love to <strong style={{ color: 'var(--highlight-color)' }}>explore new tech</strong></p>
+      <p>• Knight in LeetCode [achieved back when AI couldn't able to solve DSA problems :) ]</p>
       <p>• Open Source Contributor (beginner)</p>
-      <p>• 2026 Passout of <strong style={{ color: 'var(--highlight-color)' }}>Computer Science Student</strong> from BVM, Anand, Gujarat</p>
+      <p>• 2026 Passout of <strong style={{ color: 'var(--highlight-color)' }}>Computer Science Student</strong></p>
       <p>• Wanna Chess Match? <a href={'https://www.chess.com/member/jaimindetroja'} target={'_blank'} className="text-blue-600 dark:text-blue-400 hover:underline">Chess.com</a></p>
       <br />
       <p> Type <strong style={{ color: 'var(--highlight-color)' }}>skills</strong> to see my technical toolkit or <strong

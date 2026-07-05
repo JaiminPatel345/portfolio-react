@@ -30,16 +30,16 @@ export const Intro = () => {
               Software <strong className="text-blue-600 dark:text-blue-400"> Developer</strong>
             </li>
             <li>
-              <strong className="text-blue-600 dark:text-blue-400">Machine Learning</strong> Enthusiast
+              Love to <strong className="text-blue-600 dark:text-blue-400">explore new tech</strong>
             </li>
             <li>
-              Knight in LeetCode
+              Knight in LeetCode [achieved back when AI couldn't able to solve DSA problems :) ]
             </li>
             <li>
               Open Source Contributor (beginner)
             </li>
             <li>
-              2026 Passout of <strong className="text-blue-600 dark:text-blue-400">Computer Science Student</strong> from BVM, Anand, Gujarat
+              2026 Passout of <strong className="text-blue-600 dark:text-blue-400">Computer Science Student</strong>
             </li>
             <li>
               Wanna Chess Match? <a href={'https://www.chess.com/member/jaimindetroja'} target={'_blank'} className="text-blue-600 dark:text-blue-400 hover:underline">Chess.com</a>
